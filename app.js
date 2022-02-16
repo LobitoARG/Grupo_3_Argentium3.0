@@ -13,6 +13,11 @@ app.get("/", (req, res) => {
     res.sendFile(patheoGet);
 })
 
+app.get("/home.html", (req, res) => {
+    let patheoGet = path.resolve(__dirname, "./views/home.html");
+    res.sendFile(patheoGet);
+})
+
 app.get("/register.html", (req, res) => {
     let patheoGet = path.resolve(__dirname, "./views/register.html");
     res.sendFile(patheoGet);
@@ -25,5 +30,10 @@ app.get("/detailProduct.html", (req, res) => {
 
 app.get("/login.html", (req, res) => {
     let patheoGet = path.resolve(__dirname, "./views/login.html");
+    res.sendFile(patheoGet);
+})
+
+app.get("/productCart.html", (req, res) => {
+    let patheoGet = path.resolve(__dirname, "./views/productCart.html");
     res.sendFile(patheoGet);
 })
