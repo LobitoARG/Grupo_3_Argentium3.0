@@ -508,5 +508,114 @@ a.btnEndAdd{
     width: 40%;
 }
 
+/* css login - register */
+
+.nuevo-cliente, .acceso-clientes{
+    background-color: white;
+    padding: 10px 20px;
+    border: 3px solid black;
+    border-radius: 5%;
+    color: black;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.form{
+    justify-content: center;
+    align-items: center;
+    
+
+}
 
 
+.register, .login{
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 5%;
+    width: 90vw;
+    height: 90vh;
+    margin-top: 5%;
+    
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.correo, .contraseña{
+    width: 100%;
+}
+
+.recuerdo, .olvidaste{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.Registro-R, .Registro, .Facebook, .Google{
+    border: 3px solid black;
+    padding: 10px;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Registro, .Registro-R {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.Facebook{
+    background-color: #5875b4;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.Google{
+    background-color: #DD4B39;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+
+   
+
+
+
+.nombre-usuario-email{
+    display: block;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 400px){
+    .register, .login {
+    width: 70vw;   
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}     
+        
+    } 
+    
+ @media (min-width: 768){
+    .register, .login {
+        width: 30vw;   
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }     
+    
+ }  
