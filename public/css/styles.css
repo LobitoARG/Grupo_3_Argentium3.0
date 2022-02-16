@@ -20,6 +20,11 @@ main h1{
     margin-bottom:10px;
 }
 
+section a.anchorProducto{
+    text-decoration: none;
+    color: black;
+}
+
 .foto-principal-producto{
     width: 80%;
     height: 100%;
@@ -122,8 +127,9 @@ div.icono-menu i{
 }
 
 div .logo-empresa img{
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
+    margin: 10%;
 }
 
 
@@ -137,11 +143,11 @@ div .logo-empresa img{
     align-items: center;
 }
 
+
 .div-para-boton-oscuro{
     display:  flex;
     width: 100%;
     justify-content: flex-end;
-
 }
 
 .boton-para-modo-oscuro{
@@ -170,7 +176,7 @@ div .logo-empresa img{
 
 .logo-empresa{
 
-    
+ 
     width: 65%;
     height: 40px;
 }
@@ -415,3 +421,96 @@ footer h4{
     flex-direction: column;
     align-items: center;
 }
+
+
+/*productCart.html RULES*/
+body.bodyCarrito{
+    width: 100%;
+}
+
+
+
+section.carritoCompra h1{
+    width: 100%;
+    text-align: center;
+}
+
+section.carrito-de-compras h2{
+    width: 100%;
+    text-align: start;
+}
+
+div.contArticles{
+    
+    width: 100%;
+    
+}
+
+article.productoCarrito{
+    display: flex; 
+    width: 90%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin: auto;
+    margin-bottom: 5%;
+
+}
+
+div.imagenCarrito{
+    width: 45%;
+    margin: 5%;
+    margin-right: 5%;
+}
+
+div.imagenCarrito img{
+    width: 100%;
+    height: 100%;
+}
+
+
+div.descripcionCarrito{
+    width: 45%;
+    padding: 2%;
+}
+
+div.cantidadButtons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+div.cantidadButtons input{
+ width: 20%;
+ margin-right: 10%;
+ margin-left: 30%;
+}
+
+
+div.sumarRestar{
+    width: 20%;
+    margin-right: 5% ;
+}
+
+section.resumenCompra{
+    text-align: center;
+    padding: 5%;
+}
+
+div.endAddCompra{
+    display: flex; 
+    justify-content: space-around;
+    margin: 5%;
+}
+
+a.btnEndAdd{
+    border: solid 1px black;
+    text-decoration: none;
+    background-color: black;
+    color: white; 
+    padding: 2%;
+    border-radius: 10px;;
+    margin: 2%;
+    width: 40%;
+}
+
+
+
