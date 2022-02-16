@@ -127,9 +127,8 @@ div.icono-menu i{
 }
 
 div .logo-empresa img{
-    width: 60%;
-    height: 60%;
-    margin: 10%;
+    width: 30%;
+
 }
 
 
@@ -139,7 +138,7 @@ div .logo-empresa img{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -175,10 +174,7 @@ div .logo-empresa img{
 
 
 .logo-empresa{
-
- 
-    width: 65%;
-    height: 40px;
+    width: 60%;
 }
 
 .header-derecho{
@@ -196,7 +192,7 @@ header{
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 
