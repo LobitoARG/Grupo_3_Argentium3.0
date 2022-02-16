@@ -1,0 +1,14 @@
+{
+  "name": "proyectointegradorpruebas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alejandro Jabo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
