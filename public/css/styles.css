@@ -55,13 +55,13 @@ button.toggle-btn{
     display: none;
     position: fixed;
     z-index: 200;
-    top: 5.5%;    
+    top: 9%;    
     border: solid 1px black;
     border-radius: 2px;
-    left: 9%;
-    right: 0.5%;
+    right: 30%;
     margin-left: -100%;
-    transition:linear 1s;   
+    transition:linear 1s;  
+    float: left; 
     
     
     
@@ -75,7 +75,7 @@ button.toggle-btn{
 }
 
 .icono-usuario-header, .icono-busqueda, .carrito-de-compras i{
-    width: 400px;;
+    width: 10%;
     margin: 0 10px;
 }
 
