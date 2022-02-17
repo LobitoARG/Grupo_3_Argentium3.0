@@ -54,7 +54,7 @@ button.toggle-btn{
     border-radius: 5px;
     display: none;
     position: fixed;
-    z-index: 200;
+    z-index: 2000;
     top: 9%;    
     border: solid 1px black;
     border-radius: 2px;
