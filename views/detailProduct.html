@@ -4,29 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argent Hardware</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="/js/javaS.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>ARGENT HARDWARE</title>
 </head>
 <body>
     <header>
-        <div class="icono-menu-y-logo">
-            <div class="icono-menu">
-                <i class="fa fa-bars burger"></i>
-            </div>
-            <div class="logo-empresa">
-                <img src="img/logo_empresa_1.svg" alt="Logo Empresa" class="logo">
-            </div>
+        <div class="menuDesplegable">
+            <!-- Menu desplegable -->
+            <span class="nav-bar" id="btnMenu"><i class="fas fa-bars"></i></span>
+            <nav class="main-nav">
+                <ul class="menu" id="menu">
+                    <li class="menu__item"><a href="" class="menu__link">DESKTOP</a></li>
+                    <li class="menu__item"><a href="" class="menu__link">GAMING</a></li>
+                    <li class="menu__item container-submenu">
+                        <a href="#" class="menu__link submenu-btn">HADWARE CONSUMO<i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="menu__item"><a href="" class="menu__link">Procesadores</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Memorias</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Discos Sólidos</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Tarjetas Gráficas</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__item"><a href="" class="menu__link">Servicio Técnico</a></li>        
+                </ul>
+            </nav>
+            <script src="/js/menu.js"></script>   
+          </div>
         </div>
 
+        <div class="logo-empresa">
+            <img src="img/AGLogo.png" alt="Logo de MercadoLiebre" class="logo">
+        </div>
+        
+
         <div class="header-derecho">
+            
+
+            <input type="text" id="barraB" placeholder="Ingrese su búsqueda" />
+            <div class="icono-busqueda">
+            <button class="toggle-btn" onclick="mostrar()"><i class="fas fa-search"></i></button>
+            </div>           
+            
+            
             <div class="icono-usuario-header">
                 <i class="fa fa-solid fa-user"></i>
-            </div>
-
-            <div class="icono-busqueda">
-                <i class="fas fa-search"></i>
             </div>
 
             <div class="carrito-de-compras">

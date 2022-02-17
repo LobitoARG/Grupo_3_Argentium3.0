@@ -32,14 +32,50 @@ section a.anchorProducto{
     display: flex;
 }
 .main-foto-principal{
-    width: 90%;
+    width: 100%;
     height: 100%;
-    margin: auto;
+    margin: 0 10px;
 }
 
 .icono-usuario-header, .icono-busqueda, .carrito-de-compras{
-    width: 18px;
-    height: 18px;
+    width: 20%;
+    margin: 0 10px;
+}
+
+button.toggle-btn{
+    border: none;   
+    color: #000;
+    cursor:pointer;
+}
+
+#barraB{
+    width: 50vw;
+    height: 20px;
+    border-radius: 5px;
+    display: none;
+    position: fixed;
+    z-index: 200;
+    top: 5.5%;    
+    border: solid 1px black;
+    border-radius: 2px;
+    left: 9%;
+    right: 0.5%;
+    margin-left: -100%;
+    transition:linear 1s;   
+    
+    
+    
+}
+
+#barraB.active{
+    display: inline-block;
+    margin-left: 0%;
+    
+    
+}
+
+.icono-usuario-header, .icono-busqueda, .carrito-de-compras i{
+    width: 400px;;
     margin: 0 10px;
 }
 
@@ -126,8 +162,10 @@ div.icono-menu i{
     font-size: 20px;
 }
 
-div .logo-empresa img{
+div.logo-empresa img{
     width: 30%;
+    height: 50%;
+    margin: 10%;
 
 }
 
@@ -138,7 +176,7 @@ div .logo-empresa img{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -174,7 +212,8 @@ div .logo-empresa img{
 
 
 .logo-empresa{
-    width: 60%;
+    width: 30%;
+    height: 40px;
 }
 
 .header-derecho{
@@ -192,7 +231,8 @@ header{
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
 }
 
 
@@ -448,6 +488,8 @@ article.productoCarrito{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     margin: auto;
     margin-bottom: 5%;
+    align-items: center;
+    
 
 }
 
@@ -491,6 +533,15 @@ section.resumenCompra{
     padding: 5%;
 }
 
+.resumenCompra h2{
+    font-size: 200%;
+}
+
+.resumenCompra h3{
+    font-size: 150%;
+}
+
+
 div.endAddCompra{
     display: flex; 
     justify-content: space-around;
@@ -506,6 +557,7 @@ a.btnEndAdd{
     border-radius: 10px;;
     margin: 2%;
     width: 40%;
+
 }
 
 /* css login - register */
@@ -586,17 +638,94 @@ a.btnEndAdd{
     
 }
 
-
-   
-
-
-
 .nombre-usuario-email{
     display: block;
     
     justify-content: center;
     align-items: center;
 }
+
+
+
+/*REGLAS MENU JS*/
+
+/* REGLAS DEL MENU */
+
+div.menuDesplegable{
+    width: 20%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.nav-bar{
+    padding: 1%;
+    display: block;
+    color: black; 
+    cursor: pointer; 
+    font-size: 1.5em;
+    width: 100%;
+}
+
+.main-nav{
+    position: fixed;
+    float: left;
+    margin-left: 8px;
+    padding: 9px 10px;
+    margin-bottom: 10.5px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.menu, .submenu{
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+
+.menu{
+    background: #555;
+    width: 100%;
+    margin-left: -200%;
+    transition: all 0.5s;
+}
+
+.menu__link{
+    display:block;
+    padding: 20px;
+    color: white; 
+    font-size: 1.2em; 
+    text-decoration: none;
+}
+
+.menu__link:hover{
+    background-color: white;
+}
+
+.submenu .menu__link:hover{
+    background-color: #c9c6c6;
+}
+
+.submenu{
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.submenu .menu__link{
+    background-color: #333;
+    padding-left: 50px;
+}
+
+.mostrar{
+    margin-left: 0%;
+}
+
+
+
+
 
 @media (min-width: 400px){
     .register, .login {
@@ -605,17 +734,40 @@ a.btnEndAdd{
     align-items: center;
     text-align: center;
     margin: auto;
-}     
-        
+}      
     } 
     
- @media (min-width: 768){
+ @media (min-width: 768px){
     .register, .login {
         width: 30vw;   
         justify-content: center;
         align-items: center;
         text-align: center;
         margin: auto;
-    }     
+    }
+    
+    div.contCarritoPadre{
+        display: flex;
+        width: 100%;
+        
+    }
+
+
+    div.contArticles{
+     display: flex; 
+     flex-direction: column;
+     width: 50%;
+     justify-content: space-around;   
+    }
+    
+    article.productoCarrito{
+        width: 90%;
+        margin: 1%;
+        height: 20%;
+    }
+
+    section.resumenCompra{
+        width: 50%;
+    }
     
  }  
