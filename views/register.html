@@ -13,60 +13,25 @@
     </head>
     <body>
         <header>
-            <div class="menuDesplegable">
-                <!-- Menu desplegable -->
-                <span class="nav-bar" id="btnMenu"><i class="fas fa-bars"></i></span>
-                <nav class="main-nav">
-                    <ul class="menu" id="menu">
-                        <li class="menu__item"><a href="" class="menu__link">DESKTOP</a></li>
-                        <li class="menu__item"><a href="" class="menu__link">GAMING</a></li>
-                        <li class="menu__item container-submenu">
-                            <a href="#" class="menu__link submenu-btn">HADWARE CONSUMO<i class="fas fa-chevron-down"></i></a>
-                            <ul class="submenu">
-                                <li class="menu__item"><a href="" class="menu__link">Procesadores</a></li>
-                                <li class="menu__item"><a href="" class="menu__link">Memorias</a></li>
-                                <li class="menu__item"><a href="" class="menu__link">Discos Sólidos</a></li>
-                                <li class="menu__item"><a href="" class="menu__link">Tarjetas Gráficas</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu__item"><a href="" class="menu__link">Servicio Técnico</a></li>        
-                    </ul>
-                </nav>
-                <script src="/js/menu.js"></script>   
-              </div>
-            </div>
-    
-            <div class="logo-empresa">
-                <img src="img/AGLogo.png" alt="Logo de MercadoLiebre" class="logo">
-            </div>
-            
-    
-            <div class="header-derecho">
-                
-    
-                <input type="text" id="barraB" placeholder="Ingrese su búsqueda" />
-                <div class="icono-busqueda">
-                <button class="toggle-btn" onclick="mostrar()"><i class="fas fa-search"></i></button>
-                </div>           
-                
-                
-                <div class="icono-usuario-header">
-                    <i class="fa fa-solid fa-user"></i>
+            <div class="contenedor-padre-header">
+                <div class="contenedor-icono-de-menu">
+                    <i class="fas fa-bars"></i>
                 </div>
-    
-                <div class="carrito-de-compras">
-                    <i class="fas fa-shopping-cart"></i>
+        
+                <div class="contenedor-logo-empresa">
+                    <img src="img/logo_empresa_1.svg">
+                </div>
+        
+                <div class="contenedor-header-derecho">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="login.html"><i class="fas fa-sign-in-alt"></i></a>
+                    <a href="register.html"><i class="fa fa-solid fa-user"></i></a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
                 </div>
             </div>
         </header>
-        <div class="div-para-boton-oscuro">
-            <div class="boton-para-modo-oscuro">Modo Oscuro</div>
-        </div>
-        <div class="div-para-boton-volver-listado">
-            <div class="boton-volver">
-                <i class="fas fa-angle-left"></i>
-            </div>
-        </div>
+        
+        
 
 
         <main class="register">
@@ -124,15 +89,31 @@
 
                 <div class="contenedor-redes">
                     <h5>REDES SOCIALES</h5>
-                    <div class="contenedor-iconos-redes-sociales">
+                    <div class="contenedor-padre-footer-iconos-redes-sociales">
                         <div class="contenedor-icono-instagram">
-                            <i class="fab fa-instagram"></i>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </div>
                         <div class="contenedor-icono-facebook">
-                            <i class="fab fa-facebook-square"></i>
+                            <a href="#">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
                         </div>
                         <div class="contenedor-icono-youtube">
-                            <i class="fab fa-youtube"></i>
+                            <a href="#">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                        <div class="contenedor-icono-twitter">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="contenedor-icono-likedin">
+                            <a href="#">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
