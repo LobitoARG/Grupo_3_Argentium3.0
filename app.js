@@ -1,39 +1,17 @@
 const express = require("express");
 const path = require("path");
+const mainRoute = require('./routes/mainRoute');
+const productoRoute = require('./routes/productoRoute');
+
 const app = express();
-const patheoPublic = path.join(__dirname, "./public");
-app.use(express.static(patheoPublic));
+const rutaPublic = path.join(__dirname, "./public");
+app.use(express.static(rutaPublic));
+
+app.set('view engine','ejs');
 
 app.listen(3005, () => {
     console.log("Servidor 3005 corriendo");
 })
 
-app.get("/", (req, res) => {
-    let patheoGet = path.resolve(__dirname, "./views/home.html");
-    res.sendFile(patheoGet);
-})
-
-app.get("/home.html", (req, res) => {
-    let patheoGet = path.resolve(__dirname, "./views/home.html");
-    res.sendFile(patheoGet);
-})
-
-app.get("/register.html", (req, res) => {
-    let patheoGet = path.resolve(__dirname, "./views/register.html");
-    res.sendFile(patheoGet);
-})
-
-app.get("/detailProduct.html", (req, res) => {
-    let patheoGet = path.resolve(__dirname, "./views/detailProduct.html");
-    res.sendFile(patheoGet);
-})
-
-app.get("/login.html", (req, res) => {
-    let patheoGet = path.resolve(__dirname, "./views/login.html");
-    res.sendFile(patheoGet);
-})
-
-app.get("/productCart.html", (req, res) => {
-    let patheoGet = path.resolve(__dirname, "./views/productCart.html");
-    res.sendFile(patheoGet);
-})
+app.use(mainRoute);
+app.use(productoRoute);

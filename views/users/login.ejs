@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<%- include('../partials/head.ejs') %> 
+<body>
+     
+<!-- HEADER -->
+<%- include('../partials/header.ejs') %> 
+        
+        
+           
+        <main class="login">
+                        
+            <div class="formulario">
+            <form action="/" method="POST">
+                <h2 class="acceso-clientes">ACCESO CLIENTES</h2> 
+                <br>
+                <h4 class="correo">CORREO ELECTRONICO</h4>
+                <input type="text" name="user">
+                <br>
+                <h4 class="contraseña">CONTRASEÑA</h4>
+                <input type="password" name="pass">
+                <br>
+                <input type="submit" value="INGRESAR">
+                <br>
+                <br>
+                <label for="recuerdo">Recordar mi Contraseña</label>
+                <input type="checkbox" name="recuerdo">
+                <br>
+                <br>
+                <a class="olvidaste" href="#">OLVIDASTE TU CONTRASEÑA</a>
+                <br>
+                <br>
+                <br>
+                <a class="Registro" href="/register">Registrar nueva Cuenta</a>
+                <br>
+                <br>
+                <br>
+                <a class="Facebook" href="#">  <i class="fa-brands fa-facebook"></i>   Continuar con Facebook</a>
+               
+                <br>
+                <br>
+                <br>
+                <a class="Google" href="#">Continuar con Google+</a>
+                
+            </form>
+            <div>
+        </main>
+        <%- include('../partials/footer')  %> 
+    </body>
+</html>
