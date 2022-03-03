@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %> 
+<body>
+    <%- include('../partials/header.ejs') %> 
+    <main>
+
+        <div class="contenedor-main-form">
+            <form method="GET" action="/" class="form-register">
+
+                <h1>Edicion de productos</h1>
+                <h4>Nombre</h4>
+                <div class="contenedor-form-nombre">
+                <label for="nombre"></label>
+                <input type="text" name="nombre_producto" id="nombre" placeholder="Nombre del Producto" required="" value="Nombre a editar">
+                </div>
+        
+                <h4>Descripcion</h4>
+                <div class="contenedor-form-descripcion">
+                <label for="descripcion"></label>
+                <input type="text" name="descripcion_producto" id="descripcion" placeholder="Descripcion" value="Descripcion a editar">
+                </div>
+
+                <div class="contenedor-form-imagen">
+                    <h4>Subir una imagen del producto:</h4>
+                    <input type="file" name="img_producto_create" accept=".jpg" multiple="">
+                </div>
+        
+                <h4>Categoria</h4>
+                <div class="contenedor-form-categoria">
+                <div class="label-box">
+                    <label for="electro">Computadoras</label>
+                    <label for="moda">Notebook</label>
+                    <label for="hogar">Componentes</label>
+                </div>
+                <div class="categoria-box">
+                <input type="radio" name="categoria_productos_create" value="resp_computadoras" id="computadoras" checked>
+                <input type="radio" name="categoria_productos_create" value="resp_notebooks" id="notebooks">
+                <input type="radio" name="categoria_productos_create" value="resp_componentes" id="componentes">
+                </div>
+                </div>
+
+                <h4>Color</h4>
+                <div class="contendor-form-colores">
+                    <input type="color" value="#ff0000">
+                </div>
+
+                <h4>Precio</h4>
+                <div class="contenedor-form-precio">
+                <label for="precio"></label>
+                <input type="number" name="precio_producto" id="precio" placeholder="Precio del Producto" required="" value="100.000">
+                </div>
+
+                
+           
+                <div class="contenedor-form-botones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Borrar datos</button>
+                </div>
+            </form>
+
+        </div>
+
+    </main>
+    <%- include('../partials/footer')  %> 
+</body>
+</html>
