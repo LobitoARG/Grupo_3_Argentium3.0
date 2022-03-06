@@ -431,9 +431,9 @@ footer h4{
 }
 
 .contenedor-articulos-principales{
-    
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .contenedor-producto-imagen-descripcion{
@@ -799,6 +799,10 @@ a.btnEndAdd{
     .contenedor-boton-para-enviar button{
         width: 18%;
     }
+
+    .foto-principal-producto{
+        width: 35%;
+    }
     
  }  
 
@@ -808,5 +812,16 @@ a.btnEndAdd{
         grid-template-columns: 5% 5% 5% 5% 5%;
         grid-template-rows: 100px;
     }
+
+    .foto-principal-producto{
+        width: 25%;
+    }
+
+    .boton-comprar button{
+        width: 45%;
+    }
+
+    
+
 
 } 
