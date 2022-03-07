@@ -7,48 +7,53 @@
 <!-- HEADER -->
 <%- include('../partials/header.ejs') %> 
         
+
+ <main class="register">
+                     
+    <form action="/" method="POST">
+        <div class="nombre-usuario-email">
+            <div>
+                <h2 class="nuevo-cliente">NUEVO CLIENTE</h2> 
+            </div>
+            <div>
+                <h4>Nombre</h4>
+                <input type="text" name="nombre" placeholder="Ingresa Nombre">
+            </div> 
+            <div>
+                <h4>Apellido</h4>
+                <input type="text" name="apellido" placeholder="Ingresa Apellido">
+            </div>
+            <div>
+                <h4>Documento</h4>
+                <input type="text" name="documento" placeholder=" Ingresa Documento">
+            </div>
+            <div>
+                <h4>Email</h4>
+                <input type="email" name="email" placeholder="Ingresa E-mail"> 
+            </div>
+            <div>
+                <h4>Contraseña</h4>
+                <input type="password" name="pass" placeholder="Elegí tu contraseña">
+            </div>
+            <div>
+                <h4>Confirma Contraseña</h4>
+                <input type="password" name="pass_confirm" placeholder="Confirmá tu clave">
+            </div>
+            <div>
+                <h4>Domicilio</h4>
+                <input type="text" name="addres" placeholder="Ingresa tu Domicilio">
+            </div>                   
+            <div>
+                <h4>Ciudad</h4>
+                <input type="text" name="ciudad" placeholder="Ingresa tu Ciudad">   
+            </div>
+                <a class="registro-R" href="#">REGISTRARSE</a>
+        </div>               
         
 
-
-        <main class="register">
-                     
-            <form action="/" method="POST">
-                <div class="nombre-usuario-email">
-                    <h2 class="nuevo-cliente">NUEVO CLIENTE</h2> 
-                    <h4>Nombre</h4>
-                    <input type="text" name="nombre" placeholder="Ingresa Nombre">
-                    <br>
-                    <h4>Apellido</h4>
-                    <input type="text" name="apellido" placeholder="Ingresa Apellido">
-                    <br>
-                    <h4>Documento</h4>
-                    <input type="text" name="documento" placeholder=" Ingresa Documento">
-                    <br>
-                    <h4>Email</h4>
-                    <input type="email" name="email" placeholder="Ingresa E-mail"> 
-                    <br>
-                    <h4>Contraseña</h4>
-                    <input type="password" name="pass" placeholder="Elegí tu contraseña">
-                    <br>
-                    <h4>Confirma Contraseña</h4>
-                    <input type="password" name="pass_confirm" placeholder="Confirmá tu clave">
-                    <br>
-                    <h4>Domicilio</h4>
-                    <input type="text" name="addres" placeholder="Ingresa tu Domicilio">
-                    <br>
-                    <h4>Ciudad</h4>
-                    <input type="text" name="ciudad" placeholder="Ingresa tu Ciudad">   
-                </div>
-                <div>
-                    <br>
-                    <br>
-                    <a class="Registro-R" href="#">REGISTRARSE</a>
-                </div>               
-                
-
-                
-            </form>
-        </main>
+        
+    </form>
+</main>
 
         <%- include('../partials/footer')  %> 
     </body>

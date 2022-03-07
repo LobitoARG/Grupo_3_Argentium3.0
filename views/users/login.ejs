@@ -7,45 +7,51 @@
 <!-- HEADER -->
 <%- include('../partials/header.ejs') %> 
         
-        
-           
-        <main class="login">
-                        
-            <div class="formulario">
-            <form action="/" method="POST">
-                <h2 class="acceso-clientes">ACCESO CLIENTES</h2> 
-                <br>
-                <h4 class="correo">CORREO ELECTRONICO</h4>
-                <input type="text" name="user">
-                <br>
-                <h4 class="contraseña">CONTRASEÑA</h4>
-                <input type="password" name="pass">
-                <br>
-                <input type="submit" value="INGRESAR">
-                <br>
-                <br>
-                <label for="recuerdo">Recordar mi Contraseña</label>
-                <input type="checkbox" name="recuerdo">
-                <br>
-                <br>
-                <a class="olvidaste" href="#">OLVIDASTE TU CONTRASEÑA</a>
-                <br>
-                <br>
-                <br>
-                <a class="Registro" href="/register">Registrar nueva Cuenta</a>
-                <br>
-                <br>
-                <br>
-                <a class="Facebook" href="#">  <i class="fa-brands fa-facebook"></i>   Continuar con Facebook</a>
-               
-                <br>
-                <br>
-                <br>
-                <a class="Google" href="#">Continuar con Google+</a>
+       <!-- -----------------------LOGIN----------------------------------------- -->
+
+        <main class="contenedor-login">
+            <form action="/" method="POST">            
+            
+                <div class="acceso-login">
+                    <h2 class="acceso-clientes">ACCESO CLIENTES</h2>     
+                </div>
                 
-            </form>
-            <div>
+                <div class="correo-contra-login">
+                    <h5 class="correo">CORREO ELECTRONICO</h5>
+                    <input type="text" name="user" class="correo-el">
+                
+                    <h5 class="contraseña">CONTRASEÑA</h5>
+                    <input type="password" name="pass" class="contra-el">
+                </div>
+               
+                <div class="ingreso-login">
+                    <input type="submit" value="INGRESAR" class="boton-envio">
+                </div>
+                <div class="recordar-login">
+                    <label for="recuerdo">RECORDAR CONTRASEÑA</label>
+                    <input type="checkbox" name="recuerdo">
+                </div>
+                <div>
+                    <a class="olvidaste" href="#">OLVIDASTE TU CONTRASEÑA</a>
+                </div>
+                <div class="nueva-cuenta-login">
+                    <a class="Registro" href="/register">REGISTRAR NUEVA CUENTA</a>
+                </div>
+                <div class="face-login">
+                    <a class="Facebook" href="#">Continuar con Facebook</a>
+                    
+                </div>
+                <div class="goo-login">
+                    <a class="Google" href="#">Continuar con Google+</a>
+                </div>
+                 </form>
+              
         </main>
+
+        <!-- -------------------------------FIN----LOGIN----------------------------------------- -->
+
+
+
         <%- include('../partials/footer')  %> 
     </body>
 </html>
