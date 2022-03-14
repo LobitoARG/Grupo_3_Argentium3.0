@@ -14,4 +14,4 @@ app.listen(3005, () => {
 })
 
 app.use(mainRoute);
-app.use(productoRoute);
+app.use('/products',productoRoute);

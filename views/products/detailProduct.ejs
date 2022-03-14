@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- HEAD -->
-<%- include('../partials/head.ejs') %> 
+<%- include('../partials/head.ejs', {title: productoSeleccionado.name}) %> 
 <body>
      
 <!-- HEADER -->
@@ -10,20 +10,19 @@
     
     
     <main>
-        <h2>Categoria > Marca </h2>
-        <h1>PC GAMER AMD RYZEN 9 RTX 3090</h1>
+        
+        <h1><%= productoSeleccionado.name %> </h1>
         <div class="foto-principal-producto">
             
-            <img src="img/PC_GAMER/pc_gamer_1.png" alt="foto_pc" class="main-foto-principal">
+            <img src="/img/<%= productoSeleccionado.category %>/<%= productoSeleccionado.image %>" alt="foto_pc" class="main-foto-principal">
         </div>
         <section class="contenedor-precio-boton-comprar">
 
             <div class="precio-y-descuento">
                 <div class="precio-anterior-precio-actual">
-                    <del>$699.999</del>
-                    <h2>$419.999</h2>
+                    <h2>$<%= productoSeleccionado.price %></h2>
+                    <h2 class="descuento"><%= productoSeleccionado.discount %>% OFF</h2>
                 </div>
-                <h2 class="descuento">40% OFF</h2>
             </div>
             
             <div class="boton-comprar">
@@ -33,18 +32,43 @@
         </section>
 
         <section class="contenedor-especificaciones-completas">
-        <h2>ESPECIFICACIONES</h2>
+        <h2>ESPECIFICACIONES TECNICAS</h2>
         <div class="especificaciones">
             <ul>
-                <li><strong>Microprocesador:</strong> CPU AMD AM4 Ryzen Ryzen 9 5950X</li>
-                <li><strong>Cooler:</strong> WC ASUS ROG STRIX LC240 RGB WHITE EDITION</li>
-                <li><strong>Motherboard:</strong> AORUS X570</li>
-                <li><strong>Memoria:</strong> DDR4 BALLISTIX 16GB 3600MHZ (2x8)</li>
-                <li><strong>Disco:</strong> SSD M.2 CORSAIR MP400 2TB NVMe GEN3X4</li>
-                <li><strong>Placa de video:</strong> RTX 3090 24GB OC ZOTAC</li>
-                <li><strong>Fuente:</strong> SEASONIC 750W 80+ GOLD FOCUS</li>
-                <li><strong>Gabinete:</strong> ATX CORSAIR 4000D</li>
+                <% if (productoSeleccionado.descripCPU != null){ %> 
+                    <li><strong>Microprocesador:</strong> <%= productoSeleccionado.descripCPU %></li>
+                    <% } %> 
+
+                    <% if (productoSeleccionado.descripWC != null){ %> 
+                    <li><strong>Cooler:</strong> <%= productoSeleccionado.descripWC %></li>
+                    <% } %> 
+
+                    <% if (productoSeleccionado.descripMB != null){ %> 
+                    <li><strong>Motherboard:</strong> <%= productoSeleccionado.descripMB %></li>
+                    <% } %> 
+                    <% if (productoSeleccionado.descripRAM != null){ %> 
+                    <li><strong>Memoria:</strong> <%= productoSeleccionado.descripRAM %></li>
+                    <% } %> 
+                    <% if (productoSeleccionado.descripSSD != null){ %> 
+                    <li><strong>Disco:</strong> <%= productoSeleccionado.descripSSD %></li>
+                    <% } %> 
+                    <% if (productoSeleccionado.descripGPU != null){ %> 
+                    <li><strong>Placa de video:</strong> <%= productoSeleccionado.descripGPU %></li>
+                    <% } %> 
+                    <% if (productoSeleccionado.descripPWS != null){ %>
+                    <li><strong>Fuente:</strong> <%= productoSeleccionado.descripPWS %></li>
+                    <% } %> 
+                    <% if (productoSeleccionado.descripGAB != null){ %>
+                    <li><strong>Gabinete:</strong> <%= productoSeleccionado.descripGAB %></li>
+                    <% } %> 
+                    <% if (productoSeleccionado.OS != null){ %>
+                        <li><strong>Sistema operativo:</strong> <%= productoSeleccionado.OS %></li>
+                    <% } %> 
             </ul>
+        </div>
+        <div class="caracteristicas">
+            <h2><%= productoSeleccionado.description %></h2>
+
         </div>
         </section>
 
@@ -53,7 +77,7 @@
         <div class="productos-relacionados">
             <div class="producto-relacionado-1">
                 <div class="producto-relacionado-imagen-1">
-                    <img alt="imagen-pc" src="img/DESKTOP/producto-relacionado-1.jpg">
+                    <img alt="imagen-pc" src="/img/DESKTOP/producto-relacionado-1.jpg">
                 </div>
                 <p>PC GAMER 1</p>
                 <p>$100.000</p>
@@ -61,7 +85,7 @@
 
             <div class="producto-relacionado-2">
                 <div class="producto-relacionado-imagen-2">
-                    <img alt="imagen-pc" src="img/DESKTOP/producto-relacionado-2.jpg">
+                    <img alt="imagen-pc" src="/img/DESKTOP/producto-relacionado-2.jpg">
                 </div>
                 <p>PC GAMER 2</p>
                 <p>$200.000</p> 
@@ -69,7 +93,7 @@
 
             <div class="producto-relacionado-3">
                 <div class="producto-relacionado-imagen-3">
-                    <img alt="imagen-pc" src="img/DESKTOP/producto-relacionado-3.jpg">
+                    <img alt="imagen-pc" src="/img/DESKTOP/producto-relacionado-3.jpg">
                 </div>
                 <p>PC GAMER 3</p>
                 <p>$300.000</p> 
