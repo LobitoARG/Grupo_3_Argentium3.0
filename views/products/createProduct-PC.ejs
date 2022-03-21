@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs', {title: 'Creacion de productos'}) %> 
+<body>
+    <%- include('../partials/header.ejs') %> 
+    <main>
+        <div class="contenedor-main-form">
+            <form method="POST" action="/products" class="form-register" enctype="multipart/form-data">
+
+                <h1>Formulario de creacion de equipos completos</h1>
+                <h4>Nombre del Producto</h4>
+                <div class="contenedor-form-nombre">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="">
+                </div>
+
+                <h4>Microprocesador</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripCPU"></label>
+                <input type="text" name="descripCPU" id="descripCPU" placeholder="Modelo CPU">
+                </div>
+
+                <h4>Water Cooler</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripWC"></label>
+                <input type="text" name="descripWC" id="descripWC" placeholder="Modelo Water Cooler">
+                </div>
+
+                <h4>Motherboard</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripMB"></label>
+                <input type="text" name="descripMB" id="descripMB" placeholder="Modelo de MB">
+                </div>
+
+                <h4>RAM</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripRAM"></label>
+                <input type="text" name="descripRAM" id="descripRAM" placeholder="Modelo de RAM">
+                </div>
+
+                <h4>SSD</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripSSD"></label>
+                <input type="text" name="descripSSD" id="descripSSD"  placeholder="Modelo de SSD">
+                </div>
+
+                <h4>GPU</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripGPU"></label>
+                <input type="text" name="descripGPU" id="descripGPU" placeholder="Modelo de GPU">
+                </div>
+
+                <h4>Fuente de alimentacion</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripPWS"></label>
+                <input type="text" name="descripPWS" id="descripPWS" placeholder="Modelo de PWS">
+                </div>
+
+                <h4>Gabinete</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripGAB"></label>
+                <input type="text" name="descripGAB" id="descripGAB" placeholder="Modelo de Gabinete">
+                </div>
+        
+                <h4>Descripcion</h4>
+                <div class="contenedor-form-descripcion">
+                <label for="description"></label>
+                <textarea name="description" id="description" class="form-input"></textarea>
+                </div>
+
+                <h4>Categoria</h4>
+                <div class="contenedor-form-category">
+                    <label for="category"></label>
+                    <select name="category" id="category" class="form-input">
+                        <option value="PC_GAMER">PC GAMER</option>
+                    </select>
+                </div>
+
+                <h4>Precio</h4>
+                <div class="contenedor-form-precio">
+                <label for="price"></label>
+                <input type="number" name="price" id="price" placeholder="Precio del producto" required="">
+                </div>
+
+                <h4>Descuento base</h4>
+                <div class="contenedor-form-precio">
+                <label for="discount"></label>
+                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="">
+                </div>
+
+                <div class="contenedor-form-imagen">
+                    <h4>Subir una imagen del producto:</h4>
+                    <label for="imagen-producto" class="form-label"></label>
+					<input name="imagen-producto" type="file" id="imagen-para-subir" >
+                </div>
+           
+                <div class="contenedor-form-botones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Borrar datos</button>
+                </div>
+                
+            </form>
+
+        </div>
+
+
+    </main>
+    <%- include('../partials/footer')  %> 
+</body>
+</html>

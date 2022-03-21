@@ -17,13 +17,128 @@ const productoController = {
     productCart: (req, res) => res.render('./products/productCart'),
     // Create - Form to create
     createProduct: (req,res) => res.render('./products/createProduct'),
+   
     // Create - Metodo para crear el producto en el JSON
     store: (req,res) => {
 
+        let productosActuales = fs.readFileSync(productsFilePath, 'utf-8')
+		productosActuales = JSON.parse(productosActuales)
+		let newProduct = req.body;
+        //let newProductCat = req.body.category;
+        /*
+        console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+        console.log(newProductCat);
+        console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+        */
+		newProduct.image = req.file.filename;
+		let ultimoIndice = productosActuales.length+1;
+		newProduct.id = ultimoIndice;
+		productosActuales.push(newProduct)
+		let newProductoJSON = JSON.stringify(productosActuales)
+		//const nuevaVariableJSON = JSON.stringify(newProduct)
+		fs.writeFileSync(productsFilePath, newProductoJSON)
+		//products.push(newProductoJSON);
+		res.redirect('/')
     },
+    
     editProduct: (req,res) => res.render('./products/editProduct'),
-    index: (req,res) => res.render('products/products',{products})
+    
+    index: (req,res) => res.render('products/products',{products}),
 
+    createProductPC: (req,res) => {
+        res.render('products/createProduct-PC')
+    },
+
+    createProductntbk: (req,res) => {
+        res.render('products/createProduct-ntbk')
+    },
+
+    createProductcomp: (req,res) => {
+        res.render('products/createProduct-comp')
+    },
+    edit: (req, res) => {
+		let idProducto = req.params.id;
+		//console.log (idProducto);
+		res.render('products/editProduct',{"productoSeleccionado": products[idProducto-1]});
+
+	},
+    update: (req, res) => {
+		
+		let id = req.params.id;
+		let infoForm=req.body;
+        /*
+        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+        console.log(id)
+        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+		console.log(infoForm)
+        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')*/
+        
+		products.forEach(function (elemento){
+			if (elemento.id == id)
+			{
+				elemento.name = infoForm.name;
+                if (infoForm.descripCPU != null)
+                {
+                    elemento.descripCPU = infoForm.descripCPU;
+                }
+
+                if (infoForm.descripWC != null)
+                {
+                    elemento.descripWC = infoForm.descripWC;
+                }
+                
+                if (infoForm.descripMB != null)
+                {
+                    elemento.descripMB = infoForm.descripMB;
+                }
+
+                if (infoForm.descripRAM != null)
+                {
+                    elemento.descripRAM = infoForm.descripRAM;
+                }
+
+                if (infoForm.descripSSD != null)
+                {
+                    elemento.descripSSD = infoForm.descripSSD;
+                }
+
+                if (infoForm.descripGPU != null)
+                {
+                    elemento.descripGPU = infoForm.descripGPU;
+                }
+
+                if (infoForm.descripPWS != null)
+                {
+                    elemento.descripPWS = infoForm.descripPWS;
+                }
+
+                if (infoForm.descripGAB != null)
+                {
+                    elemento.descripGAB = infoForm.descripGAB;
+                }
+				elemento.description = infoForm.description;
+                elemento.price = infoForm.price;
+				elemento.discount = infoForm.discount;
+			}
+		})
+	
+		fs.writeFileSync(productsFilePath,JSON.stringify(products))
+		res.redirect('/')
+	},
+    destroy : (req, res) => {
+		// Do the magic
+		let idProducto = req.params.id;
+		
+		const nuevoProducto = products.filter(function(producto){
+			return producto.id != idProducto;
+		})
+		console.log (nuevoProducto)
+
+		fs.writeFileSync(productsFilePath,JSON.stringify(nuevoProducto))
+
+		res.redirect('/')
+
+	}
 }
 
 module.exports = productoController; 

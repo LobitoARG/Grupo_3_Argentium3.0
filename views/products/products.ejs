@@ -8,7 +8,10 @@
 <%- include('../partials/header') %> 
    
 
-    <main>        
+    <main>  
+        <div class="boton-display-all-products">
+            <a href="/products/create"><button>Crear producto</button></a>
+        </div>      
     <section class="contenedor-section-principal">   
         <h2>PC GAMERS</h2>
         <div class="contenedor-articulos-principales">
@@ -54,10 +57,10 @@
         <div class="contenedor-articulos-principales">
 
                 <% for (let i = 0; i<products.length; i++) { %>
-                <% if (products[i].category=="CPU"){%>
+                <% if (products[i].subCategory=="CPU"){%>
             <a class="anchorProducto" href="products/detailProduct/<%=products[i].id%>">
                 <article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/hardware/ryzen9.jpeg" alt="PC ESCRITORIO">
+                    <img src="img/componentes/ryzen9.jpeg" alt="PC ESCRITORIO">
                     <div class="contendor-descripcion">
                         <h3 class="description"><%= products[i].name %></h3>
                         <p class="price">$<%= products[i].price %></p>
@@ -74,10 +77,10 @@
         <div class="contenedor-articulos-principales">
 
                 <% for (let i = 0; i<products.length; i++) { %>
-                <% if (products[i].category=="MB"){%>
+                <% if (products[i].subCategory=="MB"){%>
             <a class="anchorProducto" href="products/detailProduct/<%=products[i].id%>">
                 <article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/hardware/mb_x570_1.png" alt="PC ESCRITORIO">
+                    <img src="img/componentes/mb_x570_1.png" alt="PC ESCRITORIO">
                     <div class="contendor-descripcion">
                         <h3 class="description"><%= products[i].name %></h3>
                         <p class="price">$<%= products[i].price %></p>
@@ -94,10 +97,10 @@
         <div class="contenedor-articulos-principales">
 
                 <% for (let i = 0; i<products.length; i++) { %>
-                <% if (products[i].category=="RAM"){%>
+                <% if (products[i].subCategory=="RAM"){%>
             <a class="anchorProducto" href="products/detailProduct/<%=products[i].id%>">
                 <article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/hardware/RAM_1.png" alt="PC ESCRITORIO">
+                    <img src="img/componentes/RAM_1.png" alt="PC ESCRITORIO">
                     <div class="contendor-descripcion">
                         <h3 class="description"><%= products[i].name %></h3>
                         <p class="price">$<%= products[i].price %></p>
@@ -114,10 +117,10 @@
         <div class="contenedor-articulos-principales">
 
                 <% for (let i = 0; i<products.length; i++) { %>
-                <% if (products[i].category=="SSD"){%>
+                <% if (products[i].subCategory=="SSD"){%>
             <a class="anchorProducto" href="products/detailProduct/<%=products[i].id%>">
                 <article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/hardware/SSD_KINGSTON_1.png" alt="PC ESCRITORIO">
+                    <img src="img/componentes/SSD_KINGSTON_1.png" alt="PC ESCRITORIO">
                     <div class="contendor-descripcion">
                         <h3 class="description"><%= products[i].name %></h3>
                         <p class="price">$<%= products[i].price %></p>
@@ -134,10 +137,10 @@
         <div class="contenedor-articulos-principales">
 
                 <% for (let i = 0; i<products.length; i++) { %>
-                <% if (products[i].category=="GPU"){%>
+                <% if (products[i].subCategory=="GPU"){%>
             <a class="anchorProducto" href="products/detailProduct/<%=products[i].id%>">
                 <article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/hardware/GPU_1.png" alt="PC ESCRITORIO">
+                    <img src="img/componentes/GPU_1.png" alt="PC ESCRITORIO">
                     <div class="contendor-descripcion">
                         <h3 class="description"><%= products[i].name %></h3>
                         <p class="price">$<%= products[i].price %></p>
@@ -154,10 +157,10 @@
         <div class="contenedor-articulos-principales">
 
                 <% for (let i = 0; i<products.length; i++) { %>
-                <% if (products[i].category=="PWS"){%>
+                <% if (products[i].subCategory=="PWS"){%>
             <a class="anchorProducto" href="products/detailProduct/<%=products[i].id%>">
                 <article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/hardware/PWS.png" alt="PC ESCRITORIO">
+                    <img src="img/componentes/PWS.png" alt="PC ESCRITORIO">
                     <div class="contendor-descripcion">
                         <h3 class="description"><%= products[i].name %></h3>
                         <p class="price">$<%= products[i].price %></p>
@@ -174,10 +177,10 @@
         <div class="contenedor-articulos-principales">
 
                 <% for (let i = 0; i<products.length; i++) { %>
-                <% if (products[i].category=="GABINETE"){%>
+                <% if (products[i].subCategory=="GABINETES"){%>
             <a class="anchorProducto" href="products/detailProduct/<%=products[i].id%>">
                 <article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/hardware/GABINETE_1.png" alt="PC ESCRITORIO">
+                    <img src="img/componentes/GABINETE_1.png" alt="PC ESCRITORIO">
                     <div class="contendor-descripcion">
                         <h3 class="description"><%= products[i].name %></h3>
                         <p class="price">$<%= products[i].price %></p>
@@ -194,10 +197,10 @@
         <div class="contenedor-articulos-principales">
 
                 <% for (let i = 0; i<products.length; i++) { %>
-                <% if (products[i].category=="WATER-COOLER"){%>
+                <% if (products[i].subCategory=="WATER-COOLER"){%>
             <a class="anchorProducto" href="products/detailProduct/<%=products[i].id%>">
                 <article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/hardware/wc_1.png" alt="PC ESCRITORIO">
+                    <img src="img/componentes/wc_1.png" alt="PC ESCRITORIO">
                     <div class="contendor-descripcion">
                         <h3 class="description"><%= products[i].name %></h3>
                         <p class="price">$<%= products[i].price %></p>

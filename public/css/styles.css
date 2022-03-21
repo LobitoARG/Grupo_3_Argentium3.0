@@ -29,6 +29,10 @@ header{
     border:  solid 1px black; 
 }
 
+.contenedor-articulos-principales h3{
+    text-align: center;
+}
+
 .contenedor-padre-header{
     display: grid;
     grid-template-columns: 100px 100px 1fr;
@@ -57,8 +61,30 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;   
+}
+
+.contenedor-form-descripcion textarea{
+        display: inline-block;
+        margin: 0;
+        padding: .2em;
+        width: auto;
+        min-width: 25em;
+        /* The max-width "100%" value fixes a weird issue where width is too wide by default and extends beyond 100% of the parent in some agents. */
+        max-width: 100%;
+        /* Height "auto" will allow the text area to expand vertically in size with a horizontal scrollbar if pre-existing content is added to the box before rendering. Remove this if you want a pre-set height. Use "em" to match the font size set in the website. */
+        height: auto;
+        /* Use "em" to define the height based on the text size set in your website and the text rows in the box, not a static pixel value. */
+        min-height: 10em;
+        /* Do not use "border" in textareas unless you want to remove the 3D box most browsers assign and flatten the box design. */
+        /*border: 1px solid black;*/
+        cursor: text;
+        /* Some textareas have a light gray background by default anyway. */
+        background-color: #eee;
+        /* Overflow "auto" allows the box to start with no scrollbars but add them as content fills the box. */
+        overflow: auto;
+        /* Resize creates a tab in the lower right corner of textarea for most modern browsers and allows users to resize the box manually. Note: Resize isn't supported by most older agents and IE. */
+        resize: both;
 }
 
 .contenedor-header-derecho i{
@@ -109,38 +135,50 @@ header{
     height: 100%;
 }
 
-.precio-y-descuento{
+.boton-editar, .boton-borrar, .boton-comprar{
+    text-align: center;
+}
+
+.boton-editar button{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: 520;
+    font-style: normal;
+    font-size: 100%;
+    color: #ffffff;
+    text-decoration: none;
     width: 60%;
-    display: flex;
-    align-items: center;
+    line-height: 3;
+    padding: 0 0px;
+    margin: 5px 0px;
+    background-color: chocolate;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #eeeeee;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline;
 }
 
-.precio-anterior-precio-actual{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.precio-y-descuento h2{
-    margin: 0;
-    width: 55%;
-}
-
-.precio-anterior-precio-actual del{
-    font-size: 15px;
-    width: 55%;
-}
-
-
-.contenedor-precio-boton-comprar{
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-}
-.boton-comprar{
-    width: 50%;
+.boton-borrar button{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: 520;
+    font-style: normal;
+    font-size: 100%;
+    color: #ffffff;
+    text-decoration: none;
+    width: 60%;
+    line-height: 3;
+    padding: 0 0px;
+    margin: 5px 0px;
+    background-color: rgb(248, 69, 37);
+    border-style: solid;
+    border-width: 0px;
+    border-color: #eeeeee;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline;
 }
 
 .boton-comprar button{
@@ -150,7 +188,7 @@ header{
     font-size: 100%;
     color: #ffffff;
     text-decoration: none;
-    width: 100%;
+    width: 60%;
     line-height: 3;
     padding: 0 0px;
     margin: 5px 0px;
@@ -162,6 +200,10 @@ header{
     cursor: pointer;
     text-align: center;
     display: inline;
+}
+
+.contenedor-main-form h1{
+    text-align: center;
 }
 
 
@@ -361,6 +403,10 @@ footer h4{
     justify-content: space-around;
 }
 
+.titulo-categoria-form{
+    text-align: center;
+}
+
 
 .contenedor-informacion-footer ul{
     margin: 0;
@@ -454,6 +500,12 @@ footer h4{
 
 .producto-relacionado-1, .producto-relacionado-2, .producto-relacionado-3{
     box-shadow: -14px 7px 24px 1px rgba(158,158,158,0.75);
+}
+
+.precio-anterior-precio-actual{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
 
@@ -552,6 +604,39 @@ a.btnEndAdd{
     margin: 2%;
     width: 40%;
 
+}
+
+.boton-form-categoria{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    width: 44%;
+    line-height: 38px;
+    padding: 0 10px;
+    margin: 10px 0px;
+    background: linear-gradient(60deg, #0064CB, #0064CB) !important;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #eeeeee;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    display: inline;
+}
+
+.contenedor-botones-categorias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.contenedor-boton-cat{
+    width: 100%;
+    text-align: center;
 }
 
 /* CSS PARA LOGIN Y REGISTER */
@@ -702,6 +787,14 @@ a.btnEndAdd{
     margin: 3% 0;
 }
 
+.boton-editar a{
+    text-decoration: none;
+}
+
+.contenedor-boton-cat, .contenedor-boton-cat, .contenedor-boton-cat a{
+    text-decoration: none;
+}
+
 .form-register h1{
     margin: 2% 0;
 }
@@ -713,19 +806,44 @@ a.btnEndAdd{
     margin: 3% 0;
 }
 
+.boton-display-all-products button{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: 520;
+    font-style: normal;
+    font-size: 100%;
+    color: #ffffff;
+    text-decoration: none;
+    width: 35%;
+    line-height: 3;
+    padding: 0 0px;
+    margin: 5px 0px;
+    background-color: rgb(248, 69, 37);
+    border-style: solid;
+    border-width: 0px;
+    border-color: #eeeeee;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline;
+}
+
+.boton-display-all-products a{
+    text-decoration: none;
+}
+
 .contenedor-form-nombre input{
 
     padding: 1%;
     border: none;
     border-radius: 3px;
-    width: 50%;
+    width: 95%;
 }
 
 .contenedor-form-descripcion input{
     padding: 1%;
     border: none;
     border-radius: 3px;
-    width: 50%;
+    width: 95%;
 }
 
 .contenedor-form-precio input{
@@ -753,6 +871,7 @@ a.btnEndAdd{
     text-align: center;
     display: inline;
 }
+
 
 
 
@@ -859,8 +978,21 @@ a.btnEndAdd{
         width: 25%;
     }
 
-    .boton-comprar button{
-        width: 45%;
+    .contenedor-botones-categorias{
+        flex-direction: row;
+    }
+    .contenedor-boton-cat{
+        width: 30%;
+    }
+    .contenedor-form-nombre input{
+        width: 35%;
+    }
+    .contenedor-form-precio input{
+        width: 35%;
+    }
+    .contenedor-form-botones button{
+        width: 10%;
+
     }
 
     

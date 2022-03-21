@@ -1,60 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head.ejs') %> 
+    <%- include('../partials/head.ejs', {title: productoSeleccionado.name}) %> 
 <body>
     <%- include('../partials/header.ejs') %> 
     <main>
 
         <div class="contenedor-main-form">
-            <form method="GET" action="/" class="form-register">
+            <form method="POST" action="/products/edit/<%= productoSeleccionado.id %>?_method=PUT" class="form-register">
 
-                <h1>Edicion de productos</h1>
-                <h4>Nombre</h4>
+                <h1>Editando: <%=productoSeleccionado.name %> </h1>
+                <h4>Nombre del producto</h4>
                 <div class="contenedor-form-nombre">
-                <label for="nombre"></label>
-                <input type="text" name="nombre_producto" id="nombre" placeholder="Nombre del Producto" required="" value="Nombre a editar">
+                <label for="name"></label>
+                <input type="text" name="name" required value="<%=productoSeleccionado.name %>">
                 </div>
-        
+
+                <% if (productoSeleccionado.descripCPU != null){ %>            
+                <h4>Microprocesador</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripCPU"></label>
+                <input type="text" name="descripCPU" required value="<%=productoSeleccionado.descripCPU %>">
+                </div>
+                <% } %> 
+
+                <% if (productoSeleccionado.descripWC != null){ %>
+                <h4>Water Cooler</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripWC"></label>
+                <input type="text" name="descripWC" required value="<%=productoSeleccionado.descripWC %>">
+                </div>
+                <% } %> 
+
+
+                <% if (productoSeleccionado.descripMB != null){ %>
+                <h4>Motherboard</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripMB"></label>
+                <input type="text" name="descripMB" required value="<%=productoSeleccionado.descripMB %>">
+                </div>
+                <% } %> 
+
+                <% if (productoSeleccionado.descripRAM != null){ %>
+                <h4>RAM</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripRAM"></label>
+                <input type="text" name="descripRAM" required value="<%=productoSeleccionado.descripRAM %>">
+                </div>
+                <% } %> 
+
+                <% if (productoSeleccionado.descripSSD != null){ %>
+                <h4>Almacenamiento</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripSSD"></label>
+                <input type="text" name="descripSSD" required value="<%=productoSeleccionado.descripSSD %>">
+                </div>
+                <% } %> 
+
+                <% if (productoSeleccionado.descripGPU != null){ %>
+                <h4>Placa de video</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripGPU"></label>
+                <input type="text" name="descripGPU" required value="<%=productoSeleccionado.descripGPU %>">
+                </div>
+                <% } %> 
+
+                <% if (productoSeleccionado.descripPWS != null){ %>
+                <h4>Fuente de alimentacion</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripPWS"></label>
+                <input type="text" name="descripPWS" required value="<%=productoSeleccionado.descripPWS %>">
+                </div>
+                <% } %> 
+
+                <% if (productoSeleccionado.descripGAB != null){ %>
+                <h4>Gabinete</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripGAB"></label>
+                <input type="text" name="descripGAB" required value="<%=productoSeleccionado.descripGAB %>">
+                </div>
+                <% } %> 
+
+                <% if (productoSeleccionado.OS != null){ %>
+                <h4>Sistema operativo</h4>
+                <div class="contenedor-form-nombre">
+                <label for="OS"></label>
+                <input type="text" name="OS" required value="<%=productoSeleccionado.OS %>">
+                </div>
+                <% } %> 
+
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
-                <label for="descripcion"></label>
-                <input type="text" name="descripcion_producto" id="descripcion" placeholder="Descripcion" value="Descripcion a editar">
+                <label for="description"></label>
+                <input type="text" name="description" required value="<%=productoSeleccionado.description %>">
                 </div>
-
-                <div class="contenedor-form-imagen">
-                    <h4>Subir una imagen del producto:</h4>
-                    <input type="file" name="img_producto_create" accept=".jpg" multiple="">
-                </div>
-        
-                <h4>Categoria</h4>
-                <div class="contenedor-form-categoria">
-                <div class="label-box">
-                    <label for="electro">Computadoras</label>
-                    <label for="moda">Notebook</label>
-                    <label for="hogar">Componentes</label>
-                </div>
-                <div class="categoria-box">
-                <input type="radio" name="categoria_productos_create" value="resp_computadoras" id="computadoras" checked>
-                <input type="radio" name="categoria_productos_create" value="resp_notebooks" id="notebooks">
-                <input type="radio" name="categoria_productos_create" value="resp_componentes" id="componentes">
-                </div>
-                </div>
-
-                <h4>Color</h4>
-                <div class="contendor-form-colores">
-                    <input type="color" value="#ff0000">
-                </div>
+                
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
-                <label for="precio"></label>
-                <input type="number" name="precio_producto" id="precio" placeholder="Precio del Producto" required="" value="100.000">
+                <label for="price"></label>
+                <input type="number" name="price" required value="<%=productoSeleccionado.price %>">
                 </div>
 
-                
-           
+                <h4>Descuento</h4>
+                <div class="contenedor-form-precio">
+                <label for="discount"></label>
+                <input type="number" name="discount" required="" value="<%=productoSeleccionado.discount %>">
+                </div>
+
                 <div class="contenedor-form-botones">
-                <button type="submit">Enviar</button>
+                <button type="submit">Guardar</button>
                 <button type="reset">Borrar datos</button>
                 </div>
             </form>

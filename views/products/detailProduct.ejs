@@ -24,6 +24,20 @@
                     <h2 class="descuento"><%= productoSeleccionado.discount %>% OFF</h2>
                 </div>
             </div>
+
+            <div class="boton-editar">
+                <a href="/products/edit/<%=productoSeleccionado.id%> ">
+                    <button type="submit">EDITAR PRODUCTO</button>
+                </a>
+                
+            </div>
+
+            <form action="/products/detail/<%= productoSeleccionado.id %>?_method=DELETE" method="POST">
+                <div class="boton-borrar">
+                    <button type="submit">BORRAR PRODUCTO</button>
+                </div>
+            </form>
+            
             
             <div class="boton-comprar">
                 <button type="submit">AGREGAR AL CARRITO</button>

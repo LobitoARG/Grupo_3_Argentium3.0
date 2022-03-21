@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs', {title: 'Creacion de productos'}) %> 
+<body>
+    <%- include('../partials/header.ejs') %> 
+    <main>
+        <div class="contenedor-main-form">
+            <form method="POST" action="/products" class="form-register" enctype="multipart/form-data">
+
+                <h1>Formulario de creacion Componentes</h1>
+                <h4>Nombre del Producto</h4>
+                <div class="contenedor-form-nombre">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="">
+                </div>
+       
+                <h4>Descripcion</h4>
+                <div class="contenedor-form-descripcion">
+                <label for="description"></label>
+                <textarea name="description" id="description" class="form-input"></textarea>
+                </div>
+
+                <h4>Seleccione una categoria</h4>
+                <div class="contenedor-form-categoria">
+                    <div class="label-box">
+                        <label for="category"></label>
+                        <select name="category" id="category" class="form-input">
+                            <option value="componentes">Componentes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h4>Seleccione una subcategoria</h4>
+                <div class="contenedor-form-categoria">
+                    <div class="label-box">
+                        <label for="subCategory"></label>
+                        <select name="subCategory" id="subCategory" class="form-input">
+                            <option value="CPU">Microprocesadores</option>
+                            <option value="MB">MOTHERBOARDS</option>
+                            <option value="RAM">MEMORIAS RAM</option>
+                            <option value="SSD">DISCOS SSD</option>
+                            <option value="GPU">PLACAS DE VIDEO</option>
+                            <option value="PWS">FUENTES DE ALIMENTACION</option>
+                            <option value="MB">GABINETES</option>
+                            <option value="WATER-COOLER">WATER COOLER</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h4>Precio</h4>
+                <div class="contenedor-form-precio">
+                <label for="precio"></label>
+                <input type="number" name="price" id="precio" placeholder="Precio del producto" required="">
+                </div>
+
+                <h4>Descuento base</h4>
+                <div class="contenedor-form-precio">
+                <label for="discount"></label>
+                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="">
+                </div>
+
+                <div class="contenedor-form-imagen">
+                    <h4>Subir una imagen del producto:</h4>
+                    <label for="imagen-producto" class="form-label"></label>
+					<input name="imagen-producto" type="file" id="imagen-para-subir" required>
+                </div>
+           
+                <div class="contenedor-form-botones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Borrar datos</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer')  %> 
+</body>
+</html>
