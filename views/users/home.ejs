@@ -12,132 +12,64 @@
         <div class="boton-display-all-products">
             <a href="../products"><button>Todos los productos</button></a>
         </div>        
-    <section class="contenedor-section-principal">   
-        <h2>PC GAMERS</h2>
-        <div class="contenedor-articulos-principales">
-                
-            <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/PC_GAMER/pc_gamer_1.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">PC GAMER INTEL</h3>
-                    <p class="price">$100.000</p>
-                    <p class="discount">12 cuotas de $10.000</p>
-                    </div>                              
-                </article></a>
+        <section class="contenedor-section-principal">   
+            <h2>ON SALE</h2>
+            <div class="contenedor-articulos-principales">
+    
+            <% for( let i = 0; i < 4 ; i++ ) { %> 
+                <a class="anchorProducto" href="products/detailProduct/<%=sales[i].id%> ">
+                    <article class="contenedor-producto-imagen-descripcion">            
+                        <img src="img/<%=sales[i].category%>/<%=sales[i].image%>" alt="<%= sales[i].name %>">
+                        <div class="contendor-descripcion">
+                            <h3 class="description"><%= sales[i].name %></h3>
+                            <p class="price">$<%= sales[i].price %></p>
+                            <p class="discount"><%= sales[i].discount %>%</p>
+                        </div>                              
+                    </article></a>   
+            
+            <% } %>
+             
+            </div>
+        </section>
+    
+        <section class="contenedor-section-principal">   
+            <h2>LOS MEJORES DESCUENTOS</h2>
+            <div class="contenedor-articulos-principales">
+    
+            <% for( let i = 0; i < 4 ; i++ ) { %> 
+                <a class="anchorProducto" href="products/detailProduct/<%=discounts[i].id%>">
+                    <article class="contenedor-producto-imagen-descripcion">            
+                        <img src="img/<%=discounts[i].category%>/<%=discounts[i].image%>" alt="<%= discounts[i].name %> ">
+                        <div class="contendor-descripcion">
+                            <h3 class="description"><%= discounts[i].name %></h3>
+                            <p class="price">$<%= discounts[i].price %></p>
+                            <p class="discount"><%= discounts[i].discount %>%</p>
+                        </div>                              
+                    </article></a>           
+            <% } %>
+             
+            </div>
+        </section>
+    
 
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/PC_GAMER/pc_gamer_2.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">PC GAMER AMD</h3>
-                    <p class="price">$200.000</p>
-                    <p class="discount">12 cuotas de $20.000</p>
-                    </div>                        
-                </article></a>
-
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/PC_GAMER/pc_gamer_3.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">PC GAMER AMD</h3>
-                    <p class="price">$300.000</p>
-                    <p class="discount">12 cuotas de $30.000</p>
-                    </div>                        
-                </article></a>
-
-
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/PC_GAMER/pc_gamer_4.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">PC GAMER INTEL</h3>
-                    <p class="price">$400.000</p>
-                    <p class="discount">12 cuotas de $40.000</p>
-                    </div>                        
-                </article></a>
-        </div>
-    </section>
-
-    <section class="contenedor-section-principal">   
-        <h2>NOTEBOOKS</h2>
-        <div class="contenedor-articulos-principales">
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/notebooks/notebook_prueba_1_res.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">NOTEBOOK OFICINA</h3>
-                    <p class="price">$100.000</p>
-                    <p class="discount">12 cuotas de $10.000</p>
-                    </div>                              
-                </article></a>
-
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/notebooks/notebook_prueba_2.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">NOTEBOOK OFICINA</h3>
-                    <p class="price">$200.000</p>
-                    <p class="discount">12 cuotas de $20.000</p>
-                    </div>                        
-                </article></a>
-
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/notebooks/notebook_prueba_3.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">NOTEBOOK DISEÑO</h3>
-                    <p class="price">$300.000</p>
-                    <p class="discount">12 cuotas de $30.000</p>
-                    </div>                        
-                </article></a>
-
-
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/notebooks/notebook_prueba_4.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">NOTEBOOK GAMING</h3>
-                    <p class="price">$400.000</p>
-                    <p class="discount">12 cuotas de $40.000</p>
-                    </div>                        
-                </article></a>
-        </div>
-    </section>
-
-    <section class="contenedor-section-principal">   
-        <h2>COMPONENTES</h2>
-        <div class="contenedor-articulos-principales">
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/componentes/hardware_ryzen9_1.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">CPU AMD RYZEN 9</h3>
-                    <p class="price">$100.000</p>
-                    <p class="discount">12 cuotas de $10.000</p>
-                    </div>                              
-                </article></a>
-
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/componentes/mb_x570_1.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">MOTHERBOARD X570</h3>
-                    <p class="price">$200.000</p>
-                    <p class="discount">12 cuotas de $20.000</p>
-                    </div>                        
-                </article></a>
-
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/componentes/RAM_1.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">RAM DDR4 AORUS</h3>
-                    <p class="price">$300.000</p>
-                    <p class="discount">12 cuotas de $30.000</p>
-                    </div>                        
-                </article></a>
-
-
-                <a class="anchorProducto" href="/detailProduct"><article class="contenedor-producto-imagen-descripcion">            
-                    <img src="img/componentes/GPU_1.png" alt="PC ESCRITORIO">
-                    <div class="contendor-descripcion">
-                    <h3 class="description">GPU NVIDIA RTX 3090</h3>
-                    <p class="price">$400.000</p>
-                    <p class="discount">12 cuotas de $40.000</p>
-                    </div>                        
-                </article></a>
-        </div>
-    </section>
+        <section class="contenedor-section-principal">   
+            <h2>Nuevos Productos</h2>
+            <div class="contenedor-articulos-principales">
+    
+            <% for( let i = 0; i < 4 ; i++ ) { %> 
+                <a class="anchorProducto" href="products/detailProduct/<%=news[i].id%>">
+                    <article class="contenedor-producto-imagen-descripcion">            
+                        <img src="img/<%=news[i].category%>/<%=news[i].image%>" alt="<%= news[i].name %> ">
+                        <div class="contendor-descripcion">
+                            <h3 class="description"><%= news[i].name %></h3>
+                            <p class="price">$<%= news[i].price %></p>
+                            <p class="discount"><%= news[i].discount %>%</p>
+                        </div>                              
+                    </article></a>           
+            <% } %>
+             
+            </div>
+        </section>
 
     </main>
        

@@ -55,6 +55,13 @@ header{
 .contenedor-logo-empresa img{
     max-width: 50%;
     margin: auto;
+    
+}
+
+.contenedor-logo-empresa a{
+    align-self: center;
+    justify-self: center;
+    
 }
 
 .contenedor-header-derecho{

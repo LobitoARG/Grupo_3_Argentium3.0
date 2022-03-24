@@ -15,7 +15,7 @@
     "discount": 15,
     "category": "PC_GAMER",
     "image": "pc_gamer_1.png",
-    "type": "SALE"
+    "type": "NEW"
   },
   {
     "id": 2,
@@ -84,7 +84,7 @@
     "descripPWS": "PWS Gigabyte 500w 80+",
     "descripGAB": "Gabinete ATX Thermaltake v250",
     "price": 500000,
-    "discount": 34,
+    "discount": 63,
     "category": "PC_GAMER",
     "image": "pc_gamer_1.png",
     "type": "SALE"
@@ -123,7 +123,7 @@
     "discount": 41,
     "category": "PC_GAMER",
     "image": "pc_gamer_3.png",
-    "type": "SALE"
+    "type": "NEW"
   },
   {
     "id": 8,
@@ -142,7 +142,7 @@
     "category": "PC_GAMER",
     "image": "pc_gamer_4.png",
     "OS": "Windows 10 Home x64 bits",
-    "type": "SALE"
+    "type": "NEW"
   },
   {
     "id": 9,
@@ -164,7 +164,7 @@
     "type": "SALE"
   },
   {
-    "id": 10,
+    "id": 10, 
     "name": "Acer 15.6 Intel Core i5 8GB SSD 512GB",
     "description": "Notebook Core i5 Home Office",
     "descripCPU": "Intel® Core™ i5-1035G4",
@@ -263,7 +263,8 @@
     "description": "orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui",
     "price": 6468419.0,
     "discount": 41,
-    "category": "CPU",
+    "category": "componentes",
+    "subCategory": "CPU",
     "image": "CPU_Intel_Core_i3_12100.jpg",
     "type": "SALE"
   },
@@ -273,7 +274,8 @@
     "description": "morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae",
     "price": 9150512.0,
     "discount": 31,
-    "category": "CPU",
+    "category": "componentes",
+    "subCategory": "CPU",
     "image": "CPU_Intel_Core_i5_12400.jpg",
     "type": "NEW"
   },
@@ -283,7 +285,8 @@
     "description": "a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris",
     "price": 78522.24,
     "discount": 6,
-    "category": "CPU",
+    "category": "componentes",
+    "subCategory": "CPU",
     "image": "CPU_Intel_Core_i7_12700.jpg",
     "type": "NEW"
   },
@@ -293,7 +296,8 @@
     "description": "vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit",
     "price": 72682.15,
     "discount": 13,
-    "category": "CPU",
+    "category": "componentes",
+    "subCategory": "CPU",
     "image": "CPU_Intel_Core_i9_12900K.png",
     "type": "NEW"
   },
@@ -303,7 +307,8 @@
     "description": "erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum",
     "price": 2789658.0,
     "discount": 40,
-    "category": "CPU",
+    "category": "componentes",
+    "subCategory": "CPU",
     "image": "CPU_AMD_Ryzen_3_3100.jpg",
     "type": "SALE"
   },
@@ -313,7 +318,8 @@
     "description": "nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis",
     "price": 9406684.0,
     "discount": 15,
-    "category": "CPU",
+    "category": "componentes",
+    "subCategory": "CPU",
     "image": "CPU_AMD_Ryzen_5_5600x.jpg",
     "type": "NEW"
   },
@@ -323,7 +329,8 @@
     "description": "bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi",
     "price": 7963323.0,
     "discount": 8,
-    "category": "CPU",
+    "category": "componentes",
+    "subCategory": "CPU",
     "image": "CPU_AMD_Ryzen_7_5800X.jpg",
     "type": "SALE"
   },
@@ -333,7 +340,8 @@
     "description": "curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis",
     "price": 9157475.0,
     "discount": 46,
-    "category": "CPU",
+    "category": "componentes",
+    "subCategory": "CPU",
     "image": "CPU_AMD_Ryzen_9_5950x.jpg",
     "type": "NEW"
   },
@@ -343,7 +351,8 @@
     "description": "sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet",
     "price": 7105764.55,
     "discount": 18,
-    "category": "MB",
+    "category": "componentes",
+    "subCategory": "MB",
     "image": "MB_Gigabyte_1200_H510.jpg",
     "type": "NEW"
   },
@@ -352,8 +361,9 @@
     "name": "MB ASUS 1200 B560",
     "description": "justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus",
     "price": 3655616.0,
-    "discount": 48,
-    "category": "MB",
+    "discount": 35,
+    "category": "componentes",
+    "subCategory": "MB",
     "image": "MB_ASUS_1200_B560.jpg",
     "type": "NEW"
   },
@@ -363,7 +373,8 @@
     "description": "tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero",
     "price": 1931439.12,
     "discount": 43,
-    "category": "MB",
+    "category": "componentes",
+    "subCategory": "MB",
     "image": "MB_Gigabyte_AORUS_1200_z690.jpg",
     "type": "NEW"
   },
@@ -373,7 +384,8 @@
     "description": "non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque",
     "price": 989230.66,
     "discount": 25,
-    "category": "MB",
+    "category": "componentes",
+    "subCategory": "MB",
     "image": "MB_ASUS_AM4_A520.jpg",
     "type": "SALE"
   },
@@ -383,7 +395,8 @@
     "description": "mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis",
     "price": 5353855.0,
     "discount": 10,
-    "category": "MB",
+    "category": "componentes",
+    "subCategory": "MB",
     "image": "MB_Gigabyte_AM4_B550.jpg",
     "type": "SALE"
   },
@@ -393,7 +406,8 @@
     "description": "eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut",
     "price": 196050.44,
     "discount": 42,
-    "category": "MB",
+    "category": "componentes",
+    "subCategory": "MB",
     "image": "MB_ASUS_AM4_X570.jpg",
     "type": "SALE"
   },
@@ -402,8 +416,9 @@
     "name": "RAM DDR4 Gigabyte 4GB",
     "description": "consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis",
     "price": 808272.23,
-    "discount": 48,
-    "category": "RAM",
+    "discount": 19,
+    "category": "componentes",
+    "subCategory": "RAM",
     "image": "RAM_DDR4_Gigabyte_4GB.jpg",
     "type": "NEW"
   },
@@ -413,7 +428,8 @@
     "description": "consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus",
     "price": 9001037.0,
     "discount": 18,
-    "category": "RAM",
+    "category": "componentes",
+    "subCategory": "RAM",
     "image": "RAM_DDR4_Gigabyte_8GB.jpg",
     "type": "SALE"
   },
@@ -423,7 +439,8 @@
     "description": "habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in",
     "price": 6488949.0,
     "discount": 9,
-    "category": "RAM",
+    "category": "componentes",
+    "subCategory": "RAM",
     "image": "RAM_DDR4_Gigabyte_16GB.jpg",
     "type": "SALE"
   },
@@ -433,7 +450,8 @@
     "description": "in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl",
     "price": 3839628.55,
     "discount": 35,
-    "category": "RAM",
+    "category": "componentes",
+    "subCategory": "RAM",
     "image": "RAM_DDR5_Gigabyte_8GB.jpg",
     "type": "NEW"
   },
@@ -443,7 +461,8 @@
     "description": "metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget",
     "price": 4035017.35,
     "discount": 18,
-    "category": "RAM",
+    "category": "componentes",
+    "subCategory": "RAM",
     "image": "RAM_DDR5_Gigabyte_16GB.jpg",
     "type": "SALE"
   },
@@ -455,7 +474,8 @@
     "description": "dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam",
     "price": 7483979.19,
     "discount": 16,
-    "category": "SSD",
+    "category": "componentes",
+    "subCategory": "SSD",
     "image": "SSD_2.5_SATA3_Kingston_120GB-min.jpg",
     "type": "NEW"
   },
@@ -465,7 +485,8 @@
     "description": "duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat",
     "price": 4148500.43,
     "discount": 23,
-    "category": "SSD",
+    "category": "componentes",
+    "subCategory": "SSD",
     "image": "SSD_2.5_SATA3_ Kingston_240GB.png",
     "type": "NEW"
   },
@@ -475,7 +496,8 @@
     "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo",
     "price": 1393924.24,
     "discount": 5,
-    "category": "SSD",
+    "category": "componentes",
+    "subCategory": "SSD",
     "image": "SSD_2.5_SATA3_Kingston_ 480GB-min.png",
     "type": "NEW"
   },
@@ -485,7 +507,8 @@
     "description": "vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est",
     "price": 2901257.54,
     "discount": 23,
-    "category": "SSD",
+    "category": "componentes",
+    "subCategory": "SSD",
     "image": "SSD_2.5_SATA3_Kingston_960GB_-min.png",
     "type": "SALE"
   },
@@ -495,7 +518,8 @@
     "description": "in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",
     "price": 6855546.0,
     "discount": 24,
-    "category": "SSD",
+    "category": "componentes",
+    "subCategory": "SSD",
     "image": "SSD_M.2_NVME_Gigabyte_AROUS_256GB-min.png",
     "type": "NEW"
   },
@@ -505,7 +529,8 @@
     "description": "augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae",
     "price": 4163695.08,
     "discount": 32,
-    "category": "SSD",
+    "category": "componentes",
+    "subCategory": "SSD",
     "image": "SSD_M.2_NVME_Gigabyte_AROUS_512GB-min.png",
     "type": "NEW"
   },
@@ -515,7 +540,8 @@
     "description": "aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id",
     "price": 2789708.0,
     "discount": 33,
-    "category": "SSD",
+    "category": "componentes",
+    "subCategory": "SSD",
     "image": "SSD_M.2_NVME_Gigabyte_AROUS_1TB-min.png",
     "type": "NEW"
   },
@@ -525,7 +551,8 @@
     "description": "vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla",
     "price": 3753220.07,
     "discount": 28,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_NVIDIA_GTX_1650-min.jpg",
     "type": "SALE"
   },
@@ -535,7 +562,8 @@
     "description": "venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis",
     "price": 7535167.0,
     "discount": 16,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_NVIDIA_GTX_1660-min.jpg",
     "type": "SALE"
   },
@@ -545,7 +573,8 @@
     "description": "et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis",
     "price": 5364921.25,
     "discount": 34,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_NVIDIA_RTX_3060_12GB-min.jpg",
     "type": "SALE"
   },
@@ -555,7 +584,8 @@
     "description": "ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede",
     "price": 5924027.26,
     "discount": 41,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_NVIDIA_RTX_3070_8GB-min.png",
     "type": "NEW"
   },
@@ -565,7 +595,8 @@
     "description": "vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc",
     "price": 7146764.4,
     "discount": 5,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_NVIDIA_RTX_3080-min.png",
     "type": "NEW"
   },
@@ -575,7 +606,8 @@
     "description": "nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia",
     "price": 8678904.0,
     "discount": 27,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_NVIDIA_RTX_3090-min.png",
     "type": "NEW"
   },
@@ -585,7 +617,8 @@
     "description": "mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean",
     "price": 8234118.0,
     "discount": 15,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_AMD_RX6500_XT_4GB-min.png",
     "type": "NEW"
   },
@@ -595,7 +628,8 @@
     "description": "integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida",
     "price": 8201930.0,
     "discount": 35,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_AMD_RX6600_XT_8GB-min.png",
     "type": "NEW"
   },
@@ -605,7 +639,8 @@
     "description": "cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus",
     "price": 6053740.0,
     "discount": 13,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_AMD_RX6700_XT_12GB-min.png",
     "type": "NEW"
   },
@@ -615,7 +650,8 @@
     "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat",
     "price": 2442286.0,
     "discount": 22,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_AMD_RX6800_XT_16GB-min.png",
     "type": "NEW"
   },
@@ -625,7 +661,8 @@
     "description": "quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare",
     "price": 4686519.55,
     "discount": 44,
-    "category": "GPU",
+    "category": "componentes",
+    "subCategory": "GPU",
     "image": "GPU_AMD_RX6900_XT_16GB-min.png",
     "type": "NEW"
   },
@@ -635,7 +672,8 @@
     "description": "vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt",
     "price": 5195160.0,
     "discount": 19,
-    "category": "PWS",
+    "category": "componentes",
+    "subCategory": "PWS",
     "image": "Gigabyte_PWS_500w_80+-min.png",
     "type": "SALE"
   },
@@ -645,7 +683,8 @@
     "description": "ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus",
     "price": 9772322.0,
     "discount": 14,
-    "category": "PWS",
+    "category": "componentes",
+    "subCategory": "PWS",
     "image": "Gigabyte_PWS_600w_80+-min.png",
     "type": "NEW"
   },
@@ -655,7 +694,8 @@
     "description": "tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia",
     "price": 2124845.95,
     "discount": 5,
-    "category": "PWS",
+    "category": "componentes",
+    "subCategory": "PWS",
     "image": "Gigabyte_PWS_700w_80+-min.png",
     "type": "SALE"
   },
@@ -665,7 +705,8 @@
     "description": "felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis",
     "price": 5606712.0,
     "discount": 13,
-    "category": "PWS",
+    "category": "componentes",
+    "subCategory": "PWS",
     "image": "Gigabyte_PWS_800w_80+-min.png",
     "type": "NEW"
   },
@@ -675,7 +716,8 @@
     "description": "pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis",
     "price": 5308323.37,
     "discount": 8,
-    "category": "PWS",
+    "category": "componentes",
+    "subCategory": "PWS",
     "image": "Gigabyte_PWS_Giga1000w_80+-min.png",
     "type": "NEW"
   },
@@ -685,7 +727,8 @@
     "description": "ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem",
     "price": 5377585.81,
     "discount": 25,
-    "category": "GABINETE",
+    "category": "componentes",
+    "subCategory": "GABINETE",
     "image": "Gabinete_Gigabyte_C200_Glass-min.png",
     "type": "SALE"
   },
@@ -695,7 +738,8 @@
     "description": "vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis",
     "price": 8139747.0,
     "discount": 23,
-    "category": "GABINETE",
+    "category": "componentes",
+    "subCategory": "GABINETE",
     "image": "Gabinete_ATX_Thermaltake_v250-min.png",
     "type": "NEW"
   },
@@ -705,7 +749,8 @@
     "description": "morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam",
     "price": 9785442.0,
     "discount": 41,
-    "category": "GABINETE",
+    "category": "componentes",
+    "subCategory": "GABINETE",
     "image": "Gabinete_AirHawk-min.png",
     "type": "NEW"
   },
@@ -715,7 +760,8 @@
     "description": "arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla",
     "price": 7522014.83,
     "discount": 33,
-    "category": "Gabinete",
+    "category": "componentes",
+    "subCategory": "Gabinete",
     "image": "Gabinete_ATX_Aerocool_Nightwak2-min",
     "type": "SALE"
   },
@@ -725,7 +771,8 @@
     "description": "fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam",
     "price": 169346.68,
     "discount": 43,
-    "category": "GABINETE",
+    "category": "componentes",
+    "subCategory": "GABINETE",
     "image": "Gabinete_ATX_Corsair_4000-min.jpg",
     "type": "SALE"
   },
@@ -735,7 +782,8 @@
     "description": "velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit",
     "price": 1107336.91,
     "discount": 48,
-    "category": "GABINETE",
+    "category": "componentes",
+    "subCategory": "GABINETE",
     "image": "Gabinete_Thermaltake_H550-min.jpg",
     "type": "SALE"
   },
@@ -745,7 +793,8 @@
     "description": "id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien",
     "price": 6574263.0,
     "discount": 21,
-    "category": "GABINETE",
+    "category": "componentes",
+    "subCategory": "GABINETE",
     "image": "Gabinete_ATX_Corsair_5000-min.jpg",
     "type": "SALE"
   },
@@ -755,7 +804,8 @@
     "description": "mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante",
     "price": 5503894.92,
     "discount": 47,
-    "category": "WATER-COOLER",
+    "category": "componentes",
+    "subCategory": "WATER-COOLER",
     "image": "wc_asus_rog_strix_lc_120_rgb-min.png",
     "type": "SALE"
   },
@@ -765,7 +815,8 @@
     "description": "mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien",
     "price": 6125837.0,
     "discount": 25,
-    "category": "WATER-COOLER",
+    "category": "componentes",
+    "subCategory": "WATER-COOLER",
     "image": "water_cooler_asus_rog_strix_lc240_rgb-min.png",
     "type": "SALE"
   }
