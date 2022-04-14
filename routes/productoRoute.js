@@ -2,6 +2,8 @@ const express = require('express');
 const productoController = require('../controllers/productoController');
 const path = require('path');
 const multer = require('multer');
+const authMiddleware = require('../middlewares/authMiddlewares');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 const router = express.Router();
 const storage = multer.diskStorage({
@@ -24,23 +26,23 @@ router.get('/detailProduct/:id', productoController.detailProduct);
 router.get('/productCart', productoController.productCart);
 
 /*** CREAR UN PRODUCTO PRODUCTO ***/ 
-router.get('/create', productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
-router.get('/create/createProduct-pc', productoController.createProductPC);
-router.get('/create/createProduct-ntbk', productoController.createProductntbk);
-router.get('/create/createProduct-comp', productoController.createProductcomp);
+router.get('/create', authMiddleware,productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
+router.get('/create/createProduct-pc',authMiddleware, productoController.createProductPC);
+router.get('/create/createProduct-ntbk',authMiddleware ,productoController.createProductntbk);
+router.get('/create/createProduct-comp',authMiddleware ,productoController.createProductcomp);
 router.post('/', upload.single('imagen-producto'),productoController.store);
 
 
 
 /*** EDITAR UN PRODUCTO ***/ 
 
-router.get('/edit/:id', productoController.edit); 
+router.get('/edit/:id', authMiddleware ,productoController.edit); 
 router.put('/edit/:id', productoController.update); 
 
 /*** OBTENER TODOS LOS PRODUCTOS ***/ 
 router.get('/', productoController.index);
 
 /*** BORRAR UN PRODUCTO ***/ 
-router.delete('/detail/:id', productoController.destroy); 
+router.delete('/detail/:id',authMiddleware ,productoController.destroy); 
 
 module.exports = router; 
