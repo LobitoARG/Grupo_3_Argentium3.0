@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs', {title: usersSeleccionado.name}) %> 
+<body>
+    <%- include('../partials/header.ejs') %> 
+    <main>
+
+        <div class="contenedor-main-form">
+            <form method="POST" action="/users/edit/<%= usersSeleccionado.id %>?_method=PUT" class="form-register">
+
+                <h1>Editando Usuario: <%=usersSeleccionado.name %> </h1>
+                <h4>Nombre del Usuario</h4>
+                <div class="contenedor-form-nombre">
+                <label for="nameUsers"></label>
+                <input type="text" name="nameUsers" required value="<%=usersSeleccionado.first_name %>">
+                </div>
+
+                <% if (usersSeleccionado.descripUsers != null){ %>            
+                <h4>Usuarios</h4>
+                <div class="contenedor-form-nombre">
+                <label for="descripUsers"></label>
+                <input type="text" name="descripUsers" required value="<%=usersSeleccionado.descripUsers %>">
+                </div>
+                <% } %> 
+
+                               
+                <div class="contenedor-form-botones">
+                <button type="submit">Guardar</button>
+                <button type="reset">Borrar datos</button>
+                </div>
+            </form>
+
+        </div>
+
+    </main>
+    <%- include('../partials/footer')  %> 
+</body>
+</html>

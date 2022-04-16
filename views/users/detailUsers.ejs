@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<%- include('../partials/head.ejs', {title: usersSeleccionado.name}) %> 
+<body>
+     
+<!-- HEADER -->
+<%- include('../partials/header.ejs') %> 
+   
+    
+    
+    <main>
+        
+        <h1><%= usersSeleccionado.first_name%> <%= usersSeleccionado.last_name%> </h1>
+        <div class="foto-principal-users">
+            
+            <img src="/img/<%= usersSeleccionado.image %>" alt="foto_users" class="main-foto-principal">
+        </div>
+        <section class="contenedor-boton-users">
+
+            <div class="boton-editar-users">
+                <a href="/users/edit/<%=usersSeleccionado.id%> ">
+                    <button type="submit">EDITAR USUARIO</button>
+                </a>
+                
+            </div>
+
+           <form action="/users/detailUsers/<%= usersSeleccionado.id %>?_method=DELETE" method="POST">
+                <div class="boton-borrar">
+                    <button type="submit">BORRAR USUARIO</button>
+                </div>
+            </form>
+            
+            
+            
+        </section>
+
+        <%- include('../partials/footer')  %> 
+    </main>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- HEAD -->
-<%- include('../partials/head.ejs', {title: 'Todos los productos'}) %> 
+<%- include('../partials/head.ejs', {title: 'Todos los Usuarios'}) %> 
 <body>
      
 <!-- HEADER -->
@@ -10,45 +10,62 @@
 
  <main class="register">
                      
-    <form action="/" method="POST">
+    <form action="/user/register" method="POST" enctype="multipart/form-data"> <!-- JPP le agregue users a action tambien el enctype -->
         <div class="nombre-usuario-email">
             <div>
                 <h2 class="nuevo-cliente">NUEVO CLIENTE</h2> 
             </div>
+
             <div>
-                <h4>Nombre</h4>
-                <input type="text" name="nombre" placeholder="Ingresa Nombre">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" placeholder="Ingresa Nombre">
             </div> 
+            
             <div>
-                <h4>Apellido</h4>
-                <input type="text" name="apellido" placeholder="Ingresa Apellido">
+                <label for="lastName">Apellido</label>
+                <input type="text" name="lastName" placeholder="Ingresa Apellido">
             </div>
-            <div>
-                <h4>Documento</h4>
-                <input type="text" name="documento" placeholder=" Ingresa Documento">
+
+            <div> <!-- JPP agregue users-image y type tipo file -->
+                <label for="imagen-Users">Imagen de Usurario</label>
+                <div>
+                    <input type="file" name="imagen-Users" id="imagen-Users">
+                </div>
             </div>
+
+            
             <div>
-                <h4>Email</h4>
+                <label for="dni">Documento</label>
+                <input type="text" name="dni" placeholder=" Ingresa Documento">
+            </div>
+            
+            <div>
+                <label for="email">Email</label>
                 <input type="email" name="email" placeholder="Ingresa E-mail"> 
             </div>
+            
             <div>
-                <h4>Contraseña</h4>
+                <label for="pass">Contraseña</label>
                 <input type="password" name="pass" placeholder="Elegí tu contraseña">
             </div>
+            
             <div>
-                <h4>Confirma Contraseña</h4>
+                <label for = "pass_confirm">Confirma Contraseña</label>
                 <input type="password" name="pass_confirm" placeholder="Confirmá tu clave">
             </div>
+            
             <div>
-                <h4>Domicilio</h4>
+                <label for = "addres">Domicilio</label>
                 <input type="text" name="addres" placeholder="Ingresa tu Domicilio">
             </div>                   
+            
             <div>
-                <h4>Ciudad</h4>
-                <input type="text" name="ciudad" placeholder="Ingresa tu Ciudad">   
+                <label for="city">Ciudad</label>
+                <input type="text" name="city" placeholder="Ingresa tu Ciudad">   
             </div>
-                <a class="registro-R" href="#">REGISTRARSE</a>
-        </div>               
+
+            <button type="submit">Registrarse</button>
+        </div>          
         
 
         

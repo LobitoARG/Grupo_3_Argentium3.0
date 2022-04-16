@@ -178,5 +178,60 @@
     "password": "b8K394kl2NN",
     "category": "user",
     "image": "user_20.jpg"
+  },
+  {
+    "nombre": "Leonardo",
+    "apellido": "Arguinzones",
+    "documento": "89498",
+    "email": "leot5865@gmail.com",
+    "pass": "1234",
+    "pass_confirm": "1234",
+    "addres": "9asd59as",
+    "ciudad": "Sáenz Peña",
+    "id": 21
+  },
+  {
+    "name": "belen",
+    "lastName": "solis",
+    "dni": "38029209",
+    "email": "belu.solis@hotmail.com",
+    "pass": "23714544",
+    "pass_confirm": "23714544",
+    "addres": "rodpqe",
+    "city": "saenz pe",
+    "id": 22
+  },
+  {
+    "name": "Belen",
+    "lastName": "solis",
+    "dni": "38020299",
+    "email": "belen.asd@asdas.com",
+    "pass": "1234",
+    "pass_confirm": "1234",
+    "addres": "almagro",
+    "city": "caba",
+    "id": 23
+  },
+  {
+    "name": "raid",
+    "lastName": "matamoscas",
+    "dni": "202020",
+    "email": "leot5865@gmail.com",
+    "pass": "581965",
+    "pass_confirm": "581965",
+    "addres": "TUCASA",
+    "city": "MDQ",
+    "id": 24
+  },
+  {
+    "name": "ultima",
+    "lastName": "prueba sin img",
+    "dni": "3333",
+    "email": "email@email.com",
+    "pass": "2323",
+    "pass_confirm": "2323",
+    "addres": "23232",
+    "city": "caba",
+    "id": 25
   }
 ]

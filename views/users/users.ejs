@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<%- include('../partials/head', {title: 'Todos los Usuarios'}) %> 
+<body>
+     
+<!-- HEADER -->
+<%- include('../partials/header') %> 
+   
+
+    <main>  
+        <div class="boton-display-all-users"> <!--JPP  modificar el css -->
+            <a href="/users/register"><button>Registro para Usuario</button></a> <!--JPP uso el archivo register no create -->
+        </div>      
+    <section class="contenedor-section-principal">   
+        <h2>USERS</h2>
+        <div class="contenedor-users-principales"> <!-- JPP modificar el css -->
+            
+            <% for (let i = 0; i<users.length; i++) { %>
+                <% if (users[i].category=="usersImg"){%>   
+            <a class="anchorUsers" href="users/detailUsers/<%=users[i].id%> ">
+                <article class="contenedor-users-imagen-descripcion">            
+                    <img src="img/usersImg/<%=users[i].image%>" alt="USERS">
+                </article>
+            </a>
+                <% } %>
+                <% } %>
+        </div>
+    </section>
+  
+
+    </main>
+       
+    <!-- footer  -->
+    <%- include('../partials/footer')  %> 
+   
+    
+</body>
+</html>

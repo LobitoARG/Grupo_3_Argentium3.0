@@ -11,7 +11,7 @@ const productoController = {
 
     detailProduct: (req, res) => {
         let idProducto = req.params.id;
-        res.render('./products/detailProduct', {"productoSeleccionado": products[idProducto-1]});
+        res.render('./products/detailProduct', {productoSeleccionado: products[idProducto-1]});
     },
 
     productCart: (req, res) => res.render('./products/productCart'),
@@ -24,13 +24,7 @@ const productoController = {
         let productosActuales = fs.readFileSync(productsFilePath, 'utf-8')
 		productosActuales = JSON.parse(productosActuales)
 		let newProduct = req.body;
-        //let newProductCat = req.body.category;
-        /*
-        console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-        console.log(newProductCat);
-        console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-        */
-		newProduct.image = req.file.filename;
+       	//newProduct.image = req.file.filename; (DESCOMENTAR CUANDO ESTÉ IMPLEMENTADO EL CAMPO FILE EN EL EJS Y EL MULTER)
 		let ultimoIndice = productosActuales.length+1;
 		newProduct.id = ultimoIndice;
 		productosActuales.push(newProduct)

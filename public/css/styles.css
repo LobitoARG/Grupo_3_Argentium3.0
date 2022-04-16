@@ -29,6 +29,12 @@ header{
     border:  solid 1px black; 
 }
 
+.buttonRegister{
+    width: 60%;
+    padding: 3%;
+    margin-top: 2%;
+}
+
 .contenedor-articulos-principales h3{
     text-align: center;
 }
