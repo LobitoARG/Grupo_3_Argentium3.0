@@ -7,18 +7,17 @@ const authMiddleware = require('../middlewares/authMiddlewares');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const { body } = require('express-validator')
 
-const storageUsers = multer.diskStorage({ // *****modifique storage por storageUsers
+const storage = multer.diskStorage({ // *****modifique storage por storageUsers
     destination: (req,file, cb) =>{
         cb (null,path.join(__dirname,'../public/img/usersImg')); // ***** cambié a carpeta usersImg y la destine
         
     },
     filename: (req,file,cb) =>{
-        console.log(file);
-        const nuevoUsuario = 'usuario_imagen' + Date.now() + path.extname(file.originalname);
+        const nuevoUsuario = file.fieldname + Date.now() + path.extname(file.originalname);
         cb (null, nuevoUsuario);
     }
 })
-const upload = multer ({storageUsers}) // 
+var upload = multer({storage}) // 
 
 const validateRegister = [
     body('email')
@@ -40,16 +39,11 @@ router.get('/detailUsers/:id', userController.detailUser);
 
 /*** CREAR UN USUARIO ***/ 
 router.get('/register', userController.createUser);
-router.post('/register',upload.single('imagen-Users') ,userController.store); // upload.single('imagen-Users') falta sumar esto, lo saco mientras hago el validate
+router.post('/register',upload.single('imagenUsers'), userController.store); // upload.single('imagen-Users') falta sumar esto, lo saco mientras hago el validate
 
 router.get('/edit/:id', userController.edit); 
 router.put('/edit/:id', userController.update); 
 
 router.delete('/detailUser/:id', userController.destroy); 
-
-
-
-
-
 
 module.exports = router; 

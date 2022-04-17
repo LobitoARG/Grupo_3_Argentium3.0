@@ -15,19 +15,17 @@ const userController = {
         res.render('./users/detailUsers', {"usersSeleccionado":usersJSON[idUsers-1]});
     },    
     createUser: (req,res) => res.render('./users/register'),
-
-    store: (req,res) => {
-        let newUsers = req.body;
-    //      newUsers.image = .imagen-Users.filename;
-        console.log(newUsers);
-	let ultimoIndiceUsers = usersJSON.length+1;
-	newUsers.id = ultimoIndiceUsers;
-	usersJSON.push(newUsers)
-	let newUsersJSON = JSON.stringify(usersJSON)
-	fs.writeFileSync(usersFilePath, newUsersJSON)
-	res.redirect('/')
-    }, 
-
+	store: (req,res) => {
+		let newUsers = req.body;
+		newUsers.image =req.file.filename;
+		console.log(newUsers.image)
+		let ultimoIndiceUsers = usersJSON.length+1;
+		newUsers.id = ultimoIndiceUsers;
+		usersJSON.push(newUsers)
+		let newUsersJSON = JSON.stringify(usersJSON)
+		fs.writeFileSync(usersFilePath, newUsersJSON)
+		res.redirect('/')
+		}, 
     edit: (req, res) => {
 		let idUsers = req.params.id;
 		//console.log (idProducto);

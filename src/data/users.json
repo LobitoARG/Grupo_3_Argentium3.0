@@ -244,5 +244,39 @@
     "addres": "",
     "city": "",
     "id": 26
+  },
+  {
+    "name": "CRISTIANO",
+    "lastName": "RONALDO",
+    "dni": "3030",
+    "email": "ELBICHO@HOTMAIL.COM",
+    "pass": "5865",
+    "pass_confirm": "5865",
+    "addres": "LISBOA",
+    "city": "PORTUGAL",
+    "id": 27
+  },
+  {
+    "name": "KARIM",
+    "lastName": "BEN",
+    "dni": "5858",
+    "email": "Elgato@gmail.com",
+    "pass": "2020",
+    "pass_confirm": "2020",
+    "addres": "CALLE",
+    "city": "CASA",
+    "id": 28
+  },
+  {
+    "name": "YANITO",
+    "lastName": "ARG CASTILLO",
+    "dni": "7924554",
+    "email": "yanito8@gmail.com",
+    "pass": "2323",
+    "pass_confirm": "2323",
+    "addres": "calle",
+    "city": "catia",
+    "image": "imagenUsers1650175656756.png",
+    "id": 29
   }
 ]
