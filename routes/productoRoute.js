@@ -26,10 +26,10 @@ router.get('/detailProduct/:id', productoController.detailProduct);
 router.get('/productCart', productoController.productCart);
 
 /*** CREAR UN PRODUCTO PRODUCTO ***/ 
-router.get('/create', authMiddleware,productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
-router.get('/create/createProduct-pc',authMiddleware, productoController.createProductPC);
-router.get('/create/createProduct-ntbk',authMiddleware ,productoController.createProductntbk);
-router.get('/create/createProduct-comp',authMiddleware ,productoController.createProductcomp);
+router.get('/create', productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
+router.get('/create/createProduct-pc', productoController.createProductPC); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
+router.get('/create/createProduct-ntbk', productoController.createProductntbk);
+router.get('/create/createProduct-comp', productoController.createProductcomp);
 router.post('/', upload.single('imagen-producto'),productoController.store);
 
 

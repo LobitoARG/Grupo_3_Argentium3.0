@@ -10,19 +10,36 @@
     
     
     <main>
-        
-        <h1><%= usersSeleccionado.first_name%> <%= usersSeleccionado.last_name%> </h1>
-        <div class="foto-principal-users">
-            
+        <h1>Datos del usuario: <%= usersSeleccionado.first_name %> <%= usersSeleccionado.last_name %> </h1>
+        <ul>
+            <li>
+                <h2>Nombre:<%= usersSeleccionado.first_name%></h2>
+            </li>
+            <li>
+                <h2>Apellido:<%= usersSeleccionado.last_name%></h2>
+            </li>
+            <li>
+                <h2>DNI:<%= usersSeleccionado.dni%></h2>
+            </li>
+            <li>
+                <h2>E=mail: <%= usersSeleccionado.email%></h2>
+            </li>
+            <li>
+                <h2>Direccion: <%= usersSeleccionado.adress%></h2>
+            </li>
+            <li>
+                <h2>Ciudad:<%= usersSeleccionado.city%></h2>
+            </li>
+        </ul>
+        <div class="foto-principal-users"> 
             <img src="/img/<%= usersSeleccionado.image %>" alt="foto_users" class="main-foto-principal">
         </div>
         <section class="contenedor-boton-users">
 
             <div class="boton-editar-users">
-                <a href="/users/edit/<%=usersSeleccionado.id%> ">
+                <a href="/user/edit/<%=usersSeleccionado.id%> ">
                     <button type="submit">EDITAR USUARIO</button>
                 </a>
-                
             </div>
 
            <form action="/users/detailUsers/<%= usersSeleccionado.id %>?_method=DELETE" method="POST">

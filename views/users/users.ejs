@@ -8,26 +8,28 @@
 <%- include('../partials/header') %> 
    
 
-    <main>  
-        <div class="boton-display-all-users"> <!--JPP  modificar el css -->
-            <a href="/users/register"><button>Registro para Usuario</button></a> <!--JPP uso el archivo register no create -->
-        </div>      
+    <main>        
     <section class="contenedor-section-principal">   
-        <h2>USERS</h2>
+        <h2>Listado de Usuarios</h2>
         <div class="contenedor-users-principales"> <!-- JPP modificar el css -->
-            
-            <% for (let i = 0; i<users.length; i++) { %>
-                <% if (users[i].category=="usersImg"){%>   
-            <a class="anchorUsers" href="users/detailUsers/<%=users[i].id%> ">
-                <article class="contenedor-users-imagen-descripcion">            
-                    <img src="img/usersImg/<%=users[i].image%>" alt="USERS">
-                </article>
-            </a>
-                <% } %>
-                <% } %>
+            <div>
+                <h3>Nombre de los usuarios registrados:</h3> 
+            </div>
+            <% for( let i = 0; i < users.length; i++ ) { %>
+                <lu>
+                        <% if (users[i].first_name) { %>
+                            <li class="lista-nombres-usuarios">
+                                <%= users[i].first_name  %>
+                            </li>
+                            
+                        <% } %>
+                </lu>
+            <% } %>
         </div>
     </section>
-  
+    <div class="contenedor-boton-para-ingresar-registro"> <!--JPP  modificar el css -->
+        <a href="user/register"><button>Ingresar al registro de Usuarios</button></a> <!--JPP uso el archivo register no create --> <!--Ale: ahora el boton lleva a la pagina de registro -->
+    </div>
 
     </main>
        

@@ -8,20 +8,44 @@
         <div class="contenedor-main-form">
             <form method="POST" action="/users/edit/<%= usersSeleccionado.id %>?_method=PUT" class="form-register">
 
-                <h1>Editando Usuario: <%=usersSeleccionado.name %> </h1>
-                <h4>Nombre del Usuario</h4>
+                <h1>Editando Usuario: <%=usersSeleccionado.first_name %> </h1>
+                <h4>Nombre</h4>
                 <div class="contenedor-form-nombre">
-                <label for="nameUsers"></label>
-                <input type="text" name="nameUsers" required value="<%=usersSeleccionado.first_name %>">
+                <label for="first_name_user"></label>
+                <input type="text" name="first_name_user" value="<%=usersSeleccionado.first_name %>">
                 </div>
 
-                <% if (usersSeleccionado.descripUsers != null){ %>            
-                <h4>Usuarios</h4>
+                <h4>Apellido</h4>
                 <div class="contenedor-form-nombre">
-                <label for="descripUsers"></label>
-                <input type="text" name="descripUsers" required value="<%=usersSeleccionado.descripUsers %>">
+                <label for="last_name_user"></label>
+                <input type="text" name="last_name_user" value="<%=usersSeleccionado.last_name %>">
                 </div>
-                <% } %> 
+
+                <h4>DNI</h4>
+                <div class="contenedor-form-nombre">
+                <label for="dni_user"></label>
+                <input type="text" name="dni_user" value="<%=usersSeleccionado.dni %>">
+                </div>
+
+                <h4>E-Mail</h4>
+                <div class="contenedor-form-nombre">
+                <label for="email_user"></label>
+                <input type="text" name="email_user" value="<%=usersSeleccionado.email %>">
+                </div>
+
+                <h4>Direccion</h4>
+                <div class="contenedor-form-nombre">
+                <label for="adress_user"></label>
+                <input type="text" name="adress_user" value="<%=usersSeleccionado.adress %>">
+                </div>
+
+                <h4>Ciudad</h4>
+                <div class="contenedor-form-nombre">
+                <label for="city_user"></label>
+                <input type="text" name="city_user" value="<%=usersSeleccionado.city %>">
+                </div>
+
+               
 
                                
                 <div class="contenedor-form-botones">

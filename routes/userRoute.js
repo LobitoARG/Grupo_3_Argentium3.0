@@ -5,6 +5,7 @@ const path = require('path');
 const multer = require('multer');
 const authMiddleware = require('../middlewares/authMiddlewares');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const { body } = require('express-validator')
 
 const storageUsers = multer.diskStorage({ // *****modifique storage por storageUsers
     destination: (req,file, cb) =>{
@@ -19,14 +20,27 @@ const storageUsers = multer.diskStorage({ // *****modifique storage por storageU
 })
 const upload = multer ({storageUsers}) // 
 
+const validateRegister = [
+    body('email')
+    .notEmpty().withMessage('Debes completar el campo de correo electronico').bail()
+    .isEmail().withMessage('Debes ingresar un formato de email correcto'),
+    body('password')
+    .notEmpty().withMessage('Debes completar el campo de contraseña').bail()
+    .isLength({min:5}).withMessage('La contraseña debe tener al menos 5 caracteres')
+];
+
 /*** OBTENER TODOS LOS USUARIOS ***/ 
 router.get('/', userController.index);
+
+/*** LOG IN DE USUARIO ***/ 
+router.get('/login', userController.login);
+router.post('/login', validateRegister, userController.processlogin) // sumamos el verificador del login in llamado validateRegister
 
 router.get('/detailUsers/:id', userController.detailUser);
 
 /*** CREAR UN USUARIO ***/ 
 router.get('/register', userController.createUser);
-router.post('/register', upload.single('imagen-Users'),userController.store);
+router.post('/register',upload.single('imagen-Users') ,userController.store); // upload.single('imagen-Users') falta sumar esto, lo saco mientras hago el validate
 
 router.get('/edit/:id', userController.edit); 
 router.put('/edit/:id', userController.update); 
@@ -36,6 +50,6 @@ router.delete('/detailUser/:id', userController.destroy);
 
 
 
-router.get('/login', guestMiddleware, userController.login);
+
 
 module.exports = router; 

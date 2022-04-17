@@ -4,6 +4,7 @@ const fs = require('fs');
 
 const usersFilePath = path.join(__dirname, '../src/data/users.json');
 const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const {validationResult} = require('express-validator');
 
 const userController = {   
 
@@ -14,6 +15,7 @@ const userController = {
         res.render('./users/detailUsers', {"usersSeleccionado":usersJSON[idUsers-1]});
     },    
     createUser: (req,res) => res.render('./users/register'),
+
     store: (req,res) => {
         let newUsers = req.body;
     //      newUsers.image = .imagen-Users.filename;
@@ -25,6 +27,7 @@ const userController = {
 	fs.writeFileSync(usersFilePath, newUsersJSON)
 	res.redirect('/')
     }, 
+
     edit: (req, res) => {
 		let idUsers = req.params.id;
 		//console.log (idProducto);
@@ -58,6 +61,21 @@ const userController = {
 		fs.writeFileSync(usersFilePath,JSON.stringify(nuevoUsers))
 		res.redirect('/')
 	},
-    login: (req, res) => res.render('./users/login')
+    login: (req, res) => res.render('./users/login'),
+
+	processlogin: function (req,res){
+		let errors = validationResult(req)
+		if (errors.isEmpty())
+		{
+			let idUsers = req.params.id;
+			res.render('./users/detailUsers/' + idUsers)
+
+			//res.send('bien, no hay errores, continuamos')
+
+		} else {
+			res.render('./users/login', {errors: errors.mapped(), old: req.body})
+		}
+		//res.send('Viajaste por POST')
+	}
 }
 module.exports = userController; 

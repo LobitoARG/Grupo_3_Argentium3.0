@@ -9,44 +9,48 @@
         
        <!-- -----------------------LOGIN----------------------------------------- -->
 
-        <main class="contenedor-login">
-            <form action="/" method="POST">            
+<main class="contenedor-login">
+
+            <form action="login" method="POST">            
             
                 <div class="acceso-login">
                     <h2 class="acceso-clientes">ACCESO CLIENTES</h2>     
                 </div>
                 
                 <div class="correo-contra-login">
-                    <h5 class="correo">CORREO ELECTRONICO</h5>
-                    <input type="text" name="user" class="correo-el">
+                    <label for="email">E-Mail</label>
+                    <input 
+                        type="email" 
+                        name="email"
+                        value="<%= locals.old ? old.email : null %> "
+                    >
+                    <% if (locals.errors && errors.email) { %>
+                     <div class="danger-text">
+                         <%= errors.email.msg %> 
+                     </div>
+                    <% } %>
+                    
                                    
-                    <h5 class="contraseña">CONTRASEÑA</h5>
-                    <input type="password" name="pass" class="contra-el">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="danger-text">
+                            <%= errors.password.msg %> 
+                        </div>
+                       <% } %>
                 </div>
                
                 <div class="ingreso-login">
                     <input type="submit" value="INGRESAR" class="boton-envio">
                 </div>
-                <div class="recordar-login">
-                    <label for="recuerdo">RECORDAR CONTRASEÑA</label>
-                    <input type="checkbox" name="recuerdo">
-                </div>
-                <div>
-                    <a class="olvidaste" href="#">OLVIDASTE TU CONTRASEÑA</a>
-                </div>
+                
                 <div class="nueva-cuenta-login">
-                    <a class="Registro" href="/register">REGISTRAR NUEVA CUENTA</a>
+                    <a class="Registro" href="/user/register">REGISTRAR NUEVA CUENTA</a>
                 </div>
-                <div class="face-login">
-                    <a class="Facebook" href="#">Continuar con Facebook</a>
-                    
-                </div>
-                <div class="goo-login">
-                    <a class="Google" href="#">Continuar con Google+</a>
-                </div>
-                 </form>
+                
+            </form>
               
-        </main>
+</main>
 
         <!-- -------------------------------FIN----LOGIN----------------------------------------- -->
 
