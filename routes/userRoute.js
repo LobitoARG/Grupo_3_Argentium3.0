@@ -42,8 +42,8 @@ router.get('/register', userController.createUser);
 router.post('/register',upload.single('imagenUsers'), userController.store); // upload.single('imagen-Users') falta sumar esto, lo saco mientras hago el validate
 
 router.get('/edit/:id', userController.edit); 
-router.put('/edit/:id', userController.update); 
+router.put('/edit/:id', upload.single('imagenUsers') ,userController.update); 
 
-router.delete('/detailUser/:id', userController.destroy); 
+router.delete('/detailUser/:id' ,userController.destroy); 
 
 module.exports = router; 

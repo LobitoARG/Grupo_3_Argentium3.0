@@ -19,7 +19,7 @@
                 <lu>
                         <% if (users[i].first_name) { %>
                             <li class="lista-nombres-usuarios">
-                                <%= users[i].first_name  %>
+                                <a href="./edit/<%=users[i].id%> "><%= users[i].first_name  %></a>
                             </li>
                             
                         <% } %>

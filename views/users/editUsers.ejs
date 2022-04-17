@@ -6,48 +6,53 @@
     <main>
 
         <div class="contenedor-main-form">
-            <form method="POST" action="/users/edit/<%= usersSeleccionado.id %>?_method=PUT" class="form-register">
+            <form method="POST" action="/user/edit/<%= usersSeleccionado.id %>?_method=PUT" class="form-register" enctype="multipart/form-data">
 
                 <h1>Editando Usuario: <%=usersSeleccionado.first_name %> </h1>
                 <h4>Nombre</h4>
                 <div class="contenedor-form-nombre">
-                <label for="first_name_user"></label>
-                <input type="text" name="first_name_user" value="<%=usersSeleccionado.first_name %>">
+                <label for="first_name"></label>
+                <input type="text" name="first_name" value="<%=usersSeleccionado.first_name %>">
                 </div>
 
                 <h4>Apellido</h4>
                 <div class="contenedor-form-nombre">
-                <label for="last_name_user"></label>
-                <input type="text" name="last_name_user" value="<%=usersSeleccionado.last_name %>">
+                <label for="last_name"></label>
+                <input type="text" name="last_name" value="<%=usersSeleccionado.last_name %>">
                 </div>
 
                 <h4>DNI</h4>
                 <div class="contenedor-form-nombre">
-                <label for="dni_user"></label>
-                <input type="text" name="dni_user" value="<%=usersSeleccionado.dni %>">
+                <label for="dni"></label>
+                <input type="text" name="dni" value="<%=usersSeleccionado.dni %>">
                 </div>
 
                 <h4>E-Mail</h4>
                 <div class="contenedor-form-nombre">
-                <label for="email_user"></label>
-                <input type="text" name="email_user" value="<%=usersSeleccionado.email %>">
+                <label for="email"></label>
+                <input type="text" name="email" value="<%=usersSeleccionado.email %>">
                 </div>
 
                 <h4>Direccion</h4>
                 <div class="contenedor-form-nombre">
-                <label for="adress_user"></label>
-                <input type="text" name="adress_user" value="<%=usersSeleccionado.adress %>">
+                <label for="adress"></label>
+                <input type="text" name="adress" value="<%=usersSeleccionado.adress %>">
                 </div>
 
                 <h4>Ciudad</h4>
                 <div class="contenedor-form-nombre">
-                <label for="city_user"></label>
-                <input type="text" name="city_user" value="<%=usersSeleccionado.city %>">
+                <label for="city"></label>
+                <input type="text" name="city" value="<%=usersSeleccionado.city %>">
                 </div>
 
-               
+                <div> <!-- JPP agregue users-image y type tipo file -->
+                    <label for="imagenUsers">Imagen de Usuario</label>
+                    <div>
+                        <input type="file" name="imagenUsers" id="imagenUsers">
+                    </div>
+                </div>
 
-                               
+                                             
                 <div class="contenedor-form-botones">
                 <button type="submit">Guardar</button>
                 <button type="reset">Borrar datos</button>

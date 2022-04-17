@@ -15,7 +15,9 @@
     "email": "jdenney1@webnode.com",
     "password": "HLL2K4LMCyZq",
     "category": "user",
-    "image": "user_2.jpg"
+    "image": "user_2.jpg",
+    "dni": "3333",
+    "city": "baires"
   },
   {
     "id": 3,
@@ -33,7 +35,10 @@
     "email": "lvolett3@woothemes.com",
     "password": "CFYJlWpTclR",
     "category": "user",
-    "image": "user_4.jpg"
+    "image": "user_4.jpg",
+    "dni": "999999",
+    "city": "CIUDAD CIUDAD",
+    "imagen": "imagenUsers1650178454879.png"
   },
   {
     "id": 5,

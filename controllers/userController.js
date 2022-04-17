@@ -35,20 +35,24 @@ const userController = {
 		let id = req.params.id;
 		let infoFormUsers=req.body;       
 		usersJSON.forEach(function (elementoUsers){
-			if (elementoUsers.id == id)
-			{	elementoUsers.name = infoFormUsers.name;
-                if (infoFormUsers.descripUsers != null)
-                {
-                    elemento.descripUsers = infoFormUsers.descripUsers;
-                }
-				elemento.description = infoFormUsers.description;
-                //elemento.price = infoForm.price;
-				//elemento.discount = infoForm.discount;
-			}
+			if (elementoUsers.id == id){
+			elementoUsers.first_name = req.body.first_name;
+			elementoUsers.last_name = req.body.last_name;
+			elementoUsers.dni = req.body.dni;
+			elementoUsers.email = req.body.email;
+			elementoUsers.pass = req.body.pass;
+			elementoUsers.pass_confirm = req.body.pass_confirm;
+			elementoUsers.addres = req.body.addres;
+			elementoUsers.city = req.body.city;
+			if(req.file != undefined){
+			elementoUsers.imagen = req.file.filename;
+			}						             
+			}					
 		})
-	
-		fs.writeFileSync(usersFilePath,JSON.stringify(usersJSON))
+		let newUsersJSON = JSON.stringify(usersJSON)
+		fs.writeFileSync(usersFilePath, newUsersJSON)
 		res.redirect('/')
+	
 	},    
     destroy: (req, res) => {
 		let idUsers = req.params.id;		
