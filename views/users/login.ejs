@@ -39,6 +39,10 @@
                         </div>
                        <% } %>
                 </div>
+
+                <% if (locals.mensaje != undefined) { %>
+                <h2> <%= mensaje %> </h2>
+                <% } %>
                
                 <div class="ingreso-login">
                     <input type="submit" value="INGRESAR" class="boton-envio">

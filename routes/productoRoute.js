@@ -36,13 +36,13 @@ router.post('/', upload.single('imagen-producto'),productoController.store);
 
 /*** EDITAR UN PRODUCTO ***/ 
 
-router.get('/edit/:id', authMiddleware ,productoController.edit); 
+router.get('/edit/:id', productoController.edit); 
 router.put('/edit/:id', productoController.update); 
 
 /*** OBTENER TODOS LOS PRODUCTOS ***/ 
 router.get('/', productoController.index);
 
 /*** BORRAR UN PRODUCTO ***/ 
-router.delete('/detail/:id',authMiddleware ,productoController.destroy); 
+router.delete('/detail/:id',productoController.destroy); 
 
 module.exports = router; 

@@ -69,10 +69,15 @@ const userController = {
 		let errors = validationResult(req)
 		if (errors.isEmpty())
 		{
-			let idUsers = req.params.id;
-			res.render('./users/detailUsers/' + idUsers)
-
-			//res.send('bien, no hay errores, continuamos')
+			let usuario = usersJSON.filter((elemento) => (elemento.email == req.body.email) && (elemento.pass == req.body.password));
+			let loggeado = usuario[0];	
+			if (loggeado != undefined){
+				res.redirect('/');
+			}
+			else{
+				let msj = 'Los datos ingresados son incorrectos';
+				res.render('./users/login', {mensaje: msj});
+			}
 
 		} else {
 			res.render('./users/login', {errors: errors.mapped(), old: req.body})
