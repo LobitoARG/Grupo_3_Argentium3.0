@@ -71,10 +71,9 @@ const userController = {
 		if (errors.isEmpty()) {
 			let users = fs.readFileSync(usersFilePath, 'utf-8');
 			users = JSON.parse(users)
-			//console.log(users)
-
+			
 			for (let i = 0; i < users.length; i++) {
-				//onsole.log(users[i].email)
+				
 				if (users[i].email == req.body.email && users[i].password == req.body.password){ // porfa leo cambiaselo por el bcrypt asi compara las pw: bcrypt.compareSync(req.body.password, users[i].password)
 						var usuarioALoguearse = users[i]
 						break;
@@ -96,43 +95,13 @@ const userController = {
 				}
 				//res.redirect('/user/detailUsers/'+idUsuarioLogeado)
 				res.render('./users/detailUsers', {"usersSeleccionado":usersJSON[usuarioALoguearse.id-1]});
-				//res.send('Bien ahi')
+				
 				console.log(req.session.usuarioLogeado)
 		} else {
 			return res.render('./users/login', {errors: errors.mapped(), old: req.body})
 
 		}
 	}
-
-		/*
-		if (errors.isEmpty())
-		{
-
-			let usuario = usersJSON.filter((elemento) => (elemento.email == req.body.email) && (elemento.pass == req.body.password));
-			let usuarioLogeado = usuario[0];	
-
-			if (usuarioLogeado == undefined){
-				let msj = 'Los datos ingresados son incorrectos';
-				res.render('./users/login', {mensaje: msj});
-				req.session.usuarioLogeado = usuarioLogeado;
-			} else{
-				return res.render('./users/login', {errors: errors.mapped(), old: req.body})	
-			}
-		}*/
-
-			/*
-			if (loggeado != undefined){
-				res.redirect('/');
-			}
-			else{
-				let msj = 'Los datos ingresados son incorrectos';
-				res.render('./users/login', {mensaje: msj});
-			}*/
-
-		 /*else {
-			res.render('./users/login', {errors: errors.mapped(), old: req.body})
-		}*/
-		//res.send('Viajaste por POST')
 	
 }
 module.exports = userController;
