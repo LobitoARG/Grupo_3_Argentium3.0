@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../src/data/users.json');
 const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -18,10 +18,17 @@ const userController = {
     createUser: (req,res) => res.render('./users/register'),
 	store: (req,res) => {
 		let newUsers = req.body;
-		newUsers.image =req.file.filename;
-		newUsers.pass_confirm = bcrypt.hashSync(req.file.pass);
-		newUsers.pass = bcrypt.hashSync(req.file.pass_confirm)
-		console.log(newUsers.image)
+		let contraseña = req.body.password;
+		let confirm = req.body.password_confirm;
+		let salt = bcrypt.genSaltSync(10)
+
+		newUsers.image = req.file.filename;
+		newUsers.password = bcrypt.hashSync(contraseña, salt );
+		console.log(contraseña);
+		console.log(confirm);
+		console.log(newUsers.pass)
+		newUsers.password_confirm = bcrypt.hashSync(confirm, salt);	
+		
 		let ultimoIndiceUsers = usersJSON.length+1;
 		newUsers.id = ultimoIndiceUsers;
 		usersJSON.push(newUsers)
@@ -43,8 +50,8 @@ const userController = {
 			elementoUsers.last_name = req.body.last_name;
 			elementoUsers.dni = req.body.dni;
 			elementoUsers.email = req.body.email;
-			elementoUsers.pass = bcrypt.hashSync(req.body.pass);
-			elementoUsers.pass_confirm = bcrypt.hashSync(req.body.pass_confirm);
+			elementoUsers.pass = bcrypt.hashSync(req.body.password, 10);
+			elementoUsers.pass_confirm = bcrypt.hashSync(req.body.password_confirm, 10);
 			elementoUsers.addres = req.body.addres;
 			elementoUsers.city = req.body.city;
 			if(req.file != undefined){
