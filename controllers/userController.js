@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const bcrypt = require('bcryptjs')
 
 const usersFilePath = path.join(__dirname, '../src/data/users.json');
 const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -18,6 +19,8 @@ const userController = {
 	store: (req,res) => {
 		let newUsers = req.body;
 		newUsers.image =req.file.filename;
+		newUsers.pass_confirm = bcrypt.hashSync(req.file.pass);
+		newUsers.pass = bcrypt.hashSync(req.file.pass_confirm)
 		console.log(newUsers.image)
 		let ultimoIndiceUsers = usersJSON.length+1;
 		newUsers.id = ultimoIndiceUsers;
@@ -40,8 +43,8 @@ const userController = {
 			elementoUsers.last_name = req.body.last_name;
 			elementoUsers.dni = req.body.dni;
 			elementoUsers.email = req.body.email;
-			elementoUsers.pass = req.body.pass;
-			elementoUsers.pass_confirm = req.body.pass_confirm;
+			elementoUsers.pass = bcrypt.hashSync(req.body.pass);
+			elementoUsers.pass_confirm = bcrypt.hashSync(req.body.pass_confirm);
 			elementoUsers.addres = req.body.addres;
 			elementoUsers.city = req.body.city;
 			if(req.file != undefined){
@@ -74,9 +77,10 @@ const userController = {
 			
 			for (let i = 0; i < users.length; i++) {
 				
-				if (users[i].email == req.body.email && users[i].password == req.body.password){ // porfa leo cambiaselo por el bcrypt asi compara las pw: bcrypt.compareSync(req.body.password, users[i].password)
-						var usuarioALoguearse = users[i]
-						break;
+				if (users[i].email == req.body.email && (bcrypt.compareSync(req.body.password, users[i].password))){ 
+
+				var usuarioALoguearse = users[i]
+				break;
 				}
 			}
 			

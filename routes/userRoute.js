@@ -29,21 +29,21 @@ const validacionLogIn = [
 ];
 
 /*** OBTENER TODOS LOS USUARIOS ***/ 
-router.get('/', userController.index);
+router.get('/',authMiddleware,userController.index);
 
 /*** LOG IN DE USUARIO ***/ 
-router.get('/login', userController.login);
+router.get('/login',guestMiddleware ,userController.login);
 router.post('/login', validacionLogIn, userController.processlogin) // sumamos el verificador del login in llamado validacionLogIn
 
-router.get('/detailUsers/:id', userController.detailUser);
+router.get('/detailUsers/:id', authMiddleware ,userController.detailUser);
 
 /*** CREAR UN USUARIO ***/ 
-router.get('/register', userController.createUser);
+router.get('/register', guestMiddleware,userController.createUser);
 router.post('/register',upload.single('imagenUsers'), userController.store); // upload.single('imagen-Users') falta sumar esto, lo saco mientras hago el validate
 
-router.get('/edit/:id', userController.edit); 
+router.get('/edit/:id',authMiddleware ,userController.edit); 
 router.put('/edit/:id', upload.single('imagenUsers') ,userController.update); 
 
-router.delete('/detailUser/:id' ,userController.destroy); 
+router.delete('/detailUser/:id', authMiddleware ,userController.destroy); 
 
 module.exports = router; 

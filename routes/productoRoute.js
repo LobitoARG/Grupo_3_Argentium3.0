@@ -23,21 +23,21 @@ const upload = multer ({storage})
 router.get('/detailProduct/:id', productoController.detailProduct);
 
 /*** CART DE 1 PRODUCTO ***/ 
-router.get('/productCart', productoController.productCart);
+router.get('/productCart',authMiddleware ,productoController.productCart);
 
 /*** CREAR UN PRODUCTO PRODUCTO ***/ 
-router.get('/create', productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
-router.get('/create/createProduct-pc', productoController.createProductPC); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
-router.get('/create/createProduct-ntbk', productoController.createProductntbk);
-router.get('/create/createProduct-comp', productoController.createProductcomp);
+router.get('/create',authMiddleware ,productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
+router.get('/create/createProduct-pc',authMiddleware ,productoController.createProductPC); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
+router.get('/create/createProduct-ntbk',authMiddleware ,productoController.createProductntbk);
+router.get('/create/createProduct-comp',authMiddleware ,productoController.createProductcomp);
 router.post('/', upload.single('imagen-producto'),productoController.store);
 
 
 
 /*** EDITAR UN PRODUCTO ***/ 
 
-router.get('/edit/:id', productoController.edit); 
-router.put('/edit/:id', productoController.update); 
+router.get('/edit/:id',authMiddleware ,productoController.edit); 
+router.put('/edit/:id', authMiddleware,productoController.update); 
 
 /*** OBTENER TODOS LOS PRODUCTOS ***/ 
 router.get('/', productoController.index);
