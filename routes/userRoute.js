@@ -19,7 +19,7 @@ const storage = multer.diskStorage({ // *****modifique storage por storageUsers
 })
 var upload = multer({storage}) // 
 
-const validateRegister = [
+const validacionLogIn = [
     body('email')
     .notEmpty().withMessage('Debes completar el campo de correo electronico').bail()
     .isEmail().withMessage('Debes ingresar un formato de email correcto'),
@@ -33,7 +33,7 @@ router.get('/', userController.index);
 
 /*** LOG IN DE USUARIO ***/ 
 router.get('/login', userController.login);
-router.post('/login', validateRegister, userController.processlogin) // sumamos el verificador del login in llamado validateRegister
+router.post('/login', validacionLogIn, userController.processlogin) // sumamos el verificador del login in llamado validacionLogIn
 
 router.get('/detailUsers/:id', userController.detailUser);
 

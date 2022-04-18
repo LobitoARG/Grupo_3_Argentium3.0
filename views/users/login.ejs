@@ -25,10 +25,10 @@
                         value="<%= locals.old ? old.email : null %> "
                     >
                     <% if (locals.errors && errors.email) { %>
-                     <div class="danger-text">
-                         <%= errors.email.msg %> 
-                     </div>
-                    <% } %>
+                        <div class="danger-text">
+                            <%= errors.email.msg %> 
+                        </div>
+                       <% } %>
                     
                                    
                     <label for="password">Contraseña</label>
@@ -41,12 +41,16 @@
                 </div>
 
                 <% if (locals.mensaje != undefined) { %>
-                <h2> <%= mensaje %> </h2>
-                <% } %>
+                    <div class="danger-text">
+                        <%= mensaje %> 
+                    </div>
+                   <% } %>
                
                 <div class="ingreso-login">
                     <input type="submit" value="INGRESAR" class="boton-envio">
                 </div>
+                <label for="">Recordame</label>
+                <input type="checkbox" name="recordarUsuario">
                 
                 <div class="nueva-cuenta-login">
                     <a class="Registro" href="/user/register">REGISTRAR NUEVA CUENTA</a>

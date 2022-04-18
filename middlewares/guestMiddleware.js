@@ -1,5 +1,5 @@
 function guestMiddleware (req, res, next){
-    if(req.session.usuarioSession == undefined){
+    if(req.session.usuarioLogeado == undefined){
         next();
     }
     else{
