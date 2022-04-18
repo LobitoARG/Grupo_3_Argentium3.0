@@ -29,6 +29,15 @@ header{
     border:  solid 1px black; 
 }
 
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+.boton-para-ir-al-registro{
+    text-decoration:none;
+    color: white;
+}
+
 .buttonRegister{
     width: 60%;
     padding: 3%;

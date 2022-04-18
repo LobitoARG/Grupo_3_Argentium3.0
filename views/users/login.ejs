@@ -40,6 +40,7 @@
 						class="formulario__input" 
 						name="email" 
 						id="email" 
+                        required
 						placeholder="email@email.com"
 						value="<%= locals.old ? old.email : null %> "
 					>
@@ -92,8 +93,12 @@
 			</div>
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="formulario__btn">Enviar</button>
+				<button type="submit" class="formulario__btn">INGRESAR</button>
 				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			</div>
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button class="formulario__btn"><a href="/user/register" class="boton-para-ir-al-registro">CREAR NUEVA CUENTA</a></button>
 			</div>
 		</form>
 	</main>
