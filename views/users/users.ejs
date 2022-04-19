@@ -19,7 +19,7 @@
                 <lu>
                         <% if (users[i].first_name) { %>
                             <li class="lista-nombres-usuarios">
-                                <a href="./edit/<%=users[i].id%> "><%= users[i].first_name  %></a>
+                                <a href="detailUsers/<%=users[i].id%> "><%= users[i].first_name  %></a>
                             </li>
                             
                         <% } %>
@@ -28,7 +28,7 @@
         </div>
     </section>
     <div class="contenedor-boton-para-ingresar-registro"> <!--JPP  modificar el css -->
-        <a href="user/register"><button>Ingresar al registro de Usuarios</button></a> <!--JPP uso el archivo register no create --> <!--Ale: ahora el boton lleva a la pagina de registro -->
+        <a href="register"><button>Ingresar al registro de Usuarios</button></a> <!--JPP uso el archivo register no create --> <!--Ale: ahora el boton lleva a la pagina de registro -->
     </div>
 
     </main>

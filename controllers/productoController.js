@@ -126,7 +126,7 @@ const productoController = {
 		const nuevoProducto = products.filter(function(producto){
 			return producto.id != idProducto;
 		})
-		console.log (nuevoProducto)
+		//console.log (nuevoProducto)
 
 		fs.writeFileSync(productsFilePath,JSON.stringify(nuevoProducto))
 

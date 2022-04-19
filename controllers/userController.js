@@ -19,15 +19,15 @@ const userController = {
 	store: (req,res) => {
 		let newUsers = req.body;
 		let contraseña = req.body.password;
-		let confirm = req.body.password_confirm;
+		let confirm = req.body.password2;
 		let salt = bcrypt.genSaltSync(10)
 
-		newUsers.image = req.file.filename;
+		newUsers.imagenUsers = req.file.filename;
 		newUsers.password = bcrypt.hashSync(contraseña, salt );
-		console.log(contraseña);
-		console.log(confirm);
-		console.log(newUsers.pass)
-		newUsers.password_confirm = bcrypt.hashSync(confirm, salt);	
+		//console.log(contraseña);
+		//console.log(confirm);
+		//console.log(newUsers.pass)
+		newUsers.password2 = bcrypt.hashSync(confirm, salt);	
 		
 		let ultimoIndiceUsers = usersJSON.length+1;
 		newUsers.id = ultimoIndiceUsers;
@@ -48,14 +48,10 @@ const userController = {
 			if (elementoUsers.id == id){
 			elementoUsers.first_name = req.body.first_name;
 			elementoUsers.last_name = req.body.last_name;
-			elementoUsers.dni = req.body.dni;
 			elementoUsers.email = req.body.email;
-			elementoUsers.pass = bcrypt.hashSync(req.body.password, 10);
-			elementoUsers.pass_confirm = bcrypt.hashSync(req.body.password_confirm, 10);
-			elementoUsers.addres = req.body.addres;
-			elementoUsers.city = req.body.city;
+			elementoUsers.telefono = req.body.telefono;
 			if(req.file != undefined){
-			elementoUsers.imagen = req.file.filename;
+			elementoUsers.imagenUsers = req.file.imagenUsers;
 			}						             
 			}					
 		})
@@ -69,7 +65,7 @@ const userController = {
 		const nuevoUsers = usersJSON.filter(function(users){
 			return users.id != idUsers;
 		})
-		console.log(nuevoUsers)
+		//console.log(nuevoUsers)
 		fs.writeFileSync(usersFilePath,JSON.stringify(nuevoUsers))
 		res.redirect('/')
 	},

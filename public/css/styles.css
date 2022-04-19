@@ -48,6 +48,13 @@ a:link, a:visited, a:active {
     text-align: center;
 }
 
+.foto-principal-users
+{
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
 .contenedor-padre-header{
     display: grid;
     grid-template-columns: 100px 100px 1fr;
@@ -159,6 +166,10 @@ a:link, a:visited, a:active {
 
 .boton-editar, .boton-borrar, .boton-comprar{
     text-align: center;
+}
+
+.href-boton-editar{
+    text-decoration: none;
 }
 
 .boton-editar button{
@@ -684,132 +695,7 @@ a.btnEndAdd{
     text-align: center;
 }
 
-/* CSS PARA LOGIN Y REGISTER */
 
-.contenedor-login{
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    box-sizing: border-box;
-    margin: 5%;
-}
-
-.acceso-login{
-    border: 1px solid black;
-    border-radius: 5%;
-    padding-left: 35px;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    background-color: aliceblue;
-}
-
-.correo-contra-login{
-    margin-bottom: 5px;
-    padding-left: 25px;
-    margin-bottom: 5%;
-    margin-top: 5%;
-}
-
-.ingreso-login{
-    
-    padding-left: 70px;
-
-}
-
-.Registro{
-    color: black;
-    
-}
-.boton-envio{
-    background-color: #0084e0;
-    color: black;
-    border-radius: 5%;
-    font-weight: bold;
-    padding: 5%;
-}
-.recordar-login{
-    padding-left: 25%;
-    padding: 5%;
-    padding-left: 7%;
-    margin-bottom: 5px;
-    font-size: small;
-    font-weight: bold;
-}
-
-.olvidaste{
-    padding-left: 9px;
-    margin-bottom: 5%;
-    color: black;
-    font-size: bold;
-}
-
-.nueva-cuenta-login{
-    padding-left: 14px;
-    margin-bottom: 5px;   
-    color: black; 
-    font-size: bold;
-}
-
-.face-login{
-    background-color: #0084e0;
-    border: 1px solid black;
-    border-radius: 5px;
-        margin-bottom: 5px;
-    margin-top: 5px;
-    padding: 5%;
-}
-
-.Facebook{
-    color: black;
-    font-size: bold;
-    align-items: center;
-    margin-left: 10%;
-
-}
-
-.goo-login{
-    background-color: rgb(245, 120, 120);
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding: 5%;
-
-}
-
-.Google{
-    color: black;
-    font-size: bold;
-    margin-left: 10%;
-}
-
-
-/* -----------------REGISTER--------------------------------- */
-
-
-.register{
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    box-sizing: border-box;
-    margin: 5%;
-}
-
-.nuevo-cliente{
-    padding-left: 15%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border-radius: 5%;
-    border: 1px solid black;
-    background-color: aliceblue;
-}
-
-.registro-R{
-    color: black;
-
-}
-/* ---------------END---REGISTER--------------------------------- */
-/* ---------------------------END LOGIN Y REGISTER---------------------------------------- */
 .contenedor-form-categoria{
     display: flex;
     justify-content: flex-end;
@@ -1040,7 +926,11 @@ a.btnEndAdd{
 
     }
 
-    
+    .foto-principal-users{
+        width: 15%;
+    } 
 
-
+    .boton-display-all-products button{
+        width: 15%;
+    }
 } 

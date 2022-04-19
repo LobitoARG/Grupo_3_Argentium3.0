@@ -29,21 +29,21 @@ const validacionLogIn = [
 ];
 
 /*** OBTENER TODOS LOS USUARIOS ***/ 
-router.get('/',authMiddleware,userController.index);
+router.get('/list',userController.index); // authMiddleware,
 
 /*** LOG IN DE USUARIO ***/ 
-router.get('/login',guestMiddleware ,userController.login);
+router.get('/login',userController.login); // guestMiddleware ,
 router.post('/login', validacionLogIn, userController.processlogin) // sumamos el verificador del login in llamado validacionLogIn
 
-router.get('/detailUsers/:id', authMiddleware ,userController.detailUser);
+router.get('/detailUsers/:id', userController.detailUser); // authMiddleware ,
 
 /*** CREAR UN USUARIO ***/ 
-router.get('/register', guestMiddleware,userController.createUser);
-router.post('/register',upload.single('imagenUsers'), userController.store); // upload.single('imagen-Users') falta sumar esto, lo saco mientras hago el validate
+router.get('/register', userController.createUser); // guestMiddleware,
+router.post('/register',upload.single('imagenUsers'), userController.store); 
 
-router.get('/edit/:id',authMiddleware ,userController.edit); 
+router.get('/edit/:id' ,userController.edit);  // ,authMiddleware
 router.put('/edit/:id', upload.single('imagenUsers') ,userController.update); 
 
-router.delete('/detailUser/:id', authMiddleware ,userController.destroy); 
+router.delete('/detailUsers/:id',userController.destroy);  //  authMiddleware ,
 
 module.exports = router; 

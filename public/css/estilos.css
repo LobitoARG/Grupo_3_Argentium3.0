@@ -8,8 +8,7 @@ body {
 }
 
 main {
-	max-width: 800px;
-	width: 90%;
+	
 	margin: auto;
 	padding: 40px;
 }
@@ -162,4 +161,11 @@ main {
 	.formulario__btn {
 		width: 100%;
 	}
+}
+
+@media (min-width: 1500px){
+	.formulario__btn{
+		width: 20%;
+	}
+
 }

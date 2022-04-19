@@ -19,30 +19,23 @@
                 <h2>Apellido:<%= usersSeleccionado.last_name%></h2>
             </li>
             <li>
-                <h2>DNI:<%= usersSeleccionado.dni%></h2>
+                <h2>E-mail: <%= usersSeleccionado.email%></h2>
             </li>
             <li>
-                <h2>E=mail: <%= usersSeleccionado.email%></h2>
-            </li>
-            <li>
-                <h2>Direccion: <%= usersSeleccionado.adress%></h2>
-            </li>
-            <li>
-                <h2>Ciudad:<%= usersSeleccionado.city%></h2>
+                <h2>Direccion: <%= usersSeleccionado.telefono%></h2>
             </li>
         </ul>
         <div class="foto-principal-users"> 
-            <img src="/img/<%= usersSeleccionado.image %>" alt="foto_users" class="main-foto-principal">
+            <img src="/img/usersImg/<%= usersSeleccionado.imagenUsers %>" alt="foto_users" class="main-foto-principal">
         </div>
         <section class="contenedor-boton-users">
 
-            <div class="boton-editar-users">
-                <a href="/user/edit/<%=usersSeleccionado.id%> ">
-                    <button type="submit">EDITAR USUARIO</button>
-                </a>
+            <div class="boton-borrar">
+               
+                <button type="button"><a href="/user/edit/<%=usersSeleccionado.id%>" class="href-boton-editar">EDITAR USUARIO</button></a>
             </div>
 
-           <form action="/users/detailUsers/<%= usersSeleccionado.id %>?_method=DELETE" method="POST">
+           <form action="/user/detailUsers/<%=usersSeleccionado.id%>?_method=DELETE" method="POST">
                 <div class="boton-borrar">
                     <button type="submit">BORRAR USUARIO</button>
                 </div>

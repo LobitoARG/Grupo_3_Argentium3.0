@@ -1,77 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- HEAD -->
-<%- include('../partials/head.ejs', {title: 'Todos los Usuarios'}) %> 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ingreso de usuario</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
 <body>
      
 <!-- HEADER -->
 <%- include('../partials/header.ejs') %> 
         
 
- <main class="register">
+ <main>
                      
-    <form action="/user/register" method="POST" enctype="multipart/form-data"> <!-- JPP le agregue users a action tambien el enctype -->
-        <div class="nombre-usuario-email">
-            <div>
-                <h2 class="nuevo-cliente">NUEVO CLIENTE</h2> 
-            </div>
+    <form action="/user/register" method="POST" class="formulario" id="formulario" enctype="multipart/form-data">
 
-            <div>
-                <label for="firts_name">Nombre</label>
-                <input type="text" name="firts_name" placeholder="Ingresa Nombre">
-            </div> 
-            
-            <div>
-                <label for="last_name">Apellido</label>
-                <input type="text" name="last_name" placeholder="Ingresa Apellido">
+        <!-- Grupo: Nombre -->
+        <div class="formulario__grupo" id="grupo__first_name">
+            <label for="first_name" class="formulario__label">Nombre</label> <!-- for: first_name -->
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="first_name" id="first_name" placeholder="John Doe"> <!-- name: first_name -->
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
+            <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+        </div>
 
-            <div> <!-- JPP agregue users-image y type tipo file -->
-                <label for="imagenUsers">Imagen de Usuario</label>
-                <div>
-                    <input type="file" name="imagenUsers" id="imagenUsers">
-                </div>
+        <!-- Grupo: Usuario -->
+        <div class="formulario__grupo" id="grupo__last_name">
+            <label for="last_name" class="formulario__label">Apellido</label> <!-- for: last_name -->
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="last_name" id="last_name" placeholder="john123"> <!-- name: last_name -->
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-
-            
-            <div>
-                <label for="dni">Documento</label>
-                <input type="text" name="dni" placeholder=" Ingresa Documento">
-            </div>
-            
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Ingresa E-mail"> 
-            </div>
-            
-            <div>
-                <label for="pass">Contraseña</label>
-                <input type="password" name="password" placeholder="Elegí tu contraseña">
-            </div>
-            
-            <div>
-                <label for = "pass_confirm">Confirma Contraseña</label>
-                <input type="password" name="password_confirm" placeholder="Confirmá tu clave">
-            </div>
-            
-            <div>
-                <label for = "addres">Domicilio</label>
-                <input type="text" name="addres" placeholder="Ingresa tu Domicilio">
-            </div>                   
-            
-            <div>
-                <label for="city">Ciudad</label>
-                <input type="text" name="city" placeholder="Ingresa tu Ciudad">   
-            </div>
-
-            <button type="submit">Registrarse</button>
-        </div>          
-        
+            <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+        </div>
 
         
+
+        <!-- Grupo: Contraseña -->
+        <div class="formulario__grupo" id="grupo__password">
+            <label for="password" class="formulario__label">Contraseña</label>
+            <div class="formulario__grupo-input">
+                <input type="password" class="formulario__input" name="password" id="password">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+        </div>
+
+        <!-- Grupo: Contraseña 2 -->
+        <div class="formulario__grupo" id="grupo__password2">
+            <label for="password2" class="formulario__label">Repetir Contraseña</label>
+            <div class="formulario__grupo-input">
+                <input type="password" class="formulario__input" name="password2" id="password2">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+        </div>
+
+        <!-- Grupo: Correo Electronico -->
+        <div class="formulario__grupo" id="grupo__email">
+            <label for="email" class="formulario__label">Correo Electrónico</label>  <!-- for: email -->
+            <div class="formulario__grupo-input">
+                <input type="email" class="formulario__input" name="email" id="email" placeholder="correo@correo.com"> <!-- name: email -->
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+        </div>
+
+        <!-- Grupo: Teléfono -->
+        <div class="formulario__grupo" id="grupo__telefono">
+            <label for="telefono" class="formulario__label">Teléfono</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+        </div>
+
+        <div>
+            <label for="imagenUsers" class="formulario__label">Imagen de Usuario</label>
+            <input type="file" name="imagenUsers" id="imagenUsers">
+        </div>
+
+        <!-- Grupo: Terminos y Condiciones -->
+        
+
+        <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+        </div>
+    
+
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn">Enviar</button>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
+
     </form>
 </main>
-
-        <%- include('../partials/footer')  %> 
-    </body>
+<%- include('../partials/footer')  %> 
+<script src="/js/formulario_registro.js"></script>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
 </html>
