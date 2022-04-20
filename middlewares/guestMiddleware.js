@@ -3,7 +3,7 @@ function guestMiddleware (req, res, next){
         next();
     }
     else{
-        res.render('login');
+        res.redirect('/');
     }
 
 }

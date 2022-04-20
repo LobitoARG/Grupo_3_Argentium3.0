@@ -29,21 +29,21 @@ const validacionLogIn = [
 ];
 
 /*** OBTENER TODOS LOS USUARIOS ***/ 
-router.get('/list',userController.index); // authMiddleware,
+router.get('/list', authMiddleware,userController.index); // authMiddleware,
 
 /*** LOG IN DE USUARIO ***/ 
-router.get('/login',userController.login); // guestMiddleware ,
+router.get('/login',guestMiddleware,userController.login); // guestMiddleware ,
 router.post('/login', validacionLogIn, userController.processlogin) // sumamos el verificador del login in llamado validacionLogIn
 
-router.get('/detailUsers/:id', userController.detailUser); // authMiddleware ,
+router.get('/detailUsers/:id',authMiddleware,userController.detailUser); // authMiddleware ,
 
 /*** CREAR UN USUARIO ***/ 
-router.get('/register', userController.createUser); // guestMiddleware,
+router.get('/register',guestMiddleware,userController.createUser); // guestMiddleware,
 router.post('/register',upload.single('imagenUsers'), userController.store); 
 
-router.get('/edit/:id' ,userController.edit);  // ,authMiddleware
+router.get('/edit/:id' ,authMiddleware,userController.edit);  // ,authMiddleware
 router.put('/edit/:id', upload.single('imagenUsers') ,userController.update); 
 
-router.delete('/detailUsers/:id',userController.destroy);  //  authMiddleware ,
+router.delete('/detailUsers/:id',authMiddleware,userController.destroy);  //  authMiddleware ,
 
 module.exports = router; 

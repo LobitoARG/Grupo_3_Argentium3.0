@@ -26,10 +26,10 @@ router.get('/detailProduct/:id', productoController.detailProduct);
 router.get('/productCart',productoController.productCart);
 
 /*** CREAR UN PRODUCTO PRODUCTO ***/ 
-router.get('/create',productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
-router.get('/create/createProduct-pc',productoController.createProductPC); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
-router.get('/create/createProduct-ntbk',productoController.createProductntbk);
-router.get('/create/createProduct-comp',productoController.createProductcomp);
+router.get('/create',authMiddleware,productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
+router.get('/create/createProduct-pc',authMiddleware, productoController.createProductPC); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
+router.get('/create/createProduct-ntbk',authMiddleware, productoController.createProductntbk);
+router.get('/create/createProduct-comp',authMiddleware,productoController.createProductcomp);
 router.post('/', upload.single('imagen-producto'),productoController.store);
 
 
@@ -43,6 +43,6 @@ router.put('/edit/:id', authMiddleware,productoController.update);
 router.get('/', productoController.index);
 
 /*** BORRAR UN PRODUCTO ***/ 
-router.delete('/detail/:id',productoController.destroy); 
+router.delete('/detail/:id',authMiddleware,productoController.destroy); 
 
 module.exports = router; 

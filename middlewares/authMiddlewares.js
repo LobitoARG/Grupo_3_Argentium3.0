@@ -3,7 +3,7 @@ function authMiddleware (req, res, next){
         next();
     }
     else{
-        res.render('productCart');
+        res.redirect('/user/login');
     }
 
 }
