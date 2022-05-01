@@ -4,6 +4,163 @@
     box-sizing: border-box;
 }
 
+/* CSS PARA EL HEADER */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Roboto:wght@100;300&display=swap');
+
+
+  header{
+      font-family: "Montserrat", sans-serif;
+  }
+
+  .main-header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0 0.4rem;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .nav-links {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .button-menu {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column; /* Pondrá un span debajo del otro*/
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  /* 
+    Dibujamos una línea recta por cada span creando el tipico menu hamburguesa
+  */
+  
+  .button-menu span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #444444;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+  }
+  
+  /* 
+    con los span dibujamos un icono de cerrar 
+    para mostrar cuándo la navegación este abierta 
+  */
+  
+  .button-menu.close span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: white
+  }
+  
+  .button-menu.close span:nth-child(2) {
+    transform: rotate(-45deg) translate(-8px, 5px);
+  }
+  
+  .button-menu.close span:nth-child(3) {
+    display: none;
+  }
+ 
+  
+  .main-nav.show {
+    margin-left: 0;
+  }
+  
+  
+  .link-item {
+    margin-top: 2rem;
+    color: #444444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+  }
+  
+  .link-item::after {
+    position: absolute;
+    background-color: black;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+  }
+  
+  .link-item:hover::after {
+    width: 100%;
+  }
+  
+  .button-menu {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .button-menu span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #444444;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+  }
+  
+  .button-menu.close span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: white
+  }
+  
+  .button-menu.close span:nth-child(2) {
+    transform: rotate(-45deg) translate(-8px, 5px);
+  }
+  
+  .button-menu.close span:nth-child(3) {
+    display: none;
+  }
+
+/* FIN DE CSS PARA EL HEADER */
+
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #ebebeb;
@@ -75,14 +232,13 @@ a:link, a:visited, a:active {
 }
 
 .contenedor-logo-empresa img{
-    max-width: 50%;
+    max-width: 33%;
     margin: auto;
     
 }
 
 .contenedor-logo-empresa a{
-    align-self: center;
-    justify-self: center;
+    max-width: 50%;
     
 }
 
@@ -805,7 +961,6 @@ a.btnEndAdd{
 
 
 
-
 @media (min-width: 400px){
     .register, .login {
     width: 70vw;   
@@ -820,7 +975,7 @@ a.btnEndAdd{
     }
 
     .contenedor-logo-empresa img{
-        max-width: 50%;
+        max-width: 30%;
     }
 
     .contenedor-header-derecho i{
@@ -828,10 +983,25 @@ a.btnEndAdd{
     }
 } 
 
+@media (min-width: 600px){
+    .contenedor-logo-empresa img{
+        max-width: 25%;
+    }
+
+    .nav-links {
+        width: 55%;
+    }
+}
+
 
     
  @media (min-width: 768px)
  {
+
+    .contenedor-logo-empresa{
+        max-width: 30%;
+    }
+
     .register, .login {
         width: 30vw;   
         justify-content: center;
@@ -870,7 +1040,7 @@ a.btnEndAdd{
     }
 
     .contenedor-logo-empresa img{
-        max-width: 65%;
+        max-width: 80%;
         margin: auto;
     }
 
@@ -894,8 +1064,8 @@ a.btnEndAdd{
 
     .foto-principal-producto{
         width: 35%;
-    }
-    
+    }    
+
  }  
 
 @media (min-width: 900px)
@@ -933,4 +1103,22 @@ a.btnEndAdd{
     .boton-display-all-products button{
         width: 15%;
     }
+    .main-nav{
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .contenedor-logo-empresa img{
+        max-width: 40%;
+    }
+
+    @media (min-width: 1920px)
+    {
+        .main-nav{
+            width: 30vw;
+            
+        }
+
+    }
+
 } 

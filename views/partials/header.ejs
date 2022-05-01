@@ -1,18 +1,27 @@
-<header>
-    <div class="contenedor-padre-header">
-        <div class="contenedor-icono-de-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-
-        <div class="contenedor-logo-empresa">
-            <a href="/"><img src="/img/logo_empresa_1.svg"></a>
-        </div>
-
-        <div class="contenedor-header-derecho">
-            <a href="#"><i class="fas fa-search"></i></a>
-            <a href="/user/login"><i class="fas fa-sign-in-alt"></i></a>
-            <a href="/user/register"><i class="fa fa-solid fa-user"></i></a>
-            <a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a>
-        </div>
+<header class="main-header">
+    
+    <div class="contenedor-logo-empresa">
+        <a class="main-logo" href="/">
+            <img src="/img/logo_empresa_1.svg" class="main-logo">
+        </a>
     </div>
+    
+    <nav id="nav" class="main-nav">
+      <div class="nav-links">
+        <a class="link-item" href="/user/login">Log in</a>
+        <a class="link-item" href="/user/register">Register</a>
+        <a class="link-item" href="/products/productCart">Carrito de Compras</a>
+        <a class="link-item" href="../products">Productos</a>
+        <a class="link-item" href="/user/list">Usuarios</a>
+        <a class="link-item" href="../products/create">Crear Producto</a>
+      </div>
+    </nav>
+    <button id="button-menu" class="button-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+    <script src="/js/header.js"></script>
 </header>
