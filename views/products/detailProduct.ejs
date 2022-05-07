@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- HEAD -->
-<%- include('../partials/head.ejs', {title: productoSeleccionado.name}) %> 
+<%- include('../partials/head.ejs', {title: ProductoEJS.nombre}) %> 
 <body>
      
 <!-- HEADER -->
@@ -11,28 +11,28 @@
     
     <main>
         
-        <h1><%= productoSeleccionado.name %> </h1>
+        <h1><%= ProductoEJS.nombre %> </h1>
         <div class="foto-principal-producto">
             
-            <img src="/img/<%= productoSeleccionado.category %>/<%= productoSeleccionado.image %>" alt="foto_pc" class="main-foto-principal">
+            <img src="/img/<%= ProductoEJS.categoria_producto.titulo_categoria %>/<%= ProductoEJS.imagen%>" alt="foto_pc" class="main-foto-principal">
         </div>
         <section class="contenedor-precio-boton-comprar">
 
             <div class="precio-y-descuento">
                 <div class="precio-anterior-precio-actual">
-                    <h2>$<%= productoSeleccionado.price %></h2>
-                    <h2 class="descuento"><%= productoSeleccionado.discount %>% OFF</h2>
+                    <h2>$<%= ProductoEJS.precio %></h2>
+                    <h2 class="descuento"><%= ProductoEJS.descuento %>% OFF</h2>
                 </div>
             </div>
 
             <div class="boton-editar">
-                <a href="/products/edit/<%=productoSeleccionado.id%> ">
+                <a href="/products/edit/<%=ProductoEJS.id_producto%> ">
                     <button>EDITAR PRODUCTO</button>
                 </a>
                 
             </div>
 
-            <form action="/products/detail/<%= productoSeleccionado.id %>?_method=DELETE" method="POST">
+            <form action="/products/detail/<%= ProductoEJS.id_producto %>?_method=DELETE" method="POST">
                 <div class="boton-borrar">
                     <button type="submit">BORRAR PRODUCTO</button>
                 </div>
@@ -48,40 +48,17 @@
         <section class="contenedor-especificaciones-completas">
         <h2>ESPECIFICACIONES TECNICAS</h2>
         <div class="especificaciones">
-            <ul>
-                <% if (productoSeleccionado.descripCPU != null){ %> 
-                    <li><strong>Microprocesador:</strong> <%= productoSeleccionado.descripCPU %></li>
-                    <% } %> 
-
-                    <% if (productoSeleccionado.descripWC != null){ %> 
-                    <li><strong>Cooler:</strong> <%= productoSeleccionado.descripWC %></li>
-                    <% } %> 
-
-                    <% if (productoSeleccionado.descripMB != null){ %> 
-                    <li><strong>Motherboard:</strong> <%= productoSeleccionado.descripMB %></li>
-                    <% } %> 
-                    <% if (productoSeleccionado.descripRAM != null){ %> 
-                    <li><strong>Memoria:</strong> <%= productoSeleccionado.descripRAM %></li>
-                    <% } %> 
-                    <% if (productoSeleccionado.descripSSD != null){ %> 
-                    <li><strong>Disco:</strong> <%= productoSeleccionado.descripSSD %></li>
-                    <% } %> 
-                    <% if (productoSeleccionado.descripGPU != null){ %> 
-                    <li><strong>Placa de video:</strong> <%= productoSeleccionado.descripGPU %></li>
-                    <% } %> 
-                    <% if (productoSeleccionado.descripPWS != null){ %>
-                    <li><strong>Fuente:</strong> <%= productoSeleccionado.descripPWS %></li>
-                    <% } %> 
-                    <% if (productoSeleccionado.descripGAB != null){ %>
-                    <li><strong>Gabinete:</strong> <%= productoSeleccionado.descripGAB %></li>
-                    <% } %> 
-                    <% if (productoSeleccionado.OS != null){ %>
-                        <li><strong>Sistema operativo:</strong> <%= productoSeleccionado.OS %></li>
-                    <% } %> 
-            </ul>
+        
+            <% if (ProductoEJS.componentes != null) { %>
+                <ul>  
+                    <% for( let i = 0; i < ComponentesEJSkeys.length; i++ ) { %>
+                        <li><strong><%=ComponentesEJSkeys[i]%> </strong> <%=ComponentesEJSvalues[i]%></li>
+                    <% } %>
+                </ul>
+            <% } %>
         </div>
         <div class="caracteristicas">
-            <h2><%= productoSeleccionado.description %></h2>
+            <h2><%= ProductoEJS.descripcion %></h2>
 
         </div>
         </section>

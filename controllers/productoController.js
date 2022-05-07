@@ -1,6 +1,9 @@
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
+const db = require('../src/database/models');
+const sequelize = db.sequelize; 
+const {Op} = require('sequelize');
 
 
 const productsFilePath = path.join(__dirname, '../src/data/products.json');
@@ -16,7 +19,17 @@ const productoController = {
             })
             .then(resultadoPromesa => {
                     let ProductoEJS = resultadoPromesa;
-                    res.render('./users/home', {ProductoEJS});
+                    
+                    if(ProductoEJS.componentes == null){
+                    res.render('./products/detailProduct', {ProductoEJS});
+                    }
+                    else{                  
+                    let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
+                    let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
+                    let ComponentesEJSvalues = Object.values(ComponentesEJS);                           
+                    res.render('./products/detailProduct', {ProductoEJS, ComponentesEJSkeys, ComponentesEJSvalues});
+                    }        
+                    
                 })       
     },
 

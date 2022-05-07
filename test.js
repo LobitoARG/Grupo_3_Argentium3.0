@@ -21,13 +21,23 @@ const {Op} = require('sequelize');
 
 
         //Necesito traer un producto por ID
-        db.Producto.findByPk(149,{
+        db.Producto.findByPk(150,{
             include: ['categoria_producto']
         })
         .then(resultadoPromesa => {
                 let ProductoEJS = resultadoPromesa;
-                console.log(ProductoEJS)
-            });
+                
+                if(ProductoEJS.componentes == null){
+                console.log(ProductoEJS);
+                }
+                else{                  
+                let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
+                let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
+                let ComponentesEJSvalues = Object.values(ComponentesEJS);                           
+                console.log(ProductoEJS, ComponentesEJSkeys, ComponentesEJSvalues); 
+                }       
+                
+            })
 
 
 
