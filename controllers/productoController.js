@@ -10,8 +10,14 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productoController = {
 
     detailProduct: (req, res) => {
-        let idProducto = req.params.id;
-        res.render('./products/detailProduct', {productoSeleccionado: products[idProducto-1]});
+       //Necesito traer un producto por ID
+        db.Producto.findByPk(req.params.id,{
+                include: ['categoria_producto']
+            })
+            .then(resultadoPromesa => {
+                    let ProductoEJS = resultadoPromesa;
+                    res.render('./users/home', {ProductoEJS});
+                })       
     },
 
     productCart: (req, res) => res.render('./products/productCart'),

@@ -6,18 +6,29 @@ const sequelize = db.sequelize;
 const {Op} = require('sequelize');
 
 
-    db.Producto.findAll({
+    // db.Producto.findAll({
+    //         include: ['categoria_producto']
+    //     })
+    //     .then(resultadoPromesa => {
+    //         let ProductoEJS = resultadoPromesa;            
+    //         for (let i = 0; i< ProductoEJS.length; i++) {
+              
+    //         console.log(ProductoEJS[i].descripcion);   
+    //         console.log(ProductoEJS[i].precio);  
+    //         console.log(ProductoEJS[i].categoria_producto.titulo_categoria)            
+    //         }
+    //      });
+
+
+        //Necesito traer un producto por ID
+        db.Producto.findByPk(149,{
             include: ['categoria_producto']
         })
         .then(resultadoPromesa => {
-            let ProductoEJS = resultadoPromesa;            
-            for (let i = 0; i< ProductoEJS.length; i++) {
-              
-            console.log(ProductoEJS[i].descripcion);   
-            console.log(ProductoEJS[i].precio);  
-            console.log(ProductoEJS[i].categoria_producto.titulo_categoria)            
-            }
-         });
+                let ProductoEJS = resultadoPromesa;
+                console.log(ProductoEJS)
+            });
+
 
 
 
