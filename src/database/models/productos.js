@@ -46,7 +46,8 @@ const config = {
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-        deletedAt: false
+        deletedAt: false,
+        freezeTableName: true
     };
 
 
@@ -54,14 +55,14 @@ const Producto = sequelize.define(alias, columnas, config);
 
 Producto.associate = (modelos) => {
     Producto.belongsTo(modelos.categoria_producto, { 
-        as: "cateogria_producto",            
+        as: "categoria_producto",            
         foreignKey: 'id_categoria_producto',            
         });
     
 
     Producto.belongsToMany(modelos.Compra, {
         as: "Compra",
-        through: 'productos_compras',
+        through: 'producto_compra',
         foreignKey: 'id_producto',
         otherKey: 'id_compra',
         timestamps: true,

@@ -23,7 +23,8 @@ module.exports=function(sequelize, dataTypes){
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: false,
-        deletedAt: false
+        deletedAt: false,
+        freezeTableName: true
     };
     
     
@@ -37,7 +38,7 @@ module.exports=function(sequelize, dataTypes){
 
         Compra.belongsToMany(modelos.Producto, {
             as: "Productos",
-            through: 'productos_compras',
+            through: 'producto_compra',
             foreignKey: 'id_compra',
             otherKey: 'id_producto',
             timestamps: true,

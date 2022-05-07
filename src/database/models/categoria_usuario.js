@@ -18,7 +18,8 @@ const config = {
     timestamps: false,
     createdAt: false,
     updatedAt: false,
-    deletedAt: false
+    deletedAt: false,
+    freezeTableName: true
 };
 
 

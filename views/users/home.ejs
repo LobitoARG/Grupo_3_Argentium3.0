@@ -14,60 +14,21 @@
             <h2>ON SALE</h2>
             <div class="contenedor-articulos-principales">
     
-            <% for( let i = 0; i < 4 ; i++ ) { %> 
-                <a class="anchorProducto" href="products/detailProduct/<%=sales[i].id%> ">
-                    <article class="contenedor-producto-imagen-descripcion">            
-                        <img src="img/<%=sales[i].category%>/<%=sales[i].image%>" alt="<%= sales[i].name %>">
+            <% for( let i = 0; i < ProductoEJS.length; i++ ) { %> 
+                <a class="anchorProducto" href="products/detailProduct/<%=ProductoEJS[i].id_producto%>">
+                    <article class="contenedor-producto-imagen-descripcion">     
+                        <img src="img/<%=ProductoEJS[i].categoria_producto.titulo_categoria%>/<%=ProductoEJS[i].imagen%>" alt="<%= ProductoEJS[i].nombre %>">                           
                         <div class="contendor-descripcion">
-                            <h3 class="description"><%= sales[i].name %></h3>
-                            <p class="price">$<%= sales[i].price %></p>
-                            <p class="discount"><%= sales[i].discount %>%</p>
+                            <h3 class="description"><%= ProductoEJS[i].descripcion%></h3>
+                            <p class="price">$<%= ProductoEJS[i].precio %></p>
+                            <p class="discount"><%= ProductoEJS[i].descuento%>%</p>
                         </div>                              
                     </article></a>   
             
             <% } %>
              
             </div>
-        </section>
-    
-        <section class="contenedor-section-principal">   
-            <h2>LOS MEJORES DESCUENTOS</h2>
-            <div class="contenedor-articulos-principales">
-    
-            <% for( let i = 0; i < 4 ; i++ ) { %> 
-                <a class="anchorProducto" href="products/detailProduct/<%=discounts[i].id%>">
-                    <article class="contenedor-producto-imagen-descripcion">            
-                        <img src="img/<%=discounts[i].category%>/<%=discounts[i].image%>" alt="<%= discounts[i].name %> ">
-                        <div class="contendor-descripcion">
-                            <h3 class="description"><%= discounts[i].name %></h3>
-                            <p class="price">$<%= discounts[i].price %></p>
-                            <p class="discount"><%= discounts[i].discount %>%</p>
-                        </div>                              
-                    </article></a>           
-            <% } %>
-             
-            </div>
-        </section>
-    
-
-        <section class="contenedor-section-principal">   
-            <h2>Nuevos Productos</h2>
-            <div class="contenedor-articulos-principales">
-    
-            <% for( let i = 0; i < 4 ; i++ ) { %> 
-                <a class="anchorProducto" href="products/detailProduct/<%=news[i].id%>">
-                    <article class="contenedor-producto-imagen-descripcion">            
-                        <img src="img/<%=news[i].category%>/<%=news[i].image%>" alt="<%= news[i].name %> ">
-                        <div class="contendor-descripcion">
-                            <h3 class="description"><%= news[i].name %></h3>
-                            <p class="price">$<%= news[i].price %></p>
-                            <p class="discount"><%= news[i].discount %>%</p>
-                        </div>                              
-                    </article></a>           
-            <% } %>
-             
-            </div>
-        </section>
+        </section>         
 
     </main>
        

@@ -17,7 +17,8 @@ module.exports=function(sequelize, dataTypes){
         timestamps: false,
         createdAt: false,
         updatedAt: false,
-        deletedAt: false
+        deletedAt: false,
+        freezeTableName: true
     };
     
     
