@@ -34,7 +34,7 @@ const columnas = {
         allowNull: true
     },
     id_categoria_usuario:{
-        type: dataTypes.INTEGER.UNSIGED,
+        type: dataTypes.INTEGER.UNSIGNED,
         allowNull: false
     }
 };

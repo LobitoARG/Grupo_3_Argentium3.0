@@ -1,5 +1,5 @@
 module.exports=function(sequelize, dataTypes){
-    const alias = 'categoria_usuario';
+    const alias = 'categoria_producto';
     const columnas = {
         id_categoria_producto: {
             type: dataTypes.INTEGER.UNSIGNED,

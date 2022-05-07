@@ -13,7 +13,7 @@ const columnas = {
         allowNull: false        
     },
     precio:{
-        type: dataTypes.DECIMAL(10,2).UNSIGED,
+        type: dataTypes.DECIMAL(10,2).UNSIGNED,
         allowNull: false        
     },
     descuento: {
@@ -37,7 +37,7 @@ const columnas = {
         allowNull: true
     },
     id_categoria_producto:{
-        type: dataTypes.INTEGER.UNSIGED,
+        type: dataTypes.INTEGER.UNSIGNED,
         allowNull: false
     }
 };
@@ -59,7 +59,7 @@ Producto.associate = (modelos) => {
         });
     
 
-    Compra.belongsToMany(modelos.Compra, {
+    Producto.belongsToMany(modelos.Compra, {
         as: "Compra",
         through: 'productos_compras',
         foreignKey: 'id_producto',

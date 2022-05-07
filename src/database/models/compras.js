@@ -14,7 +14,7 @@ module.exports=function(sequelize, dataTypes){
             allowNull: false
         },
         id_usuario:{
-            type: dataTypes.INTEGER.UNSIGED,
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         }
     };
@@ -35,7 +35,7 @@ module.exports=function(sequelize, dataTypes){
             foreignKey: 'id_usuario',            
         });
 
-        Compra.belongsToMany(modelos.Productos, {
+        Compra.belongsToMany(modelos.Producto, {
             as: "Productos",
             through: 'productos_compras',
             foreignKey: 'id_compra',
