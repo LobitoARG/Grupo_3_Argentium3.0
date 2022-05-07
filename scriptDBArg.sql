@@ -44,13 +44,13 @@ INSERT INTO `categoria_usuario` VALUES (1,'Cliente'),
 (2,'Administrador');
 
 --
--- Table structure for table `usuarios`
+-- Table structure for table `usuario`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
+DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `usuarios` (
+CREATE TABLE `usuario` (
   `id_usuario` int unsigned NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(50) NOT NULL,
   `last_name` VARCHAR(50) NOT NULL,
@@ -68,11 +68,11 @@ CREATE TABLE `usuarios` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuarios`
+-- Dumping data for table `usuario`
 --
 
 
-INSERT INTO `usuarios` VALUES (1,'Alejandro','Jabo','12345A','alejandro@digitalhouse.com','123456','imagenUsers1650340819929.jpg',NULL,NULL,2),
+INSERT INTO `usuario` VALUES (1,'Alejandro','Jabo','12345A','alejandro@digitalhouse.com','123456','imagenUsers1650340819929.jpg',NULL,NULL,2),
 (2,'Perrito','Joven','12345AA','perrito@digitalhouse.com','1234567','imagenUsers1650340819929.jpg',NULL,NULL,1);
 
 
@@ -97,31 +97,31 @@ CREATE TABLE `categoria_producto` (
 --
 
 
-INSERT INTO `categoria_producto` VALUES (1,'PC_GAMER'),
-(2,'Notebooks'),
-(3,'Componentes');
+INSERT INTO `categoria_producto` VALUES (1,'pc_gamer'),
+(2,'notebooks'),
+(3,'componentes');
 
 
 --
--- Table structure for table `productos`
+-- Table structure for table `producto`
 --
 
 
-DROP TABLE IF EXISTS `productos`;
+DROP TABLE IF EXISTS `producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `productos` (
-  `id_producto` int unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `producto` (
+  `id_producto` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(100) NOT NULL,
   `precio` DECIMAL(10,2) NOT NULL,
-  `descuento` INT NOT NULL,  
+  `descuento` INT NULL,  
   `tipo` VARCHAR(50) NOT NULL,
   `componentes` TEXT NOT NULL,
   `imagen` VARCHAR(100) NOT NULL,
   `descripcion` TEXT NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
- `id_categoria_producto` int unsigned NOT NULL,
+ `id_categoria_producto` int UNSIGNED NOT NULL,
   PRIMARY KEY (`id_producto`),
   KEY `categoria_producto_id_foreign` (`id_categoria_producto`),
   CONSTRAINT `categoria_producto_id_foreign` FOREIGN KEY (`id_categoria_producto`) REFERENCES `categoria_producto` (`id_categoria_producto`)
@@ -129,53 +129,53 @@ CREATE TABLE `productos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `productos`
+-- Dumping data for table `producto`
 --
 
 
-INSERT INTO `productos` VALUES (1,'PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500w',100,'computadora','varios','pc_gamer_1.png','Equipo entry level INTEL ideal para comenzar a jugar',NULL,NULL,1),
-(2,'CPU AMD Ryzen 9 5950x',1000,'componente','uno solo','CPU_AMD_Ryzen_9_5950x.jpg','nuevo microprocesador',NULL,NULL,3),
-(3,'Gigabyte 15.6 Intel Core i7 16GB SSD 1TB',10000,'notebook','varios','notebook_prueba_3.png','Notebook Gigabyte Pro Core i7',NULL,NULL,2);
+INSERT INTO `producto` VALUES (NULL,'PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500w',100,10,'desktop','varios','pc_gamer_1.png','Equipo entry level INTEL ideal para comenzar a jugar',NULL,NULL,1),
+(NULL,'CPU AMD Ryzen 9 5950x',1000,15,'componente','uno solo','CPU_AMD_Ryzen_9_5950x.jpg','nuevo microprocesador',NULL,NULL,3),
+(NULL,'Gigabyte 15.6 Intel Core i7 16GB SSD 1TB',10000,40,'notebook','varios','notebook_prueba_3.png','Notebook Gigabyte Pro Core i7',NULL,NULL,2);
 
 
 
 --
--- Table structure for table `compras`
+-- Table structure for table `compra`
 --
 
 
-DROP TABLE IF EXISTS `compras`;
+DROP TABLE IF EXISTS `compra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `compras` (
+CREATE TABLE `compra` (
   `id_compra` int unsigned NOT NULL AUTO_INCREMENT,
   `total` DECIMAL(10,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `id_usuario` int unsigned NOT NULL,
   PRIMARY KEY (`id_compra`),
   KEY `id_usuario_id_foreign` (`id_usuario`),
-  CONSTRAINT `id_usuario_id_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+  CONSTRAINT `id_usuario_id_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `compras`
+-- Dumping data for table `compra`
 --
 
 
-INSERT INTO `compras` VALUES (1,100,NULL,1),
+INSERT INTO `compra` VALUES (1,100,NULL,1),
 (2,200,NULL,2),
 (3,250,NULL,1);
 
 --
--- Table structure for table `productos_compras`
+-- Table structure for table `producto_compra`
 --
 
 
-DROP TABLE IF EXISTS `productos_compras`;
+DROP TABLE IF EXISTS `producto_compra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `productos_compras` (
+CREATE TABLE `producto_compra` (
   `id_producto_compra` int unsigned NOT NULL AUTO_INCREMENT,
   `importe_producto` DECIMAL(10,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -184,17 +184,17 @@ CREATE TABLE `productos_compras` (
   PRIMARY KEY (`id_producto_compra`),
   KEY `id_compra_id_foreign` (`id_compra`),
   KEY `id_producto_id_foreign` (`id_producto`),
-  CONSTRAINT `id_compra_id_foreign` FOREIGN KEY (`id_compra`) REFERENCES `compras` (`id_compra`),
-  CONSTRAINT `id_producto_id_foreign` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`)
+  CONSTRAINT `id_compra_id_foreign` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id_compra`),
+  CONSTRAINT `id_producto_id_foreign` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `productos_compras`
+-- Dumping data for table `producto_compra`
 --
 
 
-INSERT INTO `productos_compras` VALUES (1,100,NULL,1,1),
+INSERT INTO `producto_compra` VALUES (1,100,NULL,1,1),
 (2,300,NULL,2,2),
 (3,400,NULL,3,3);
 
