@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Open products.ejs",
+            "file": "c:\\Users\\ltorrealba\\Documents\\Personal\\07052022\\Grupo_3_Argentium3.0\\views\\products\\products.ejs"
+        }
+    ]
+}

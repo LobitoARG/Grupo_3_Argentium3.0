@@ -6,19 +6,31 @@ const sequelize = db.sequelize;
 const {Op} = require('sequelize');
 
 
-comp = {
-    Microprocesador:" descripCPU",
-    Cooler:" descripWC",
-    Motherboard:" descripMB",
-    Memoria:" descripRAM",
-    Disco:" descripSSD",
-    Fuente:" descripPWS",
-    Video:" descripGPU",
-    Gabinete:" descripGA"
-};
-compJSON = JSON.stringify(comp)
+// comp = {
+//     Microprocesador:" descripCPU",
+//     Cooler:" descripWC",
+//     Motherboard:" descripMB",
+//     Memoria:" descripRAM",
+//     Disco:" descripSSD",
+//     Fuente:" descripPWS",
+//     Video:" descripGPU",
+//     Gabinete:" descripGA"
+// };
+// compJSON = JSON.stringify(comp)
 
-console.log(compJSON);
+// console.log(compJSON);
+
+db.Producto.findAll({
+    include: ['categoria_producto']
+})
+.then(resultadoPromesa => {
+    var ProductoEJS = resultadoPromesa;   
+    for (let i = 0; i < ProductoEJS.length; i++) {
+    
+        console.log(JSON.parse(ProductoEJS[i].componentes));
+    }
+});
+
 
 
 

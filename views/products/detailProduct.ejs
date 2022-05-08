@@ -12,10 +12,12 @@
     <main>
         
         <h1><%= ProductoEJS.nombre %> </h1>
-        <div class="foto-principal-producto">
-            
-            <img src="/img/<%= ProductoEJS.categoria_producto.titulo_categoria %>/<%= ProductoEJS.imagen%>" alt="foto_pc" class="main-foto-principal">
-        </div>
+       
+            <% if (ProductoEJS.categoria_producto.titulo_categoria) { %>
+                <div class="foto-principal-producto">
+                    <img src="/img/<%= ProductoEJS.categoria_producto.titulo_categoria %>/<%= ProductoEJS.imagen%>" alt="foto_pc" class="main-foto-principal">
+                </div>
+            <% } %>            
         <section class="contenedor-precio-boton-comprar">
 
             <div class="precio-y-descuento">
@@ -68,7 +70,7 @@
         <div class="productos-relacionados">
             <div class="producto-relacionado-1">
                 <div class="producto-relacionado-imagen-1">
-                    <img alt="imagen-pc" src="/img/DESKTOP/producto-relacionado-1.jpg">
+                    <img alt="imagen-pc" src="/img/desktop/producto-relacionado-1.jpg">
                 </div>
                 <p>PC GAMER 1</p>
                 <p>$100.000</p>
@@ -76,7 +78,7 @@
 
             <div class="producto-relacionado-2">
                 <div class="producto-relacionado-imagen-2">
-                    <img alt="imagen-pc" src="/img/DESKTOP/producto-relacionado-2.jpg">
+                    <img alt="imagen-pc" src="/img/desktop/producto-relacionado-2.jpg">
                 </div>
                 <p>PC GAMER 2</p>
                 <p>$200.000</p> 
@@ -84,7 +86,7 @@
 
             <div class="producto-relacionado-3">
                 <div class="producto-relacionado-imagen-3">
-                    <img alt="imagen-pc" src="/img/DESKTOP/producto-relacionado-3.jpg">
+                    <img alt="imagen-pc" src="/img/desktop/producto-relacionado-3.jpg">
                 </div>
                 <p>PC GAMER 3</p>
                 <p>$300.000</p> 

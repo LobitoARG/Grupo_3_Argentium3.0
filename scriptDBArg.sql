@@ -145,7 +145,7 @@ INSERT INTO `producto` VALUES (NULL,'PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500
     "Gabinete": "Gabinete ATX Gigabye C200"}',
     
     'pc_gamer_1.png','Equipo entry level INTEL ideal para comenzar a jugar',NULL,NULL,1),
-(NULL,'CPU AMD Ryzen 9 5950x',1000,15,'componente',NULL,'CPU_AMD_Ryzen_9_5950x.jpg','nuevo microprocesador',NULL,NULL,3),
+(NULL,'CPU AMD Ryzen 9 5950x',1000,15,'componente',{'Microprocesador'},'CPU_AMD_Ryzen_9_5950x.jpg','nuevo microprocesador',NULL,NULL,3),
 (NULL,'Gigabyte 15.6 Intel Core i7 16GB SSD 1TB',10000,40,'notebook',
 	'{"Microprocesador": "Intel® Core™ i7-1065G7",
     "Memoria": "RAM SODIMM DDR4 16GB 2666 mhz",

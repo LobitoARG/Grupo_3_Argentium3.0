@@ -48,7 +48,7 @@ const productoController = {
                 Microprocesador: req.body.descripCPU,
                 Cooler: req.body.descripWC,
                 Motherboard: req.body.descripMB,
-                Memoria: req.body.descripRAM,
+                RAM: req.body.descripRAM,
                 Disco: req.body.descripSSD,
                 Fuente: req.body.descripPWS,
                 Video: req.body.descripGPU,
@@ -60,7 +60,7 @@ const productoController = {
             categ = 2;
             let comp = {
                 Microprocesador: req.body.cpu_name,
-                Memoria: req.body.ram_name,
+                RAM: req.body.ram_name,
                 Disco: req.body.ssd_name,
                 Fuente: req.body.pws_name,
                 Video: req.body.gpu_name
@@ -69,6 +69,10 @@ const productoController = {
         }
         else{
             categ = 3;
+            let comp = {
+                Componente: req.body.componente
+            }
+            compJSON = JSON.stringify(comp);
         }
 
         db.Producto.create({        
@@ -87,7 +91,17 @@ const productoController = {
     
     editProduct: (req,res) => res.render('./products/editProduct'),
     
-    index: (req,res) => res.render('products/products',{products}),
+    index: (req,res) => {
+    //Necesito traer todos los productos para que se muestren en el home. 
+                db.Producto.findAll({
+                    include: ['categoria_producto']
+                })
+                .then(resultadoPromesa => {
+                    let ProductoEJS = resultadoPromesa;                                            
+                    res.render('./products/products', {ProductoEJS});
+                })       
+    },
+
 
     createProductPC: (req,res) => {
         res.render('products/createProduct-PC')

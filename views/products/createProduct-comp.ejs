@@ -38,12 +38,6 @@
                 <textarea name="description" id="description" class="form-input"></textarea>
                 </div>
 
-                <div class="contenedor-form-imagen">
-                    <h4>Subir una imagen del producto:</h4>
-                    <label for="imagen-producto" class="form-label"></label>
-					<input name="imagen-producto" type="file" id="imagen-para-subir" required>
-                </div>
-
                 <h4>Seleccione una categoria</h4>
                 <div class="contenedor-form-categoria">
                     <div class="label-box">
@@ -54,22 +48,28 @@
                     </div>
                 </div>
 
-                <!-- <h4>Seleccione una subcategoria</h4>
+                <div class="contenedor-form-imagen">
+                    <h4>Subir una imagen del producto:</h4>
+                    <label for="imagenProducto" class="form-label"></label>
+					<input name="imagenProducto" type="file" id="imagen-para-subir" required>
+                </div>
+
+                <h4>Seleccione Tipo de Componente</h4>
                 <div class="contenedor-form-categoria">
                     <div class="label-box">
-                        <label for="subCategory"></label>
-                        <select name="subCategory" id="subCategory" class="form-input">
-                            <option value="CPU">Microprocesadores</option>
-                            <option value="MB">MOTHERBOARDS</option>
-                            <option value="RAM">MEMORIAS RAM</option>
-                            <option value="SSD">DISCOS SSD</option>
-                            <option value="GPU">PLACAS DE VIDEO</option>
-                            <option value="PWS">FUENTES DE ALIMENTACION</option>
-                            <option value="MB">GABINETES</option>
-                            <option value="WATER-COOLER">WATER COOLER</option>
+                        <label for="componente"></label>
+                        <select name="componente" id="componente" class="form-input">
+                            <option value="Microprocesador">Microprocesador</option>
+                            <option value="Motherboard">Motherboard</option>
+                            <option value="RAM">RAM</option>
+                            <option value="Disco">Disco</option>
+                            <option value="Video">Video</option>
+                            <option value="Fuente">Fuente</option>
+                            <option value="Gabinete">Gabinete</option>
+                            <option value="Cooler">Cooler</option>
                         </select>
                     </div>
-                 </div> -->               
+                 </div>               
            
                 <div class="contenedor-form-botones">
                 <button type="submit">Enviar</button>
