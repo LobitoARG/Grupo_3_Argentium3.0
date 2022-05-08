@@ -14,6 +14,18 @@
                 <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="">
                 </div>
 
+                <h4>Precio</h4>
+                <div class="contenedor-form-precio">
+                <label for="price"></label>
+                <input type="number" name="price" id="precio" placeholder="Precio del producto" required="">
+                </div>
+
+                <h4>Descuento base</h4>
+                <div class="contenedor-form-precio">
+                <label for="discount"></label>
+                <input type="number" name="discount" id="precio" placeholder="Descuento del producto" required="">
+                </div>
+
                 <h4>Microprocesador</h4>
                 <div class="contenedor-form-nombre">
                 <label for="cpu_name"></label>
@@ -43,6 +55,12 @@
                 <label for="name"></label>
                 <input type="text" name="pws_name" id="pws_name" placeholder="Modelo de PWS">
                 </div>
+
+                <div class="contenedor-form-imagen">
+                    <h4>Subir una imagen del producto:</h4>
+                    <label for="imagenProducto" class="form-label"></label>
+					<input name="imagenProducto" type="file" id="imagen-para-subir" >
+                </div>
         
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
@@ -58,23 +76,6 @@
                     </select>
                 </div>
 
-                <h4>Precio</h4>
-                <div class="contenedor-form-precio">
-                <label for="price"></label>
-                <input type="number" name="price" id="precio" placeholder="Precio del producto" required="">
-                </div>
-
-                <h4>Descuento base</h4>
-                <div class="contenedor-form-precio">
-                <label for="discount"></label>
-                <input type="number" name="discount" id="precio" placeholder="Descuento del producto" required="">
-                </div>
-
-                <div class="contenedor-form-imagen">
-                    <h4>Subir una imagen del producto:</h4>
-                    <label for="imagen-producto" class="form-label"></label>
-					<input name="imagen-producto" type="file" id="imagen-para-subir" >
-                </div>
            
                 <div class="contenedor-form-botones">
                 <button type="submit">Enviar</button>

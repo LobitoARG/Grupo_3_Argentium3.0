@@ -40,24 +40,32 @@ const productoController = {
    
     // Create - Metodo para crear el producto en el JSON
     store: (req,res) => {
-        comp = {
-            Microprocesador: req.body.descripCPU,
-            Cooler: req.body.descripWC,
-            Motherboard: req.body.descripMB,
-            Memoria: req.body.descripRAM,
-            Disco: req.body.descripSSD,
-            Fuente: req.body.descripPWS,
-            Video: req.body.descripGPU,
-            Gabinete: req.body.descripGAB
-        };
-        compJSON = JSON.stringify(comp)
-
         let categ;
+        let compJSON = null;        
         if(req.body.category == 'pc_gamer'){
-            categ = 1;
+            categ = 1;            
+            let comp = {
+                Microprocesador: req.body.descripCPU,
+                Cooler: req.body.descripWC,
+                Motherboard: req.body.descripMB,
+                Memoria: req.body.descripRAM,
+                Disco: req.body.descripSSD,
+                Fuente: req.body.descripPWS,
+                Video: req.body.descripGPU,
+                Gabinete: req.body.descripGAB
+            };        
+            compJSON = JSON.stringify(comp)
         }
         else if (req.body.category == 'notebooks'){
             categ = 2;
+            let comp = {
+                Microprocesador: req.body.cpu_name,
+                Memoria: req.body.ram_name,
+                Disco: req.body.ssd_name,
+                Fuente: req.body.pws_name,
+                Video: req.body.gpu_name
+            };        
+            compJSON = JSON.stringify(comp)
         }
         else{
             categ = 3;

@@ -13,11 +13,35 @@
                 <label for="name"></label>
                 <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="">
                 </div>
+
+                <h4>Precio</h4>
+                <div class="contenedor-form-precio">
+                <label for="precio"></label>
+                <input type="number" name="price" id="precio" placeholder="Precio del producto" required="">
+                </div>
+
+                <h4>Descuento base</h4>
+                <div class="contenedor-form-precio">
+                <label for="discount"></label>
+                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="">
+                </div>
+
+                <h4>Tipo</h4>
+                <div class="contenedor-form-precio">
+                <label for="discount"></label>
+                <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="">
+                </div>
        
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
                 <textarea name="description" id="description" class="form-input"></textarea>
+                </div>
+
+                <div class="contenedor-form-imagen">
+                    <h4>Subir una imagen del producto:</h4>
+                    <label for="imagen-producto" class="form-label"></label>
+					<input name="imagen-producto" type="file" id="imagen-para-subir" required>
                 </div>
 
                 <h4>Seleccione una categoria</h4>
@@ -30,7 +54,7 @@
                     </div>
                 </div>
 
-                <h4>Seleccione una subcategoria</h4>
+                <!-- <h4>Seleccione una subcategoria</h4>
                 <div class="contenedor-form-categoria">
                     <div class="label-box">
                         <label for="subCategory"></label>
@@ -45,25 +69,7 @@
                             <option value="WATER-COOLER">WATER COOLER</option>
                         </select>
                     </div>
-                </div>
-
-                <h4>Precio</h4>
-                <div class="contenedor-form-precio">
-                <label for="precio"></label>
-                <input type="number" name="price" id="precio" placeholder="Precio del producto" required="">
-                </div>
-
-                <h4>Descuento base</h4>
-                <div class="contenedor-form-precio">
-                <label for="discount"></label>
-                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="">
-                </div>
-
-                <div class="contenedor-form-imagen">
-                    <h4>Subir una imagen del producto:</h4>
-                    <label for="imagen-producto" class="form-label"></label>
-					<input name="imagen-producto" type="file" id="imagen-para-subir" required>
-                </div>
+                 </div> -->               
            
                 <div class="contenedor-form-botones">
                 <button type="submit">Enviar</button>
