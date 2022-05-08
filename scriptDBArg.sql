@@ -32,7 +32,7 @@ CREATE TABLE `categoria_usuario` (
   `id_categoria_usuario` int unsigned NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id_categoria_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,8 +40,8 @@ CREATE TABLE `categoria_usuario` (
 --
 
 
-INSERT INTO `categoria_usuario` VALUES (1,'Cliente'),
-(2,'Administrador');
+INSERT INTO `categoria_usuario` VALUES (NULL,'Cliente'),
+(NULL,'Administrador');
 
 --
 -- Table structure for table `usuario`
@@ -64,7 +64,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`id_usuario`),
   KEY `categoria_usuario_id_foreign` (`id_categoria_usuario`),
   CONSTRAINT `categoria_usuario_id_foreign` FOREIGN KEY (`id_categoria_usuario`) REFERENCES `categoria_usuario` (`id_categoria_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,8 +72,8 @@ CREATE TABLE `usuario` (
 --
 
 
-INSERT INTO `usuario` VALUES (1,'Alejandro','Jabo','12345A','alejandro@digitalhouse.com','123456','imagenUsers1650340819929.jpg',NULL,NULL,2),
-(2,'Perrito','Joven','12345AA','perrito@digitalhouse.com','1234567','imagenUsers1650340819929.jpg',NULL,NULL,1);
+INSERT INTO `usuario` VALUES (NULL,'Alejandro','Jabo','12345A','alejandro@digitalhouse.com','123456','imagenUsers1650340819929.jpg',NULL,NULL,2),
+(NULL,'Perrito','Joven','12345AA','perrito@digitalhouse.com','1234567','imagenUsers1650340819929.jpg',NULL,NULL,1);
 
 
 
@@ -89,7 +89,7 @@ CREATE TABLE `categoria_producto` (
   `id_categoria_producto` int unsigned NOT NULL AUTO_INCREMENT,
   `titulo_categoria` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id_categoria_producto`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,9 +97,9 @@ CREATE TABLE `categoria_producto` (
 --
 
 
-INSERT INTO `categoria_producto` VALUES (1,'pc_gamer'),
-(2,'notebooks'),
-(3,'componentes');
+INSERT INTO `categoria_producto` VALUES (NULL,'pc_gamer'),
+(NULL,'notebooks'),
+(NULL,'componentes');
 
 
 --
@@ -125,7 +125,7 @@ CREATE TABLE `producto` (
   PRIMARY KEY (`id_producto`),
   KEY `categoria_producto_id_foreign` (`id_categoria_producto`),
   CONSTRAINT `categoria_producto_id_foreign` FOREIGN KEY (`id_categoria_producto`) REFERENCES `categoria_producto` (`id_categoria_producto`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,14 +134,17 @@ CREATE TABLE `producto` (
 
 
 INSERT INTO `producto` VALUES (NULL,'PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500w',100,10,'desktop',
-	'{"Microprocesador": "Intel Core i3 12100",
+	
+  '{"Microprocesador": "Intel Core i3 12100",
     "Cooler": "WATER COOLER ASUS ROG STRIX LC240 RGB",
     "Motherboard": "MB ASUS 1200 B560",
     "Memoria": "RAM DDR4 Gigabyte 8GB",
     "Disco": "SSD 2.5 SATA3 Kingston 480GB",
-	"Fuente": "PWS Gigabyte 500w 80+",
+	  "Fuente": "PWS Gigabyte 500w 80+",
     "Video": "GPU NVIDIA GTX 1650 4GB",
-    "Gabinete": "Gabinete ATX Gigabye C200"}','pc_gamer_1.png','Equipo entry level INTEL ideal para comenzar a jugar',NULL,NULL,1),
+    "Gabinete": "Gabinete ATX Gigabye C200"}',
+    
+    'pc_gamer_1.png','Equipo entry level INTEL ideal para comenzar a jugar',NULL,NULL,1),
 (NULL,'CPU AMD Ryzen 9 5950x',1000,15,'componente',NULL,'CPU_AMD_Ryzen_9_5950x.jpg','nuevo microprocesador',NULL,NULL,3),
 (NULL,'Gigabyte 15.6 Intel Core i7 16GB SSD 1TB',10000,40,'notebook',
 	'{"Microprocesador": "Intel® Core™ i7-1065G7",
@@ -168,7 +171,7 @@ CREATE TABLE `compra` (
   PRIMARY KEY (`id_compra`),
   KEY `id_usuario_id_foreign` (`id_usuario`),
   CONSTRAINT `id_usuario_id_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,9 +179,9 @@ CREATE TABLE `compra` (
 --
 
 
-INSERT INTO `compra` VALUES (1,100,NULL,1),
-(2,200,NULL,2),
-(3,250,NULL,1);
+INSERT INTO `compra` VALUES (NULL,100,NULL,1),
+(NULL,200,NULL,2),
+(NULL,250,NULL,1);
 
 --
 -- Table structure for table `producto_compra`
@@ -199,15 +202,15 @@ CREATE TABLE `producto_compra` (
   KEY `id_producto_id_foreign` (`id_producto`),
   CONSTRAINT `id_compra_id_foreign` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id_compra`),
   CONSTRAINT `id_producto_id_foreign` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `producto_compra`
+-- Dumping data for tablºe `producto_compra`
 --
 
 
-INSERT INTO `producto_compra` VALUES (1,100,NULL,1,1),
-(2,300,NULL,2,2),
-(3,400,NULL,3,3);
+INSERT INTO `producto_compra` VALUES (NULL,100,NULL,1,1),
+(NULL,300,NULL,2,2),
+(NULL,400,NULL,3,3);
 

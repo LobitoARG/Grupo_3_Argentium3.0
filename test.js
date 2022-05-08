@@ -6,6 +6,33 @@ const sequelize = db.sequelize;
 const {Op} = require('sequelize');
 
 
+comp = {
+    Microprocesador:" descripCPU",
+    Cooler:" descripWC",
+    Motherboard:" descripMB",
+    Memoria:" descripRAM",
+    Disco:" descripSSD",
+    Fuente:" descripPWS",
+    Video:" descripGPU",
+    Gabinete:" descripGA"
+};
+compJSON = JSON.stringify(comp)
+
+console.log(compJSON);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // db.Producto.findAll({
     //         include: ['categoria_producto']
     //     })
@@ -20,24 +47,24 @@ const {Op} = require('sequelize');
     //      });
 
 
-        //Necesito traer un producto por ID
-        db.Producto.findByPk(150,{
-            include: ['categoria_producto']
-        })
-        .then(resultadoPromesa => {
-                let ProductoEJS = resultadoPromesa;
+        // //Necesito traer un producto por ID
+        // db.Producto.findByPk(150,{
+        //     include: ['categoria_producto']
+        // })
+        // .then(resultadoPromesa => {
+        //         let ProductoEJS = resultadoPromesa;
                 
-                if(ProductoEJS.componentes == null){
-                console.log(ProductoEJS);
-                }
-                else{                  
-                let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
-                let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
-                let ComponentesEJSvalues = Object.values(ComponentesEJS);                           
-                console.log(ProductoEJS, ComponentesEJSkeys, ComponentesEJSvalues); 
-                }       
+        //         if(ProductoEJS.componentes == null){
+        //         console.log(ProductoEJS);
+        //         }
+        //         else{                  
+        //         let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
+        //         let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
+        //         let ComponentesEJSvalues = Object.values(ComponentesEJS);                           
+        //         console.log(ProductoEJS, ComponentesEJSkeys, ComponentesEJSvalues); 
+        //         }       
                 
-            })
+        //     })
 
 
 

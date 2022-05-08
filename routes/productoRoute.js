@@ -4,8 +4,8 @@ const path = require('path');
 const multer = require('multer');
 const authMiddleware = require('../middlewares/authMiddlewares');
 const guestMiddleware = require('../middlewares/guestMiddleware');
-
 const router = express.Router();
+
 const storage = multer.diskStorage({
     destination: (req,file, cb) =>{
         let categoria = req.body.category;
@@ -19,6 +19,10 @@ const storage = multer.diskStorage({
     }
 })
 const upload = multer ({storage})
+
+
+
+
 /*** OBTENER 1 PRODUCTO ***/ 
 router.get('/detailProduct/:id', productoController.detailProduct);
 
@@ -30,7 +34,7 @@ router.get('/create',authMiddleware,productoController.createProduct); /*** SELE
 router.get('/create/createProduct-pc',authMiddleware, productoController.createProductPC); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
 router.get('/create/createProduct-ntbk',authMiddleware, productoController.createProductntbk);
 router.get('/create/createProduct-comp',authMiddleware,productoController.createProductcomp);
-router.post('/', upload.single('imagen-producto'),productoController.store);
+router.post('/', upload.single('imagenProducto'),productoController.store);
 
 
 

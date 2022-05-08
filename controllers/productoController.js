@@ -4,6 +4,7 @@ const fs = require('fs');
 const db = require('../src/database/models');
 const sequelize = db.sequelize; 
 const {Op} = require('sequelize');
+const { traceDeprecation } = require('process');
 
 
 const productsFilePath = path.join(__dirname, '../src/data/products.json');
@@ -39,19 +40,41 @@ const productoController = {
    
     // Create - Metodo para crear el producto en el JSON
     store: (req,res) => {
+        comp = {
+            Microprocesador: req.body.descripCPU,
+            Cooler: req.body.descripWC,
+            Motherboard: req.body.descripMB,
+            Memoria: req.body.descripRAM,
+            Disco: req.body.descripSSD,
+            Fuente: req.body.descripPWS,
+            Video: req.body.descripGPU,
+            Gabinete: req.body.descripGAB
+        };
+        compJSON = JSON.stringify(comp)
 
-        let productosActuales = fs.readFileSync(productsFilePath, 'utf-8')
-		productosActuales = JSON.parse(productosActuales)
-		let newProduct = req.body;
-       	//newProduct.image = req.file.filename; (DESCOMENTAR CUANDO ESTÉ IMPLEMENTADO EL CAMPO FILE EN EL EJS Y EL MULTER)
-		let ultimoIndice = productosActuales.length+1;
-		newProduct.id = ultimoIndice;
-		productosActuales.push(newProduct)
-		let newProductoJSON = JSON.stringify(productosActuales)
-		//const nuevaVariableJSON = JSON.stringify(newProduct)
-		fs.writeFileSync(productsFilePath, newProductoJSON)
-		//products.push(newProductoJSON);
-		res.redirect('/')
+        let categ;
+        if(req.body.category == 'pc_gamer'){
+            categ = 1;
+        }
+        else if (req.body.category == 'notebooks'){
+            categ = 2;
+        }
+        else{
+            categ = 3;
+        }
+
+        db.Producto.create({        
+        nombre: req.body.name,
+        precio: req.body.price,
+        descuento: req.body.discount,
+        tipo: req.body.type,
+        componentes: compJSON,
+        imagen: req.file.filename,
+        descripcion: req.body.description,
+        id_categoria_producto: categ
+        });
+
+        res.redirect('/')
     },
     
     editProduct: (req,res) => res.render('./products/editProduct'),
