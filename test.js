@@ -33,21 +33,68 @@ const {Op} = require('sequelize');
 
 
 
-     db.Producto.findByPk(1,{
-        include: ['categoria_producto']
-    })
-    .then(resultadoPromesa => {
-            let productoSeleccionado = resultadoPromesa;
-            let ComponentesEJS = JSON.parse(productoSeleccionado.componentes);
-            let ComponentesEJSkeys = productoSeleccionado._options.attributes;  
-            console.log(ComponentesEJS);
-        });
+    //  db.Producto.findByPk(1,{
+    //     include: ['categoria_producto']
+    // })
+    // .then(resultadoPromesa => {
+    //         let productoSeleccionado = resultadoPromesa;
+    //         let ComponentesEJS = JSON.parse(productoSeleccionado.componentes);
+    //         let ComponentesEJSkeys = productoSeleccionado._options.attributes;  
+    //         console.log(ComponentesEJS);
+    //     });
 
 
 
+    // function getIdCategoria (param) {
+    //     if (param == 'pc_gamer'){
+    //         return 1;
+    //     }
+    //     else if (param == 'notebooks'){
+    //         return 2;
+    //     }
+    //     else{
+    //         return 3;
+    //     }
+    // }
+
+    // var gamer = 'pc_gamer';
+    // console.log(getIdCategoria('notebooks'));
+
+   let miobjeto = {
+        name: 'PC DE PRUEBA',
+        price: '12313',
+        discount: '2',
+        type: '-jklhl',
+        descripCPU: 'jkh',
+        descripWC: 'lkjh',
+        descripMB: 'lkj',
+        descripRAM: 'hlk',
+        descripSSD: 'jh',
+        descripGPU: 'lkj',
+        descripPWS: 'hlkjh',
+        descripGAB: 'lkj',
+        description: 'hl',
+        category: 'pc_gamer'
+      };
+
+
+    console.log(miobjeto[0]);
 
 
 
+    //   console.log()
+
+
+    //   var components = new Object();
+    //   if (miobjeto.descripCPU){
+    //       components.Microprocesador = miobjeto.descripCPU;
+    //   }
+
+    //   if(miobjeto.descripGAB){
+    //       components.Gabinete = miobjeto.descripGAB;
+    //   }
+
+    //   console.log(components);
 
 
 

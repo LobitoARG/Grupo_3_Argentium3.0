@@ -6,7 +6,7 @@
     <main>
 
         <div class="contenedor-main-form">
-            <form method="POST" action="/products/edit/<%= productoSeleccionado.id_producto %>?_method=PUT" class="form-register">
+            <form method="POST" action="/products/edit/<%= productoSeleccionado.id_producto %>?_method=PUT" class="form-register" enctype="multipart/form-data">
 
                 <h1>Editando: <%=productoSeleccionado.name %> </h1>
                 <h4>Nombre del producto</h4>
@@ -52,7 +52,7 @@
                 <div class="contenedor-form-imagen">
                     <h4>Subir una imagen del producto:</h4>
                     <label for="imagenProducto" class="form-label"></label>
-					<input name="imagenProducto" type="file" id="imagen-para-subir" >
+					<input name="imagenProducto" type="file" id="imagen-para-subir" required>
                 </div>                     
                              
 
@@ -61,7 +61,7 @@
                     <h4><%=ComponentesEJSkeys[i]%></h4>
                 <div class="contenedor-form-nombre">
                 <label for="<%=ComponentesEJSkeys[i]%>"></label>
-                <input type="text" name="<%=ComponentesEJSkeys[i]%>" id="<%=ComponentesEJSkeys[i]%>" placeholder="<%=ComponentesEJSkeys[i]%>" value="<%=ComponentesEJS[i]%>">
+                <input type="text" name="<%=ComponentesEJSkeys[i]%>" id="<%=ComponentesEJSkeys[i]%>" placeholder="<%=ComponentesEJSkeys[i]%>" value="<%=ComponentesEJSvalues[i]%>">
                 </div>                
                 <% } %>           
                                

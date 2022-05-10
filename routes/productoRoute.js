@@ -40,7 +40,7 @@ router.post('/', upload.single('imagenProducto'),productoController.store);
 /*** EDITAR UN PRODUCTO ***/ 
 
 router.get('/edit/:id', productoController.edit); 
-router.put('/edit/:id',  upload.single('imagenProducto'),productoController.update); 
+router.put('/edit/:id', upload.single('imagenProducto'),productoController.update); 
 
 /*** OBTENER TODOS LOS PRODUCTOS ***/ 
 router.get('/', productoController.index);

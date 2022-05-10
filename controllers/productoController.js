@@ -10,6 +10,66 @@ const { traceDeprecation } = require('process');
 const productsFilePath = path.join(__dirname, '../src/data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+//FUNCIONES
+
+function getIdCategoria (param) {
+    if (param == 'pc_gamer'){
+        return 1;
+    }
+    else if (param == 'notebooks'){
+        return 2;
+    }
+    else{
+        return 3;
+    }
+}
+
+function getComponentes (param){  
+                    
+    var components = new Object();
+    if (param.descripCPU){
+        components.Microprocesador = miobjeto.descripCPU;
+    }
+
+    if(param.descripWC){
+        components.Cooler = miobjeto.descripWC;
+    }
+
+    if(param.descripMB){
+        components.Motherboard = miobjeto.descripMB;
+    }
+
+    if(param.descripRAM){
+        components.RAM = miobjeto.descripRAM;
+    }
+
+    if(param.descripSSD){
+        components.Disco = miobjeto.descripSSD;
+    }        
+
+    if(param.descripPWS){
+        components.Fuente = miobjeto.descripPWS;
+    }
+    
+    if(param.descripGPU){
+        components.Video = miobjeto.descripGPU;
+    }   
+
+    if(param.descripGAB){
+        components.Gabinete = miobjeto.descripGAB;
+    }
+
+    if(param.componente){
+        components.Componente = miobjeto.componente;
+    }
+    return components;       
+  }
+
+
+
+
+
+
 
 const productoController = {
 
@@ -52,50 +112,20 @@ const productoController = {
    
     // Create - Metodo para crear el producto en el JSON
     store: (req,res) => {
-        let categ;
-        let compJSON = null;        
-        if(req.body.category == 'pc_gamer'){
-            categ = 1;            
-            let comp = {
-                Microprocesador: req.body.descripCPU,
-                Cooler: req.body.descripWC,
-                Motherboard: req.body.descripMB,
-                RAM: req.body.descripRAM,
-                Disco: req.body.descripSSD,
-                Fuente: req.body.descripPWS,
-                Video: req.body.descripGPU,
-                Gabinete: req.body.descripGAB
-            };        
-            compJSON = JSON.stringify(comp)
-        }
-        else if (req.body.category == 'notebooks'){
-            categ = 2;
-            let comp = {
-                Microprocesador: req.body.cpu_name,
-                RAM: req.body.ram_name,
-                Disco: req.body.ssd_name,
-                Fuente: req.body.pws_name,
-                Video: req.body.gpu_name
-            };        
-            compJSON = JSON.stringify(comp)
-        }
-        else{
-            categ = 3;
-            let comp = {
-                Componente: req.body.componente
-            }
-            compJSON = JSON.stringify(comp);
-        }
+        let cmp = getComponentes(req.body);
+        let cmpjson = JSON.stringify(cmp);
+        let categid = getIdCategoria(req.body.category);
+        
 
         db.Producto.create({        
         nombre: req.body.name,
         precio: req.body.price,
         descuento: req.body.discount,
         tipo: req.body.type,
-        componentes: compJSON,
+        componentes: cmpjson,
         imagen: req.file.filename,
         descripcion: req.body.description,
-        id_categoria_producto: categ
+        id_categoria_producto: categid
         });
 
         res.redirect('/')
@@ -117,72 +147,32 @@ const productoController = {
         })
         .then(resultadoPromesa => {
                 let productoSeleccionado = resultadoPromesa;
-                let ComponentesEJS = JSON.parse(productoSeleccionado.componentes);
-                let ComponentesEJSkeys = Object.keys(ComponentesEJS);                
-                res.render('./products/editProduct', {productoSeleccionado, ComponentesEJS, ComponentesEJSkeys})
+                let ComponentesEJS = JSON.parse(productoSeleccionado.componentes);                
+                let ComponentesEJSkeys = Object.keys(ComponentesEJS);
+                let ComponentesEJSvalues = Object.values(ComponentesEJS);
+                res.render('./products/editProduct', {productoSeleccionado, ComponentesEJSvalues, ComponentesEJSkeys})
         });
 	},
     update: (req, res) => {
-		
-		let id = req.params.id;
-		let infoForm=req.body;
-        /*
-        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-        console.log(id)
-        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-		console.log(infoForm)
-        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')*/
+        let cmp = getComponentes(req.body);
+        let cmpjson = JSON.stringify(cmp);
+        let categid = getIdCategoria(req.body.category);
+
+        db.Producto.update({
+        nombre: req.body.name,
+        precio: req.body.precio,
+        descuento: req.body.discount,
+        tipo: req.body.description,
+        id_categoria_producto: categid,
+        imagen: req.file.filename,
+        componentes: cmpjson,     
+        },
         
-		products.forEach(function (elemento){
-			if (elemento.id == id)
-			{
-				elemento.name = infoForm.name;
-                if (infoForm.descripCPU != null)
-                {
-                    elemento.descripCPU = infoForm.descripCPU;
-                }
+        {where: {id_producto: req.params.id}
+        
+        })
 
-                if (infoForm.descripWC != null)
-                {
-                    elemento.descripWC = infoForm.descripWC;
-                }
-                
-                if (infoForm.descripMB != null)
-                {
-                    elemento.descripMB = infoForm.descripMB;
-                }
 
-                if (infoForm.descripRAM != null)
-                {
-                    elemento.descripRAM = infoForm.descripRAM;
-                }
-
-                if (infoForm.descripSSD != null)
-                {
-                    elemento.descripSSD = infoForm.descripSSD;
-                }
-
-                if (infoForm.descripGPU != null)
-                {
-                    elemento.descripGPU = infoForm.descripGPU;
-                }
-
-                if (infoForm.descripPWS != null)
-                {
-                    elemento.descripPWS = infoForm.descripPWS;
-                }
-
-                if (infoForm.descripGAB != null)
-                {
-                    elemento.descripGAB = infoForm.descripGAB;
-                }
-				elemento.description = infoForm.description;
-                elemento.price = infoForm.price;
-				elemento.discount = infoForm.discount;
-			}
-		})
-	
-		fs.writeFileSync(productsFilePath,JSON.stringify(products))
 		res.redirect('/')
 	},
     destroy : (req, res) => {
