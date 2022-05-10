@@ -6,106 +6,65 @@
     <main>
 
         <div class="contenedor-main-form">
-            <form method="POST" action="/products/edit/<%= productoSeleccionado.id %>?_method=PUT" class="form-register">
+            <form method="POST" action="/products/edit/<%= productoSeleccionado.id_producto %>?_method=PUT" class="form-register">
 
                 <h1>Editando: <%=productoSeleccionado.name %> </h1>
                 <h4>Nombre del producto</h4>
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
-                <input type="text" name="name" required value="<%=productoSeleccionado.name %>">
+                <input type="text" name="name" required value="<%=productoSeleccionado.nombre %>">
                 </div>
-
-                <% if (productoSeleccionado.descripCPU != null){ %>            
-                <h4>Microprocesador</h4>
-                <div class="contenedor-form-nombre">
-                <label for="descripCPU"></label>
-                <input type="text" name="descripCPU" required value="<%=productoSeleccionado.descripCPU %>">
-                </div>
-                <% } %> 
-
-                <% if (productoSeleccionado.descripWC != null){ %>
-                <h4>Water Cooler</h4>
-                <div class="contenedor-form-nombre">
-                <label for="descripWC"></label>
-                <input type="text" name="descripWC" required value="<%=productoSeleccionado.descripWC %>">
-                </div>
-                <% } %> 
-
-
-                <% if (productoSeleccionado.descripMB != null){ %>
-                <h4>Motherboard</h4>
-                <div class="contenedor-form-nombre">
-                <label for="descripMB"></label>
-                <input type="text" name="descripMB" required value="<%=productoSeleccionado.descripMB %>">
-                </div>
-                <% } %> 
-
-                <% if (productoSeleccionado.descripRAM != null){ %>
-                <h4>RAM</h4>
-                <div class="contenedor-form-nombre">
-                <label for="descripRAM"></label>
-                <input type="text" name="descripRAM" required value="<%=productoSeleccionado.descripRAM %>">
-                </div>
-                <% } %> 
-
-                <% if (productoSeleccionado.descripSSD != null){ %>
-                <h4>Almacenamiento</h4>
-                <div class="contenedor-form-nombre">
-                <label for="descripSSD"></label>
-                <input type="text" name="descripSSD" required value="<%=productoSeleccionado.descripSSD %>">
-                </div>
-                <% } %> 
-
-                <% if (productoSeleccionado.descripGPU != null){ %>
-                <h4>Placa de video</h4>
-                <div class="contenedor-form-nombre">
-                <label for="descripGPU"></label>
-                <input type="text" name="descripGPU" required value="<%=productoSeleccionado.descripGPU %>">
-                </div>
-                <% } %> 
-
-                <% if (productoSeleccionado.descripPWS != null){ %>
-                <h4>Fuente de alimentacion</h4>
-                <div class="contenedor-form-nombre">
-                <label for="descripPWS"></label>
-                <input type="text" name="descripPWS" required value="<%=productoSeleccionado.descripPWS %>">
-                </div>
-                <% } %> 
-
-                <% if (productoSeleccionado.descripGAB != null){ %>
-                <h4>Gabinete</h4>
-                <div class="contenedor-form-nombre">
-                <label for="descripGAB"></label>
-                <input type="text" name="descripGAB" required value="<%=productoSeleccionado.descripGAB %>">
-                </div>
-                <% } %> 
-
-                <% if (productoSeleccionado.OS != null){ %>
-                <h4>Sistema operativo</h4>
-                <div class="contenedor-form-nombre">
-                <label for="OS"></label>
-                <input type="text" name="OS" required value="<%=productoSeleccionado.OS %>">
-                </div>
-                <% } %> 
-
-                <h4>Descripcion</h4>
-                <div class="contenedor-form-descripcion">
-                <label for="description"></label>
-                <input type="text" name="description" required value="<%=productoSeleccionado.description %>">
-                </div>
-                
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
                 <label for="price"></label>
-                <input type="number" name="price" required value="<%=productoSeleccionado.price %>">
+                <input type="number" name="price" required value="<%=productoSeleccionado.precio %>">
                 </div>
 
                 <h4>Descuento</h4>
                 <div class="contenedor-form-precio">
                 <label for="discount"></label>
-                <input type="number" name="discount" required="" value="<%=productoSeleccionado.discount %>">
+                <input type="number" name="discount" required="" value="<%=productoSeleccionado.descuento %>">
                 </div>
+
+                <h4>Tipo</h4>
+                <div class="contenedor-form-descripcion">
+                <label for="type"></label>
+                <input type="text" name="type" required value="<%=productoSeleccionado.tipo %>">
+                </div>
+
+                <h4>Descripcion</h4>
+                <div class="contenedor-form-descripcion">
+                <label for="description"></label>
+                <input type="text" name="description" required value="<%=productoSeleccionado.descripcion %>">
+                </div>
+
+                <h4>Categoria</h4>
+                <div class="contenedor-form-category">
+                    <label for="category"></label>
+                    <select name="category" id="category" class="form-input">
+                        <option value="pc_gamer">PC Gamer</option>
+                        <option value="notebooks">Notebooks</option>
+                        <option value="componentes">Componentes</option>
+                    </select>
+                </div>
+                
+                <div class="contenedor-form-imagen">
+                    <h4>Subir una imagen del producto:</h4>
+                    <label for="imagenProducto" class="form-label"></label>
+					<input name="imagenProducto" type="file" id="imagen-para-subir" >
+                </div>                     
+                             
+
+
+                <% for( let i = 0; i < ComponentesEJSkeys.length; i++ ) { %>
+                    <h4><%=ComponentesEJSkeys[i]%></h4>
+                <div class="contenedor-form-nombre">
+                <label for="<%=ComponentesEJSkeys[i]%>"></label>
+                <input type="text" name="<%=ComponentesEJSkeys[i]%>" id="<%=ComponentesEJSkeys[i]%>" placeholder="<%=ComponentesEJSkeys[i]%>" value="<%=ComponentesEJS[i]%>">
+                </div>                
+                <% } %>           
+                               
 
                 <div class="contenedor-form-botones">
                 <button type="submit">Guardar</button>

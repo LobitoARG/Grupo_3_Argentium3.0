@@ -20,19 +20,28 @@ const {Op} = require('sequelize');
 
 // console.log(compJSON);
 
-db.Producto.findAll({
-    include: ['categoria_producto']
-})
-.then(resultadoPromesa => {
-    var ProductoEJS = resultadoPromesa;   
-    for (let i = 0; i < ProductoEJS.length; i++) {
+// db.Producto.findAll({
+//     include: ['categoria_producto']
+// })
+// .then(resultadoPromesa => {
+//     var ProductoEJS = resultadoPromesa;   
+//     for (let i = 0; i < ProductoEJS.length; i++) {
     
-        console.log(JSON.parse(ProductoEJS[i].componentes));
-    }
-});
+//         console.log(JSON.parse(ProductoEJS[i].componentes));
+//     }
+// });
 
 
 
+     db.Producto.findByPk(1,{
+        include: ['categoria_producto']
+    })
+    .then(resultadoPromesa => {
+            let productoSeleccionado = resultadoPromesa;
+            let ComponentesEJS = JSON.parse(productoSeleccionado.componentes);
+            let ComponentesEJSkeys = productoSeleccionado._options.attributes;  
+            console.log(ComponentesEJS);
+        });
 
 
 

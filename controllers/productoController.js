@@ -36,7 +36,19 @@ const productoController = {
 
     productCart: (req, res) => res.render('./products/productCart'),
     // Create - Form to create
-    createProduct: (req,res) => res.render('./products/createProduct'),
+    createProduct: (req,res) => res.render('./products/createProduct'),//SELECCION DE CATEGORIA
+ 
+    createProductPC: (req,res) => {
+        res.render('products/createProduct-PC')
+    },
+
+    createProductntbk: (req,res) => {
+        res.render('products/createProduct-ntbk')
+    },
+
+    createProductcomp: (req,res) => {
+        res.render('products/createProduct-comp')
+    },
    
     // Create - Metodo para crear el producto en el JSON
     store: (req,res) => {
@@ -88,37 +100,27 @@ const productoController = {
 
         res.redirect('/')
     },
-    
-    editProduct: (req,res) => res.render('./products/editProduct'),
-    
+        
     index: (req,res) => {
-    //Necesito traer todos los productos para que se muestren en el home. 
-                db.Producto.findAll({
-                    include: ['categoria_producto']
-                })
-                .then(resultadoPromesa => {
-                    let ProductoEJS = resultadoPromesa;                                            
-                    res.render('./products/products', {ProductoEJS});
-                })       
+       //Necesito traer todos los productos para que se muestren en el home. 
+            db.Producto.findAll({
+            include: ['categoria_producto']
+            })
+            .then(resultadoPromesa => {
+            let ProductoEJS = resultadoPromesa;                                            
+            res.render('./products/products', {ProductoEJS});
+            })       
     },
-
-
-    createProductPC: (req,res) => {
-        res.render('products/createProduct-PC')
-    },
-
-    createProductntbk: (req,res) => {
-        res.render('products/createProduct-ntbk')
-    },
-
-    createProductcomp: (req,res) => {
-        res.render('products/createProduct-comp')
-    },
-    edit: (req, res) => {
-		let idProducto = req.params.id;
-		//console.log (idProducto);
-		res.render('products/editProduct',{"productoSeleccionado": products[idProducto-1]});
-
+     edit: (req, res) => {
+		db.Producto.findByPk(req.params.id,{
+            include: ['categoria_producto']
+        })
+        .then(resultadoPromesa => {
+                let productoSeleccionado = resultadoPromesa;
+                let ComponentesEJS = JSON.parse(productoSeleccionado.componentes);
+                let ComponentesEJSkeys = Object.keys(ComponentesEJS);                
+                res.render('./products/editProduct', {productoSeleccionado, ComponentesEJS, ComponentesEJSkeys})
+        });
 	},
     update: (req, res) => {
 		

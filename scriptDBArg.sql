@@ -116,7 +116,7 @@ CREATE TABLE `producto` (
   `precio` DECIMAL(10,2) NOT NULL,
   `descuento` INT NULL,  
   `tipo` VARCHAR(50) NOT NULL,
-  `componentes` TEXT,
+  `componentes` TEXT NOT NULL,
   `imagen` VARCHAR(100) NOT NULL,
   `descripcion` TEXT NOT NULL,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -133,25 +133,9 @@ CREATE TABLE `producto` (
 --
 
 
-INSERT INTO `producto` VALUES (NULL,'PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500w',100,10,'desktop',
-	
-  '{"Microprocesador": "Intel Core i3 12100",
-    "Cooler": "WATER COOLER ASUS ROG STRIX LC240 RGB",
-    "Motherboard": "MB ASUS 1200 B560",
-    "Memoria": "RAM DDR4 Gigabyte 8GB",
-    "Disco": "SSD 2.5 SATA3 Kingston 480GB",
-	  "Fuente": "PWS Gigabyte 500w 80+",
-    "Video": "GPU NVIDIA GTX 1650 4GB",
-    "Gabinete": "Gabinete ATX Gigabye C200"}',
-    
-    'pc_gamer_1.png','Equipo entry level INTEL ideal para comenzar a jugar',NULL,NULL,1),
-(NULL,'CPU AMD Ryzen 9 5950x',1000,15,'componente',{'Microprocesador'},'CPU_AMD_Ryzen_9_5950x.jpg','nuevo microprocesador',NULL,NULL,3),
-(NULL,'Gigabyte 15.6 Intel Core i7 16GB SSD 1TB',10000,40,'notebook',
-	'{"Microprocesador": "Intel® Core™ i7-1065G7",
-    "Memoria": "RAM SODIMM DDR4 16GB 2666 mhz",
-    "Disco": "SSD M.2 NVME 1TB",    
-    "Fuente": "Integrated 30wh",    
-    "OS": "Windows 10 Pro x64 bits"}','notebook_prueba_3.png','Notebook Gigabyte Pro Core i7',NULL,NULL,2);
+INSERT INTO `producto` VALUES (NULL,'PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500w',100,10,'desktop','{"Microprocesador": "Intel Core i3 12100","Cooler": "WATER COOLER ASUS ROG STRIX LC240 RGB","Motherboard": "MB ASUS 1200 B560","Memoria": "RAM DDR4 Gigabyte 8GB","Disco": "SSD 2.5 SATA3 Kingston 480GB","Fuente": "PWS Gigabyte 500w 80+","Video": "GPU NVIDIA GTX 1650 4GB","Gabinete": "Gabinete ATX GigabyeC200"}','pc_gamer_1.png','Equipo entry level INTEL ideal para comenzar a jugar',NULL,NULL,1),
+(NULL,'CPU AMD Ryzen 9 5950x',1000,15,'componente', '{"Microprocesador": "Microprocesador"}','CPU_AMD_Ryzen_9_5950x.jpg','nuevo microprocesador',NULL,NULL,3),
+(NULL,'Gigabyte 15.6 Intel Core i7 16GB SSD 1TB',10000,40,'notebook','{"Microprocesador": "Intel Core i7-1065G7","Memoria": "RAM SODIMM DDR4 16GB 2666 mhz","Disco": "SSD M.2 NVME 1TB","Fuente": "Integrated 30wh","OS": "Windows 10 Pro x64 bits"}','notebook_prueba_3.png','Notebook Gigabyte Pro Core i7',NULL,NULL,2);
 
 
 
@@ -206,7 +190,7 @@ CREATE TABLE `producto_compra` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for tablºe `producto_compra`
+-- Dumping data for tablÂºe `producto_compra`
 --
 
 
