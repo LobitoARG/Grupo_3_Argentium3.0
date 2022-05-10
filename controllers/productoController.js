@@ -79,19 +79,16 @@ const productoController = {
                 include: ['categoria_producto']
             })
             .then(resultadoPromesa => {
-                    let ProductoEJS = resultadoPromesa;
-                    
-                    if(ProductoEJS.componentes == null){
-                    res.render('./products/detailProduct', {ProductoEJS});
-                    }
-                    else{                  
+                    let ProductoEJS = resultadoPromesa;                   
+                   
+                                     
                     let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
                     let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
                     let ComponentesEJSvalues = Object.values(ComponentesEJS);                           
                     res.render('./products/detailProduct', {ProductoEJS, ComponentesEJSkeys, ComponentesEJSvalues});
-                    }        
+                    })        
                     
-                })       
+                       
     },
 
     productCart: (req, res) => res.render('./products/productCart'),
