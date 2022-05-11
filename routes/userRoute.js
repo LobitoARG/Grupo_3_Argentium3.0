@@ -27,23 +27,23 @@ const validacionLogIn = [
     .notEmpty().withMessage('Debes completar el campo de contraseña').bail()
     .isLength({min:5}).withMessage('La contraseña debe tener al menos 5 caracteres')
 ];
-
+ 
 /*** OBTENER TODOS LOS USUARIOS ***/ 
-router.get('/list', authMiddleware,userController.index); // authMiddleware,
+router.get('/list', userController.index); // authMiddleware,
 
 /*** LOG IN DE USUARIO ***/ 
 router.get('/login',guestMiddleware,userController.login); // guestMiddleware ,
-router.post('/login', validacionLogIn, userController.processlogin) // sumamos el verificador del login in llamado validacionLogIn
+router.post('/login',  userController.processlogin) // 10.05 que primero funcione y dsp sumamos el verificador validacionLogIn
 
-router.get('/detailUsers/:id',authMiddleware,userController.detailUser); // authMiddleware ,
-
+router.get('/detailUsers/:id',userController.detailUser); // authMiddleware ,
+ 
 /*** CREAR UN USUARIO ***/ 
 router.get('/register',guestMiddleware,userController.createUser); // guestMiddleware,
 router.post('/register',upload.single('imagenUsers'), userController.store); 
 
-router.get('/edit/:id' ,authMiddleware,userController.edit);  // ,authMiddleware
+router.get('/edit/:id' ,userController.edit);  // ,authMiddleware
 router.put('/edit/:id', upload.single('imagenUsers') ,userController.update); 
 
-router.delete('/detailUsers/:id',authMiddleware,userController.destroy);  //  authMiddleware ,
+router.delete('/detailUsers/:id',userController.destroy);  //  authMiddleware ,
 
 module.exports = router; 

@@ -917,6 +917,10 @@ a.btnEndAdd{
 .boton-display-all-products a{
     text-decoration: none;
 }
+.text-ingreso{
+    text-align: center;
+}
+
 
 .contenedor-form-nombre input{
 
@@ -959,7 +963,16 @@ a.btnEndAdd{
     display: inline;
 }
 
+.derechos-reservados-footer{
+    text-align: center;
+}
 
+@media (min-width:300px) {
+    .contenedor-boton-para-enviar button{
+        margin: 0;
+    }
+    
+}
 
 @media (min-width: 400px){
     .register, .login {

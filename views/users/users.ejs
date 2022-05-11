@@ -7,7 +7,7 @@
 <!-- HEADER -->
 <%- include('../partials/header') %> 
    
-
+ 
     <main>        
     <section class="contenedor-section-principal">   
         <h2>Listado de Usuarios</h2>
@@ -16,14 +16,14 @@
                 <h3>Nombre de los usuarios registrados:</h3> 
             </div>
             <% for( let i = 0; i < users.length; i++ ) { %>
-                <lu>
+                <ul>
                         <% if (users[i].first_name) { %>
                             <li class="lista-nombres-usuarios">
-                                <a href="detailUsers/<%=users[i].id%> "><%= users[i].first_name  %></a>
+                                <a href="detailUsers/<%=users[i].id_usuario%> "><%= users[i].first_name  %></a>
                             </li>
                             
                         <% } %>
-                </lu>
+                </ul>
             <% } %>
         </div>
     </section>

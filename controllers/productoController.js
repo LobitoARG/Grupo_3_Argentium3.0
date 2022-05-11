@@ -69,7 +69,7 @@ function getComponentes (param){
 
 
 
-
+ 
 
 const productoController = {
 
@@ -80,7 +80,7 @@ const productoController = {
             })
             .then(resultadoPromesa => {
                     let ProductoEJS = resultadoPromesa;                   
-                   
+                    
                                      
                     let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
                     let ComponentesEJSkeys = Object.keys(ComponentesEJS);   

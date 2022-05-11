@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head.ejs', {title: usersSeleccionado.name}) %> 
+    <%- include('../partials/head.ejs', {title: usersSeleccionado.first_name}) %> 
 <body>
     <%- include('../partials/header.ejs') %> 
     <main>
 
         <div class="contenedor-main-form">
-            <form method="POST" action="/user/edit/<%= usersSeleccionado.id %>?_method=PUT" class="form-register" enctype="multipart/form-data">
+            <form method="POST" action="/user/edit/<%= usersSeleccionado.id_usuario %>?_method=PUT" class="form-register" enctype="multipart/form-data">
 
                 <h1>Editando Usuario: <%=usersSeleccionado.first_name %> </h1>
                 <h4>Nombre</h4>

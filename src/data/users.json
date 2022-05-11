@@ -1,1 +1,52 @@
-[{"first_name":"Lobito","last_name":"Jabo","password":"$2a$10$Rqq2ghkwLiBJgB9ZYjZJpuGZGs9TFdKIKz2m/yttQCadCFMVUbqOq","password2":"$2a$10$Rqq2ghkwLiBJgB9ZYjZJpuGZGs9TFdKIKz2m/yttQCadCFMVUbqOq","email":"hjabo97@gmail.com","telefono":"1140301832","imagenUsers":"imagenUsers1650338703069.jpg","id":2},{"first_name":"Hugo","last_name":"Jabo","password":"$2a$10$HsmUBXag24fSrRmXBjIdwu4sXBFQ1nay0NSlW6pgV2rO0LCHFuMVW","password2":"$2a$10$HsmUBXag24fSrRmXBjIdwu4sXBFQ1nay0NSlW6pgV2rO0LCHFuMVW","email":"hjabo97@gmail.com","telefono":"1140301832","imagenUsers":"imagenUsers1650340819929.jpg","id":3},{"first_name":"Leonardo","last_name":"Torrealba","password":"$2a$10$OKOJldRKE4JFxQ1p28AsmuJKwWtSRtwbG090/rdnCvdH05Ik.6apm","password2":"$2a$10$OKOJldRKE4JFxQ1p28AsmuJKwWtSRtwbG090/rdnCvdH05Ik.6apm","email":"leot5865@gmail.com","telefono":"01139157831","imagenUsers":"imagenUsers1650414632831.png","id":3},{"first_name":"Leonardo","last_name":"Torrealba","password":"$2a$10$o8dZoJuLwOh6h1vX4uZlBulKzt/0ebaFV0O2gxiLjLVB9togTcHPC","password2":"$2a$10$o8dZoJuLwOh6h1vX4uZlBulKzt/0ebaFV0O2gxiLjLVB9togTcHPC","email":"leot5865@gmail.com","telefono":"1139157831","imagenUsers":"imagenUsers1652022314289.jpg","id":4},{"first_name":"leo","last_name":"arguin","password":"$2a$10$/jIboi9fmwhp5OsS71Ngr.NilwSVPhPpVG2ZySqxqZvgOd8U0.0qS","password2":"$2a$10$/jIboi9fmwhp5OsS71Ngr.NilwSVPhPpVG2ZySqxqZvgOd8U0.0qS","email":"leoarguinzones@gmail.com","telefono":"12345689","imagenUsers":"imagenUsers1652022379686.jpg","id":5}]
+[
+  {
+    "first_name": "Lobito",
+    "last_name": "Jabo",
+    "password": "$2a$10$Rqq2ghkwLiBJgB9ZYjZJpuGZGs9TFdKIKz2m/yttQCadCFMVUbqOq",
+    "password2": "$2a$10$Rqq2ghkwLiBJgB9ZYjZJpuGZGs9TFdKIKz2m/yttQCadCFMVUbqOq",
+    "email": "hjabo97@gmail.com",
+    "telefono": "1140301832",
+    "imagenUsers": "imagenUsers1650338703069.jpg",
+    "id": 1
+  },
+  {
+    "first_name": "Hugo",
+    "last_name": "Jabo",
+    "password": "$2a$10$HsmUBXag24fSrRmXBjIdwu4sXBFQ1nay0NSlW6pgV2rO0LCHFuMVW",
+    "password2": "$2a$10$HsmUBXag24fSrRmXBjIdwu4sXBFQ1nay0NSlW6pgV2rO0LCHFuMVW",
+    "email": "hjabo97@gmail.com",
+    "telefono": "1140301832",
+    "imagenUsers": "imagenUsers1650340819929.jpg",
+    "id": 2
+  },
+  {
+    "first_name": "Leonardo",
+    "last_name": "Torrealba",
+    "password": "$2a$10$OKOJldRKE4JFxQ1p28AsmuJKwWtSRtwbG090/rdnCvdH05Ik.6apm",
+    "password2": "$2a$10$OKOJldRKE4JFxQ1p28AsmuJKwWtSRtwbG090/rdnCvdH05Ik.6apm",
+    "email": "leot5865@gmail.com",
+    "telefono": "01139157831",
+    "imagenUsers": "imagenUsers1650414632831.png",
+    "id": 3
+  },
+  {
+    "first_name": "Leonardo",
+    "last_name": "Torrealba",
+    "password": "$2a$10$o8dZoJuLwOh6h1vX4uZlBulKzt/0ebaFV0O2gxiLjLVB9togTcHPC",
+    "password2": "$2a$10$o8dZoJuLwOh6h1vX4uZlBulKzt/0ebaFV0O2gxiLjLVB9togTcHPC",
+    "email": "leot5865@gmail.com",
+    "telefono": "1139157831",
+    "imagenUsers": "imagenUsers1652022314289.jpg",
+    "id": 4
+  },
+  {
+    "first_name": "leo",
+    "last_name": "arguin",
+    "password": "$2a$10$/jIboi9fmwhp5OsS71Ngr.NilwSVPhPpVG2ZySqxqZvgOd8U0.0qS",
+    "password2": "$2a$10$/jIboi9fmwhp5OsS71Ngr.NilwSVPhPpVG2ZySqxqZvgOd8U0.0qS",
+    "email": "leoarguinzones@gmail.com",
+    "telefono": "12345689",
+    "imagenUsers": "imagenUsers1652022379686.jpg",
+    "id": 5
+  }
+]
