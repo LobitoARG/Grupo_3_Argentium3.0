@@ -30,9 +30,10 @@ const userController = {
 
 	store: (req,res) => {
 		let newUsers = req.body;
-		let contraseña = req.body.password;
-		let salt = bcrypt.genSaltSync(10)
-		newUsers.password = bcrypt.hashSync(contraseña, salt );
+		let contraseña = req.body.password;		
+		console.log(contraseña);
+
+		newUsers.password = bcrypt.hashSync(contraseña.toString(), 10);
 		db.Usuario.create({
 			first_name:newUsers.first_name,
 			last_name:newUsers.last_name,
@@ -95,9 +96,8 @@ const userController = {
 			
             if(resultado){
 				
-				 console.log(req.body.password);
-
-                if (bcrypt.compareSync(resultado.password,req.body.password))
+				let booleanito = bcrypt.compare(req.body.password, resultado.password);		
+                if (booleanito)
 				{
                     let usuarioALoguearse = {
                     idUsuario: resultado.idUsuario,
