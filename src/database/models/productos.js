@@ -56,7 +56,8 @@ const Producto = sequelize.define(alias, columnas, config);
 Producto.associate = (modelos) => {
     Producto.belongsTo(modelos.categoria_producto, { 
         as: "categoria_producto",            
-        foreignKey: 'id_categoria_producto',            
+        foreignKey: 'id_categoria_producto',
+        onDelete: 'CASCADE'
         });
     
 
@@ -66,7 +67,8 @@ Producto.associate = (modelos) => {
         foreignKey: 'id_producto',
         otherKey: 'id_compra',
         timestamps: true,
-        createdAt: 'created_at'
+        createdAt: 'created_at',
+        onDelete: 'CASCADE'
         });
     }
 

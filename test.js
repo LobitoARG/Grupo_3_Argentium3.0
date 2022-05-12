@@ -60,25 +60,25 @@ const {Op} = require('sequelize');
     // var gamer = 'pc_gamer';
     // console.log(getIdCategoria('notebooks'));
 
-   let miobjeto = {
-        name: 'PC DE PRUEBA',
-        price: '12313',
-        discount: '2',
-        type: '-jklhl',
-        descripCPU: 'jkh',
-        descripWC: 'lkjh',
-        descripMB: 'lkj',
-        descripRAM: 'hlk',
-        descripSSD: 'jh',
-        descripGPU: 'lkj',
-        descripPWS: 'hlkjh',
-        descripGAB: 'lkj',
-        description: 'hl',
-        category: 'pc_gamer'
-      };
+  //  let miobjeto = {
+  //       name: 'PC DE PRUEBA',
+  //       price: '12313',
+  //       discount: '2',
+  //       type: '-jklhl',
+  //       descripCPU: 'jkh',
+  //       descripWC: 'lkjh',
+  //       descripMB: 'lkj',
+  //       descripRAM: 'hlk',
+  //       descripSSD: 'jh',
+  //       descripGPU: 'lkj',
+  //       descripPWS: 'hlkjh',
+  //       descripGAB: 'lkj',
+  //       description: 'hl',
+  //       category: 'pc_gamer'
+  //     };
 
 
-    console.log(miobjeto[0]);
+  //   console.log(miobjeto[0]);
 
 
 
@@ -160,3 +160,16 @@ const {Op} = require('sequelize');
       
       
         // res.render('./users/home', {sales, discounts, news});
+
+
+
+        db.Producto.findByPk(1,{
+          include: ['categoria_producto']
+      })
+      .then(resultadoPromesa => {
+              let ProductoEJS = resultadoPromesa;
+              let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
+              let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
+              let ComponentesEJSvalues = Object.values(ComponentesEJS);                                         
+              console.log(ComponentesEJS);
+      })

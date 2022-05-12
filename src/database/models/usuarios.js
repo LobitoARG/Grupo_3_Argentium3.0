@@ -55,12 +55,14 @@ const config = {
     Usuario.associate = (modelos) => {
         Usuario.belongsTo(modelos.categoria_usuario, { 
             as: "cateogria_usuario",            
-            foreignKey: 'id_categoria_usuario',            
+            foreignKey: 'id_categoria_usuario',
+            onDelete: 'CASCADE'            
         });
 
         Usuario.hasMany(modelos.Compra,{
             as: "Compra",
-            foreignKey: "id_usuario" 
+            foreignKey: "id_usuario",
+            onDelete: 'CASCADE'
         });
     }
 

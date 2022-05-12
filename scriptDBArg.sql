@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `categoria_usuario`;
 CREATE TABLE `categoria_usuario` (
   `id_categoria_usuario` int unsigned NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id_categoria_usuario`)
+  PRIMARY KEY (`id_categoria_usuario`) ON DELETE CASCADE
 )  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,7 +63,7 @@ CREATE TABLE `usuario` (
   `id_categoria_usuario` int unsigned NOT NULL,
   PRIMARY KEY (`id_usuario`),
   KEY `categoria_usuario_id_foreign` (`id_categoria_usuario`),
-  CONSTRAINT `categoria_usuario_id_foreign` FOREIGN KEY (`id_categoria_usuario`) REFERENCES `categoria_usuario` (`id_categoria_usuario`)
+  CONSTRAINT `categoria_usuario_id_foreign` FOREIGN KEY (`id_categoria_usuario`) REFERENCES `categoria_usuario` (`id_categoria_usuario`) ON DELETE CASCADE
 )  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -88,7 +88,7 @@ DROP TABLE IF EXISTS `categoria_producto`;
 CREATE TABLE `categoria_producto` (
   `id_categoria_producto` int unsigned NOT NULL AUTO_INCREMENT,
   `titulo_categoria` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id_categoria_producto`)
+  PRIMARY KEY (`id_categoria_producto`) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -124,7 +124,7 @@ CREATE TABLE `producto` (
  `id_categoria_producto` int UNSIGNED NOT NULL,
   PRIMARY KEY (`id_producto`),
   KEY `categoria_producto_id_foreign` (`id_categoria_producto`),
-  CONSTRAINT `categoria_producto_id_foreign` FOREIGN KEY (`id_categoria_producto`) REFERENCES `categoria_producto` (`id_categoria_producto`)
+  CONSTRAINT `categoria_producto_id_foreign` FOREIGN KEY (`id_categoria_producto`) REFERENCES `categoria_producto` (`id_categoria_producto`) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -550,7 +550,7 @@ CREATE TABLE `compra` (
   `id_usuario` int unsigned NOT NULL,
   PRIMARY KEY (`id_compra`),
   KEY `id_usuario_id_foreign` (`id_usuario`),
-  CONSTRAINT `id_usuario_id_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
+  CONSTRAINT `id_usuario_id_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE
 )  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -580,8 +580,8 @@ CREATE TABLE `producto_compra` (
   PRIMARY KEY (`id_producto_compra`),
   KEY `id_compra_id_foreign` (`id_compra`),
   KEY `id_producto_id_foreign` (`id_producto`),
-  CONSTRAINT `id_compra_id_foreign` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id_compra`),
-  CONSTRAINT `id_producto_id_foreign` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`)
+  CONSTRAINT `id_compra_id_foreign` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id_compra`) ON DELETE CASCADE,
+  CONSTRAINT `id_producto_id_foreign` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE
 )  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

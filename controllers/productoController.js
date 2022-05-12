@@ -79,15 +79,15 @@ const productoController = {
                 include: ['categoria_producto']
             })
             .then(resultadoPromesa => {
-                    let ProductoEJS = resultadoPromesa;                   
-                    
-                                     
+                    let ProductoEJS = resultadoPromesa;
                     let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
                     let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
-                    let ComponentesEJSvalues = Object.values(ComponentesEJS);                           
+                    let ComponentesEJSvalues = Object.values(ComponentesEJS);                                         
                     res.render('./products/detailProduct', {ProductoEJS, ComponentesEJSkeys, ComponentesEJSvalues});
-                    })        
-                    
+            })
+            .catch(()=>{
+                res.redirect('/products')
+            })                   
                        
     },
 
@@ -174,17 +174,12 @@ const productoController = {
 	},
     destroy : (req, res) => {
 		// Do the magic
-		let idProducto = req.params.id;
-		
-		const nuevoProducto = products.filter(function(producto){
-			return producto.id != idProducto;
-		})
-		//console.log (nuevoProducto)
-
-		fs.writeFileSync(productsFilePath,JSON.stringify(nuevoProducto))
-
-		res.redirect('/')
-
+        db.Producto.destroy({
+            where: {
+                id_producto: req.params.id
+            }
+        });
+        res.redirect('/');
 	}
 }
 

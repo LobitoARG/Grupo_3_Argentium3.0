@@ -33,7 +33,8 @@ module.exports=function(sequelize, dataTypes){
     Compra.associate = (modelos) => {
         Compra.belongsTo(modelos.Usuario, { 
             as: "Usuario",            
-            foreignKey: 'id_usuario',            
+            foreignKey: 'id_usuario',  
+            onDelete: 'CASCADE'          
         });
 
         Compra.belongsToMany(modelos.Producto, {
@@ -42,7 +43,8 @@ module.exports=function(sequelize, dataTypes){
             foreignKey: 'id_compra',
             otherKey: 'id_producto',
             timestamps: true,
-            createdAt: 'created_at'
+            createdAt: 'created_at',
+            onDelete: 'CASCADE'
         });
 
 
