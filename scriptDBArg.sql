@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `categoria_usuario`;
 CREATE TABLE `categoria_usuario` (
   `id_categoria_usuario` int unsigned NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id_categoria_usuario`) ON DELETE CASCADE
+  PRIMARY KEY (`id_categoria_usuario`)
 )  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -88,7 +88,7 @@ DROP TABLE IF EXISTS `categoria_producto`;
 CREATE TABLE `categoria_producto` (
   `id_categoria_producto` int unsigned NOT NULL AUTO_INCREMENT,
   `titulo_categoria` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id_categoria_producto`) ON DELETE CASCADE
+  PRIMARY KEY (`id_categoria_producto`)
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -229,7 +229,7 @@ NULL,
 41,
 'PC_GAMER',
 '{
-"Microprocesador": “AMD Ryzen 7 5800x",
+"Microprocesador": "AMD Ryzen 7 5800x",
 "Cooler": "WATER COOLER ASUS ROG STRIX LC240 RGB",
 "Motherboard": "MB ASUS AM4 X570",
 "Memoria": "RAM DDR4 Gigabyte 16GB",
@@ -249,7 +249,7 @@ NULL,
 17,
 'PC_GAMER',
 '{
-"Microprocesador": “AMD Ryzen 9 5950x",
+"Microprocesador": "AMD Ryzen 9 5950x",
 "Cooler": "WATER COOLER ASUS ROG STRIX LC240 RGB",
 "Motherboard": "MB ASUS AM4 X570",
 "Memoria": "RAM DDR4 Gigabyte 16GB",
@@ -343,7 +343,7 @@ NULL,
 4689486.02,
 43,
 'notebook',
-'{"Microprocesador": "AMD RYZEN 7”,
+'{"Microprocesador": "AMD RYZEN 7",
     "Memoria": "RAM 16GB",
     "Disco": "SSD 1TB",    
     "Fuente": "Integrated 30wh",    
@@ -358,7 +358,7 @@ NULL,
 1438542,
 22,
 'notebook',
-'{"Microprocesador": "CORE I 7”,
+'{"Microprocesador": "CORE I 7",
     "Memoria": "RAM 16GB",
     "Disco": "SSD 1TB",    
     "Fuente": "Integrated 30wh",    
@@ -373,7 +373,7 @@ NULL,
 8984999,
 39,
 'notebook',
-'{"Microprocesador": "RYZEN 7”,
+'{"Microprocesador": "RYZEN 7",
     "Memoria": "RAM 16GB",
     "Disco": "SSD 1TB",    
     "Fuente": "Integrated 30wh",    
@@ -496,7 +496,7 @@ NULL,
 NULL,
 NULL,
 3),
-/* (NULL,
+(NULL,
 'Gabinete ATX Corsair 4000',
 24000,
 12,
@@ -507,8 +507,8 @@ NULL,
 Fabricadas en acero, plástico y cristal templado.',
 NULL,
 NULL,
-3), */
-/* (NULL,
+3),
+ (NULL,
 'Gabinete ATX Aerocool Nigthawk',
 28000,
 15,
@@ -519,7 +519,7 @@ NULL,
 Fabricadas en acero, plástico y cristal templado.',
 NULL,
 NULL,
-3), */
+3),
 (NULL,
 'Gabinete ATX Aerocool AIRHAWK',
 33000,

@@ -28,39 +28,39 @@ function getComponentes (param){
                     
     var components = new Object();
     if (param.descripCPU){
-        components.Microprocesador = miobjeto.descripCPU;
+        components.Microprocesador = param.descripCPU;
     }
 
     if(param.descripWC){
-        components.Cooler = miobjeto.descripWC;
+        components.Cooler = param.descripWC;
     }
 
     if(param.descripMB){
-        components.Motherboard = miobjeto.descripMB;
+        components.Motherboard = param.descripMB;
     }
 
     if(param.descripRAM){
-        components.RAM = miobjeto.descripRAM;
+        components.RAM = param.descripRAM;
     }
 
     if(param.descripSSD){
-        components.Disco = miobjeto.descripSSD;
+        components.Disco = param.descripSSD;
     }        
 
     if(param.descripPWS){
-        components.Fuente = miobjeto.descripPWS;
+        components.Fuente = param.descripPWS;
     }
     
     if(param.descripGPU){
-        components.Video = miobjeto.descripGPU;
+        components.Video = param.descripGPU;
     }   
 
     if(param.descripGAB){
-        components.Gabinete = miobjeto.descripGAB;
+        components.Gabinete = param.descripGAB;
     }
 
     if(param.componente){
-        components.Componente = miobjeto.componente;
+        components.Componente = param.componente;
     }
     return components;       
   }
