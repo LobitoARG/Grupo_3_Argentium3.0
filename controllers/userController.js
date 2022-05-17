@@ -87,18 +87,21 @@ const userController = {
 	processlogin: (req,res) => {
 
         db.Usuario.findOne({
-			where: {
-				email: req.body.email
-			}
-		}
+            where: {
+                email: req.body.email
+            }
+        }
         ).then((resultado) => 
-		{
-			
+        {
+            
             if(resultado){
-				
-				let booleanito = bcrypt.compare(req.body.password, resultado.password);		
+                console.log('%%%%%%%%%%%%%%%%%%');
+                console.log(req.body.password);
+                console.log(resultado.password);
+                console.log('%%%%%%%%%%%%%%%%%%');
+                let booleanito = bcrypt.compareSync(req.body.password, resultado.password);        
                 if (booleanito)
-				{
+                {
                     let usuarioALoguearse = {
                     idUsuario: resultado.idUsuario,
                     nombres: resultado.nombres,
@@ -108,7 +111,7 @@ const userController = {
                     };
  
                     delete resultado.password;
-					req.session.usuarioLogeado = usuarioALoguearse;
+                    req.session.usuarioLogeado = usuarioALoguearse;
                     //req.session.userLogged = usuarioALoguearse;
 
                     if(req.body.recordarUsuario){
@@ -117,14 +120,12 @@ const userController = {
                     
                     return res.redirect('/');
                 } else {
-					let msg = 'Los datos ingresados no son correctos'
+                    let msg = 'Los datos ingresados no son correctos'
                     return res.render('./users/login', {mensaje: msg});
                 }
 
-            }
-        
-			return res.render('./users/login', {errors: errors.mapped(), old: req.body})
-        
+            }      
+                    
         });
 
     }

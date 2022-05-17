@@ -80,14 +80,15 @@ const productoController = {
             })
             .then(resultadoPromesa => {
                     let ProductoEJS = resultadoPromesa;
+                    console.log(resultadoPromesa);
                     let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
                     let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
                     let ComponentesEJSvalues = Object.values(ComponentesEJS);                                         
                     res.render('./products/detailProduct', {ProductoEJS, ComponentesEJSkeys, ComponentesEJSvalues});
             })
-            .catch(()=>{
-                res.redirect('/products')
-            })                   
+            // .catch(()=>{
+            //     res.redirect('/products')
+            // })                   
                        
     },
 

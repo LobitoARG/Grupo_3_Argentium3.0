@@ -54,7 +54,7 @@ CREATE TABLE `usuario` (
   `id_usuario` int unsigned NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(50) NOT NULL,
   `last_name` VARCHAR(50) NOT NULL,
-  `password` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(200) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
   `telefono` VARCHAR(50) NOT NULL,
   `imagenUsers` VARCHAR(50) NULL,
