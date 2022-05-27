@@ -18,6 +18,9 @@
 
  <main>
 
+
+
+
     <div>
         <h2 class="text-ingreso">
             REGISTRO DE USUARIOS
@@ -30,7 +33,7 @@
         <div class="formulario__grupo" id="grupo__first_name">
             <label for="first_name" class="formulario__label">Nombre</label> <!-- for: first_name -->
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="first_name" id="first_name" placeholder="John Doe"> <!-- name: first_name -->
+                <input type="text" class="formulario__input" name="first_name" id="first_name" placeholder="John Doe" value="<%=locals.old && old.first_name? old.first_name : '' %> "> <!-- name: first_name -->
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
@@ -40,7 +43,7 @@
         <div class="formulario__grupo" id="grupo__last_name">
             <label for="last_name" class="formulario__label">Apellido</label> <!-- for: last_name -->
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="last_name" id="last_name" placeholder="john123"> <!-- name: last_name -->
+                <input type="text" class="formulario__input" name="last_name" id="last_name" placeholder="john123" value="<%=locals.old && old.last_name? old.last_name : '' %> "> <!-- name: last_name -->
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
@@ -52,7 +55,7 @@
         <div class="formulario__grupo" id="grupo__password">
             <label for="password" class="formulario__label">Contraseña</label>
             <div class="formulario__grupo-input">
-                <input type="password" class="formulario__input" name="password" id="password">
+                <input type="password" class="formulario__input" name="password" id="password" value="<%=locals.old && old.password? old.password : '' %> ">
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
@@ -62,7 +65,7 @@
         <div class="formulario__grupo" id="grupo__password2">
             <label for="password2" class="formulario__label">Repetir Contraseña</label>
             <div class="formulario__grupo-input">
-                <input type="password" class="formulario__input" name="password2" id="password2">
+                <input type="password" class="formulario__input" name="password2" id="password2" value="<%=locals.old && old.password2? old.password2 : '' %> ">
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
@@ -72,7 +75,7 @@
         <div class="formulario__grupo" id="grupo__email">
             <label for="email" class="formulario__label">Correo Electrónico</label>  <!-- for: email -->
             <div class="formulario__grupo-input">
-                <input type="email" class="formulario__input" name="email" id="email" placeholder="correo@correo.com"> <!-- name: email -->
+                <input type="email" class="formulario__input" name="email" id="email" placeholder="correo@correo.com"  value="<%=locals.old && old.email? old.email : '' %> "> <!-- name: email -->
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
@@ -82,7 +85,7 @@
         <div class="formulario__grupo" id="grupo__telefono">
             <label for="telefono" class="formulario__label">Teléfono</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567" value="<%=locals.old && old.telefono? old.telefono : '' %> ">
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
@@ -107,6 +110,16 @@
         </div>
 
     </form>
+
+
+    <% if (locals.errors){ 
+        errors.forEach(element => { %>
+        <p> <%= element.msg %> </p>        
+    <% }) } %> 
+
+
+
+
 </main>
 <%- include('../partials/footer')  %> 
 <script src="/js/formulario_registro.js"></script>

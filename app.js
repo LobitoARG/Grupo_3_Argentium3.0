@@ -9,6 +9,7 @@ var recordameMiddleware = require('./middlewares/recordarmeMiddleware');
 
 const app = express();
 const rutaPublic = path.join(__dirname, "./public");
+app.use(express.json());
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
 app.use(express.static(rutaPublic));

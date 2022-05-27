@@ -2,9 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-
 const usersFilePath = path.join(__dirname, '../src/data/users.json');
-const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const {validationResult} = require('express-validator');
 const db = require('../src/database/models'); 
 
@@ -28,7 +26,15 @@ const userController = {
     },    
     createUser: (req,res) => res.render('./users/register'),
 
+	
+
+// PARA VER MAÑANA: Está llegando la info del form en el req.body pero no está llegando en value del array de errores. 
 	store: (req,res) => {
+		console.log(req.body);
+
+
+		let errores = validationResult(req);
+		if (errores.isEmpty()) {
 		let newUsers = req.body;
 		let contraseña = req.body.password;		
 		console.log(contraseña);
@@ -43,7 +49,12 @@ const userController = {
 			imagenUsers: req.file.filename,
 			id_categoria_usuario:1
 		})
-		res.redirect('/')
+		res.redirect('/')			
+		}
+		else{
+			console.log(errores);
+			res.render('./users/register', {errors: errores.array(), old: req.body});
+		}
 		}, 
     edit: (req, res) => {
 		let idUsers = req.params.id;
