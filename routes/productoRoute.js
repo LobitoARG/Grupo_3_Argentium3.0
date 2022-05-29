@@ -1,11 +1,14 @@
 const express = require('express');
+const router = express.Router();
 const productoController = require('../controllers/productoController');
 const path = require('path');
 const multer = require('multer');
 const authMiddleware = require('../middlewares/authMiddlewares');
 const guestMiddleware = require('../middlewares/guestMiddleware');
-const router = express.Router();
+const { check } = require('express-validator')
+const db = require('../src/database/models');
 
+//NO ESTÁ GUARDANDO LA IMAGEN EN LA CARPETA QUE LE INDIQUÉ. 
 const storage = multer.diskStorage({
     destination: (req,file, cb) =>{
         let categoria = req.body.category
@@ -13,11 +16,39 @@ const storage = multer.diskStorage({
     },
     filename: (req,file,cb) =>{
         console.log(file);
-        const nuevoNombre = 'nombre_imagen' + Date.now() + path.extname(file.originalname);
-        cb (null, nuevoNombre);
+        let categoria = req.body.category
+        let nuevoProducto = Date.now()+ categoria + path.extname(file.originalname);
+        cb (null, nuevoProducto);
     }
 })
 const upload = multer ({storage})
+
+
+const productoValidator = [
+    check('name')
+        .notEmpty().withMessage('Debes completar el nombre del producto').bail()
+        .isLength({min:2}).withMessage('El nombre debe tener al menos 2 caracteres'),
+    check('description')
+        .notEmpty().withMessage('Debes completar la descripción del producto').bail()
+        .isLength({min:20}).withMessage('La descripción debe tener al menos 20 caracteres'),
+    check('imagenProducto')
+        .custom((imagenProducto, {req}) => {
+            var extension = path.extname(req.file.originalname)
+            var aceptadas = ['.jpg', '.jpeg', '.png', '.gif'];
+            if (aceptadas.includes(extension)){
+                return extension;
+            }
+            else {
+                return false
+            }
+
+        }).withMessage('Tipo de archivo no permitido. Debe ser una imagen en formato JPG, JPEG, PNG O GIF')
+]
+
+
+
+
+
 
 
 
@@ -30,10 +61,10 @@ router.get('/productCart',productoController.productCart);
 
 /*** CREAR UN PRODUCTO PRODUCTO ***/ 
 router.get('/create',productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
-router.get('/create/createProduct-pc', productoController.createProductPC); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
-router.get('/create/createProduct-ntbk', productoController.createProductntbk);
-router.get('/create/createProduct-comp',productoController.createProductcomp);
-router.post('/', upload.single('imagenProducto'),productoController.store);
+router.get('/create/createProduct-pc_gamer', productoController.createProductpc_gamer); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
+router.get('/create/createProduct-notebooks', productoController.createProductnotebooks);
+router.get('/create/createProduct-componentes', productoController.createProductcomponentes);
+router.post('/', upload.single('imagenProducto'), productoValidator,productoController.store);
 
 
 

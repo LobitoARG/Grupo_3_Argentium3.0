@@ -30,26 +30,31 @@ const userController = {
 
 // PARA VER MAÑANA: Está llegando la info del form en el req.body pero no está llegando en value del array de errores. 
 	store: (req,res) => {
-		console.log(req.body);
-
-
 		let errores = validationResult(req);
 		if (errores.isEmpty()) {
-		let newUsers = req.body;
-		let contraseña = req.body.password;		
-		console.log(contraseña);
-
-		newUsers.password = bcrypt.hashSync(contraseña.toString(), 10);
-		db.Usuario.create({
-			first_name:newUsers.first_name,
-			last_name:newUsers.last_name,
-			password: newUsers.password,
-			email:newUsers.email,
-			telefono: newUsers.telefono,
-			imagenUsers: req.file.filename,
-			id_categoria_usuario:1
-		})
-		res.redirect('/')			
+			db.Usuario.findOne({where: {email: req.body.email}})
+			.then(resultado =>{
+				if(resultado !== null){
+					let mensaje = 'Ya existe un usuario registrado con ese email'
+					res.render('./users/register', {mensaje});
+				}
+				else{
+					let newUsers = req.body;
+					let contraseña = req.body.password;		
+					console.log(contraseña);
+					newUsers.password = bcrypt.hashSync(contraseña.toString(), 10);
+					db.Usuario.create({
+						first_name:newUsers.first_name,
+						last_name:newUsers.last_name,
+						password: newUsers.password,
+						email:newUsers.email,
+						telefono: newUsers.telefono,
+						imagenUsers: req.file.filename,
+						id_categoria_usuario:1
+					})
+					res.redirect('/')			
+				}
+			})		
 		}
 		else{
 			console.log(errores);
@@ -95,22 +100,16 @@ const userController = {
 	},
     login: (req, res) => res.render('./users/login'),
  
-	processlogin: (req,res) => {
-
-        db.Usuario.findOne({
-            where: {
-                email: req.body.email
-            }
-        }
-        ).then((resultado) => 
-        {
-            
-            if(resultado){
-                console.log('%%%%%%%%%%%%%%%%%%');
-                console.log(req.body.password);
-                console.log(resultado.password);
-                console.log('%%%%%%%%%%%%%%%%%%');
-                let booleanito = bcrypt.compareSync(req.body.password, resultado.password);        
+	processlogin: (req,res) => {	
+		const erroresLogin = validationResult(req);
+		if(erroresLogin.isEmpty()){
+		db.Usuario.findOne({
+			where: {
+				email: req.body.email
+			}
+		}).then(resultado =>{
+			if (resultado !== null){
+				let booleanito = bcrypt.compareSync(req.body.password, resultado.password);        
                 if (booleanito)
                 {
                     let usuarioALoguearse = {
@@ -131,15 +130,25 @@ const userController = {
                     
                     return res.redirect('/');
                 } else {
-                    let msg = 'Los datos ingresados no son correctos'
+                    let msg = 'La contraseña ingresada no es correcta'
                     return res.render('./users/login', {mensaje: msg});
                 }
-
-            }      
-                    
-        });
-
+			}
+			else{
+				let msg = 'El email ingresado no es correcto'
+				return res.render('./users/login', {mensaje: msg});
+			}
+		})
+	}
+	else{
+	console.log(erroresLogin);
+	res.render('./users/login', {errors: erroresLogin.array(), old: req.body});
+	}
+                   
     }
-	
+	 
+
 }
+	
+
 module.exports = userController;

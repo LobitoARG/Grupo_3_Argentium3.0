@@ -30,7 +30,7 @@ const columnas = {
     },
     imagen:{
         type: dataTypes.STRING(100),
-        allowNull: false
+        allowNull: true
     },
     descripcion: {
         type: dataTypes.TEXT,

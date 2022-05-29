@@ -5,6 +5,7 @@ const db = require('../src/database/models');
 const sequelize = db.sequelize; 
 const {Op} = require('sequelize');
 const { traceDeprecation } = require('process');
+const {validationResult} = require('express-validator');
 
 
 const productsFilePath = path.join(__dirname, '../src/data/products.json');
@@ -96,37 +97,67 @@ const productoController = {
     // Create - Form to create
     createProduct: (req,res) => res.render('./products/createProduct'),//SELECCION DE CATEGORIA
  
-    createProductPC: (req,res) => {
-        res.render('products/createProduct-PC')
+    createProductpc_gamer: (req,res) => {
+        res.render('products/createProduct-pc_gamer')
     },
 
-    createProductntbk: (req,res) => {
-        res.render('products/createProduct-ntbk')
+    createProductnotebooks: (req,res) => {
+        res.render('products/createProduct-notebooks')
     },
 
-    createProductcomp: (req,res) => {
-        res.render('products/createProduct-comp')
+    createProductcomponentes: (req,res) => {
+        res.render('products/createProduct-componentes')
     },
    
     // Create - Metodo para crear el producto en el JSON
     store: (req,res) => {
-        let cmp = getComponentes(req.body);
-        let cmpjson = JSON.stringify(cmp);
-        let categid = getIdCategoria(req.body.category);
+
+        // let cmp = getComponentes(req.body);
+        // let cmpjson = JSON.stringify(cmp);
+        // let categid = getIdCategoria(req.body.category);
         
 
-        db.Producto.create({        
-        nombre: req.body.name,
-        precio: req.body.price,
-        descuento: req.body.discount,
-        tipo: req.body.type,
-        componentes: cmpjson,
-        imagen: req.file.filename,
-        descripcion: req.body.description,
-        id_categoria_producto: categid
-        });
+        // db.Producto.create({        
+        // nombre: req.body.name,
+        // precio: req.body.price,
+        // descuento: req.body.discount,
+        // tipo: req.body.type,
+        // componentes: cmpjson,
+        // imagen: req.file.filename,
+        // descripcion: req.body.description,
+        // id_categoria_producto: categid
+        // });
 
-        res.redirect('/')
+        // res.redirect('/')
+
+
+
+
+        let errores = validationResult(req);
+		if (errores.isEmpty()) {
+            let cmp = getComponentes(req.body);
+            let cmpjson = JSON.stringify(cmp);
+            let categid = getIdCategoria(req.body.category);
+
+            db.Producto.create({        
+            nombre: req.body.name,
+            precio: req.body.price,
+            descuento: req.body.discount,
+            tipo: req.body.type,
+            componentes: cmpjson,
+            imagen: req.file.filename,
+            descripcion: req.body.description,
+            id_categoria_producto: categid
+            });
+             console.log(req.file.path)
+            res.redirect('/')
+        }
+        else{         
+            res.render('./products/createProduct-'+req.body.category, {errors: errores.array(), old: req.body});
+    }
+    
+
+
     },
         
     index: (req,res) => {

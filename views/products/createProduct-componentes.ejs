@@ -11,31 +11,31 @@
                 <h4>Nombre del Producto</h4>
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
-                <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="">
+                <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=locals.old && old.name? old.name:''%>">
                 </div>
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
                 <label for="precio"></label>
-                <input type="number" name="price" id="precio" placeholder="Precio del producto" required="">
+                <input type="number" name="price" id="precio" placeholder="Precio del producto" required="" value="<%=locals.old && old.price? old.price:''%>">
                 </div>
 
                 <h4>Descuento base</h4>
                 <div class="contenedor-form-precio">
                 <label for="discount"></label>
-                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="">
+                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="" value="<%=locals.old && old.discount? old.discount:''%>">
                 </div>
 
                 <h4>Tipo</h4>
                 <div class="contenedor-form-nombre">
                 <label for="discount"></label>
-                <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="">
+                <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="" value="<%=locals.old && old.type? old.type:''%>">
                 </div>
        
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
-                <textarea name="description" id="description" class="form-input"></textarea>
+                <textarea name="description" id="description" class="form-input"> <%=locals.old && old.description? old.description:''%> </textarea>
                 </div>
 
                 <h4>Seleccione una categoria</h4>
@@ -51,7 +51,7 @@
                 <div class="contenedor-form-imagen">
                     <h4>Subir una imagen del producto:</h4>
                     <label for="imagenProducto" class="form-label"></label>
-					<input name="imagenProducto" type="file" id="imagen-para-subir" required>
+					<input name="imagenProducto" type="file" id="imagen-para-subir" required  accept="image/png,image/jpeg,image/jpg,image/gif">
                 </div>
 
                 <h4>Seleccione Tipo de Componente</h4>
@@ -77,6 +77,7 @@
                 </div>
             </form>
         </div>
+        <%- include('../partials/errors')  %> 
     </main>
     <%- include('../partials/footer')  %> 
 </body>

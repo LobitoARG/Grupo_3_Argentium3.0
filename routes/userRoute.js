@@ -6,8 +6,9 @@ const multer = require('multer');
 const authMiddleware = require('../middlewares/authMiddlewares');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const { check } = require('express-validator')
+const db = require('../src/database/models'); 
 
-const storage = multer.diskStorage({ // *****modifique storage por storageUsers
+const storageUsers = multer.diskStorage({ // *****modifique storage por storageUsers
     destination: (req,file, cb) =>{
         cb (null,path.join(__dirname,'../public/img/usersImg')); // ***** cambié a carpeta usersImg y la destine
         
@@ -17,16 +18,32 @@ const storage = multer.diskStorage({ // *****modifique storage por storageUsers
         cb (null, nuevoUsuario);
     }
 })
-var upload = multer({storage}) // 
+var uploadUser = multer({storageUsers}) // 
 
 const validacionLogIn = [
     check('email')
-    .notEmpty().withMessage('Debes completar el campo de correo electronico').bail()
-    .isEmail().withMessage('Debes ingresar un formato de email correcto'),
+        .notEmpty().withMessage('Debes completar el campo de correo electronico').bail()
+        .isEmail().withMessage('Debes ingresar un email correcto')
+        // .custom((email, {req}) =>{
+        //     db.Usuario.findOne({
+        //         where: {
+        //             email: req.body.email
+        //     }})
+        //     .then(resultado =>{
+        //         if (resultado == null){
+        //             return req.body.email
+        //         }
+        //         else{
+        //             return false
+        //         }
+        //     })
+        //     }).withMessage('El mail ya existe')
+        ,
     check('password')
     .notEmpty().withMessage('Debes completar el campo de contraseña').bail()
     .isLength({min:5}).withMessage('La contraseña debe tener al menos 5 caracteres')
 ];
+
 
 const validacionRegister = [
     check('first_name')
@@ -62,8 +79,7 @@ const validacionRegister = [
             }
 
         }).withMessage('Tipo de archivo no permitido. Debe ser una imagen en formato JPG, JPEG, PNG O GIF')
-
-]
+];
 
 
 
@@ -72,17 +88,17 @@ const validacionRegister = [
 router.get('/list', userController.index); // authMiddleware,
 
 /*** LOG IN DE USUARIO ***/ 
-router.get('/login',guestMiddleware,userController.login); // guestMiddleware ,
-router.post('/login', validacionLogIn  ,userController.processlogin) // 10.05 que primero funcione y dsp sumamos el verificador validacionLogIn
+router.get('/login',userController.login); // guestMiddleware ,
+router.post('/login', validacionLogIn,userController.processlogin) // 10.05 que primero funcione y dsp sumamos el verificador validacionLogIn
 
 router.get('/detailUsers/:id',userController.detailUser); // authMiddleware ,
  
 /*** CREAR UN USUARIO ***/ 
 router.get('/register',guestMiddleware,userController.createUser); // guestMiddleware,
-router.post('/register', upload.single('imagenUsers'), validacionRegister, userController.store); 
+router.post('/register', uploadUser.single('imagenUsers'), validacionRegister, userController.store); 
 
 router.get('/edit/:id' ,userController.edit);  // ,authMiddleware
-router.put('/edit/:id', upload.single('imagenUsers') ,userController.update); 
+router.put('/edit/:id', uploadUser.single('imagenUsers') ,userController.update); 
 
 router.delete('/detailUsers/:id',userController.destroy);  //  authMiddleware ,
 

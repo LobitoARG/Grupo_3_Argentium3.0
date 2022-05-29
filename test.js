@@ -4,6 +4,46 @@ const fs = require('fs');
 const db = require('./src/database/models');
 const sequelize = db.sequelize; 
 const {Op} = require('sequelize');
+const arrayValidatorsUsers = require('./public/js/arrayValidatorsUsers');
+
+
+
+// db.Usuario.findOne({
+//   where: {
+//     email: 'lalala@lalala.com'
+//   }
+// }).then(resultado =>{
+//    if (resultado !== null){
+//     console.log(resultado.email);
+//   }
+//   else{
+//     console.log('No conseguí al usuario');
+//     console.log('La respuesta de la promesa es: ' + resultado)
+//   }
+// })
+
+// async function buscalo (elmail) {
+
+//  let variable = await db.Usuario.findOne({where: {email: elmail}});
+//  return await variable;
+
+// }
+
+// let variableMetodo = buscalo('leot5865@gmail.com');
+
+// console.log(variableMetodo);
+
+
+console.log(arrayValidatorsUsers.validacionLogin)
+
+
+
+
+
+
+
+
+
 
 
 // comp = {
@@ -163,13 +203,13 @@ const {Op} = require('sequelize');
 
 
 
-        db.Producto.findByPk(1,{
-          include: ['categoria_producto']
-      })
-      .then(resultadoPromesa => {
-              let ProductoEJS = resultadoPromesa;
-              let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
-              let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
-              let ComponentesEJSvalues = Object.values(ComponentesEJS);                                         
-              console.log(ComponentesEJS);
-      })
+      //   db.Producto.findByPk(1,{
+      //     include: ['categoria_producto']
+      // })
+      // .then(resultadoPromesa => {
+      //         let ProductoEJS = resultadoPromesa;
+      //         let ComponentesEJS = JSON.parse(ProductoEJS.componentes);
+      //         let ComponentesEJSkeys = Object.keys(ComponentesEJS);   
+      //         let ComponentesEJSvalues = Object.values(ComponentesEJS);                                         
+      //         console.log(ComponentesEJS);
+      // })
