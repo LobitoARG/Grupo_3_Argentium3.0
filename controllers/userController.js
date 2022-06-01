@@ -19,7 +19,10 @@ const userController = {
     detailUser: (req, res) => {
         let idUsers = req.params.id;
 		db.Usuario.findByPk(idUsers)
-		.then(function(resultado){
+		.then(resultado => {
+			let usudetail = resultado;
+			console.log(usudetail);
+			console.log(resultado.imagenUsers);
 			res.render('./users/detailUsers', {"usersSeleccionado":resultado});
 		})
         
@@ -28,21 +31,22 @@ const userController = {
 
 	
 
-// PARA VER MAÑANA: Está llegando la info del form en el req.body pero no está llegando en value del array de errores. 
+// FIJARME DE CÓMO QUEDA EL CONTROLLER CON LA VALIDACION EN EL ROUTER CON EXPRESS-VALIDATOR. 
 	store: (req,res) => {
 		let errores = validationResult(req);
 		if (errores.isEmpty()) {
-			db.Usuario.findOne({where: {email: req.body.email}})
-			.then(resultado =>{
-				if(resultado !== null){
-					let mensaje = 'Ya existe un usuario registrado con ese email'
-					res.render('./users/register', {mensaje});
-				}
-				else{
+			// db.Usuario.findOne({where: {email: req.body.email}})
+			// .then(resultado =>{
+			// 	if(resultado !== null){
+			// 		let mensaje = 'Ya existe un usuario registrado con ese email'
+			// 		res.render('./users/register', {mensaje});
+			// 	}
+			// 	else{
 					let newUsers = req.body;
 					let contraseña = req.body.password;		
 					console.log(contraseña);
 					newUsers.password = bcrypt.hashSync(contraseña.toString(), 10);
+					console.log(req.file.filename);
 					db.Usuario.create({
 						first_name:newUsers.first_name,
 						last_name:newUsers.last_name,
@@ -53,8 +57,8 @@ const userController = {
 						id_categoria_usuario:1
 					})
 					res.redirect('/')			
-				}
-			})		
+			// 	}
+			// })		
 		}
 		else{
 			console.log(errores);

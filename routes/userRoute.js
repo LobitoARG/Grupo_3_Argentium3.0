@@ -8,7 +8,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const { check } = require('express-validator')
 const db = require('../src/database/models'); 
 
-const storageUsers = multer.diskStorage({ // *****modifique storage por storageUsers
+const storage = multer.diskStorage({ // *****modifique storage por storageUsers
     destination: (req,file, cb) =>{
         cb (null,path.join(__dirname,'../public/img/usersImg')); // ***** cambié a carpeta usersImg y la destine
         
@@ -18,26 +18,13 @@ const storageUsers = multer.diskStorage({ // *****modifique storage por storageU
         cb (null, nuevoUsuario);
     }
 })
-var uploadUser = multer({storageUsers}) // 
+var upload = multer({storage}) // 
 
 const validacionLogIn = [
     check('email')
         .notEmpty().withMessage('Debes completar el campo de correo electronico').bail()
         .isEmail().withMessage('Debes ingresar un email correcto')
-        // .custom((email, {req}) =>{
-        //     db.Usuario.findOne({
-        //         where: {
-        //             email: req.body.email
-        //     }})
-        //     .then(resultado =>{
-        //         if (resultado == null){
-        //             return req.body.email
-        //         }
-        //         else{
-        //             return false
-        //         }
-        //     })
-        //     }).withMessage('El mail ya existe')
+        
         ,
     check('password')
     .notEmpty().withMessage('Debes completar el campo de contraseña').bail()
@@ -64,7 +51,17 @@ const validacionRegister = [
         .withMessage('Las contraseñas deben coincidir'),
     check('email')
         .notEmpty().withMessage('Debes completar el campo de correo electronico').bail()
-        .isEmail().withMessage('Debes ingresar un formato de email correcto'),
+        .isEmail().withMessage('Debes ingresar un formato de email correcto')
+        .custom(async(email, {req}) =>{
+            const usuario = await db.Usuario.findOne({
+                    where: {
+                        email: req.body.email
+                }});
+                console.log(usuario);
+                if(usuario){
+                    throw new Error('El mail ya existe')
+                }
+            }),
     check('telefono')
         .notEmpty().withMessage('Debes completar el campo de Teléfono').bail()
         .isNumeric().withMessage('Debe ingresar solo números'),
@@ -95,10 +92,10 @@ router.get('/detailUsers/:id',userController.detailUser); // authMiddleware ,
  
 /*** CREAR UN USUARIO ***/ 
 router.get('/register',guestMiddleware,userController.createUser); // guestMiddleware,
-router.post('/register', uploadUser.single('imagenUsers'), validacionRegister, userController.store); 
+router.post('/register', upload.single('imagenUsers'), validacionRegister, userController.store); 
 
 router.get('/edit/:id' ,userController.edit);  // ,authMiddleware
-router.put('/edit/:id', uploadUser.single('imagenUsers') ,userController.update); 
+router.put('/edit/:id', upload.single('imagenUsers') ,userController.update); 
 
 router.delete('/detailUsers/:id',userController.destroy);  //  authMiddleware ,
 
