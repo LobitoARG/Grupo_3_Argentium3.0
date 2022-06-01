@@ -33,7 +33,7 @@
         <div class="formulario__grupo" id="grupo__first_name">
             <label for="first_name" class="formulario__label">Nombre</label> <!-- for: first_name -->
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="first_name" id="first_name" placeholder="John Doe" value="<%=locals.old && old.first_name? old.first_name:''%>"> <!-- name: first_name -->
+                <input type="text" class="formulario__input" name="first_name" id="first_name" placeholder="Matias" value="<%=locals.old && old.first_name? old.first_name:''%>"> <!-- name: first_name -->
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
@@ -43,7 +43,7 @@
         <div class="formulario__grupo" id="grupo__last_name">
             <label for="last_name" class="formulario__label">Apellido</label> <!-- for: last_name -->
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="last_name" id="last_name" placeholder="john123" value="<%=locals.old && old.last_name? old.last_name:''%>"> <!-- name: last_name -->
+                <input type="text" class="formulario__input" name="last_name" id="last_name" placeholder="Gomez" value="<%=locals.old && old.last_name? old.last_name:''%>"> <!-- name: last_name -->
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
@@ -75,10 +75,11 @@
         <div class="formulario__grupo" id="grupo__email">
             <label for="email" class="formulario__label">Correo Electrónico</label>  <!-- for: email -->
             <div class="formulario__grupo-input">
-                <input type="email" class="formulario__input" name="email" id="email" placeholder="correo@correo.com"  value="<%=locals.old && old.email? old.email:''%>"> <!-- name: email -->
+                <input type="email" class="formulario__input" name="email" id="email" placeholder="correo@correo.com"  value="<%=locals.old && old.email? old.email:''%>" onmouseout="return validarEMAILDB()"> <!-- name: email -->
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+            <p class="formulario__input-error" id="msgEMAIL">Ya existe un usuario registrado con ese email</p>
         </div>
 
         <!-- Grupo: Teléfono -->
@@ -90,10 +91,11 @@
             </div>
             <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
         </div>
-
+        <!-- Grupo: Imagen -->
         <div>
             <label for="imagenUsers" class="formulario__label">Imagen de Usuario</label>
-            <input type="file" accept="image/png,image/jpeg,image/jpg,image/gif" name="imagenUsers" id="imagenUsers">
+            <input type="file" accept="image/png,image/jpeg,image/jpg,image/gif" name="imagenUsers" id="imagenUsers" onchange="return validarIMG()">
+            <p class="formulario__input-IMG-error" id="msgIMG">El archivo debe tener una de las siguientes extensiones: JPG, JPEG, PNG, GIF</p>
         </div>
 
         <!-- Grupo: Terminos y Condiciones -->
@@ -123,6 +125,7 @@
 </main>
 <%- include('../partials/footer')  %> 
 <script src="/js/formulario_registro.js"></script>
+<script src="/js/formulario_registro_db.js"></script>
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 </html>

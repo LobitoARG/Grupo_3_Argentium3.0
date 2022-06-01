@@ -14,7 +14,25 @@ const campos = {
 	first_name: false,
 	password: false,
 	email: false,
-	telefono: false
+	telefono: false,
+	imagenUsers: false
+}
+
+function validarIMG(){
+	let inputIMG = document.getElementById('imagenUsers');
+	let extensionesIMG = /(.jpg|.jpeg|.png|.gif)$/i;
+	let filePath = inputIMG.value;
+	let mensajeError = document.getElementById('msgIMG')
+	if(!extensionesIMG.exec(filePath)){
+		  mensajeError.classList.remove('formulario__input-IMG-error')
+		  mensajeError.classList.add('formulario__input-error-activo')
+		  inputIMG.value='';
+		  return false
+	}
+	else{
+		mensajeError.classList.remove('formulario__input-error-activo')
+		mensajeError.classList.add('formulario__input-IMG-error')
+	}
 }
 
 const validarFormulario = (e) => {
@@ -84,25 +102,3 @@ inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
 });
-
-/*
-
-formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
-
-	const terminos = document.getElementById('terminos');
-	if(campos.last_name && campos.first_name && campos.password && campos.correo && campos.telefono && terminos.checked ){
-		formulario.reset();
-
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
-
-		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-			icono.classList.remove('formulario__grupo-correcto');
-		});
-	} else {
-		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-	}
-});*/

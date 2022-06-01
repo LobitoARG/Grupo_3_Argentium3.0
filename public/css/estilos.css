@@ -53,6 +53,13 @@ main {
 	display: none;
 }
 
+.formulario__input-IMG-error
+{
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
 .formulario__input-error-activo {
 	display: block;
 }

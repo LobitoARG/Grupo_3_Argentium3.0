@@ -967,6 +967,10 @@ a.btnEndAdd{
     text-align: center;
 }
 
+.contenedor-google-maps{
+    display: none;
+}
+
 @media (min-width:300px) {
     .contenedor-boton-para-enviar button{
         margin: 0;
@@ -1125,13 +1129,24 @@ a.btnEndAdd{
         max-width: 40%;
     }
 
-    @media (min-width: 1920px)
-    {
+    .contenedor-google-maps{
+        display: block;
+    }
+
+    .contenedor-google-maps iframe{
+        width: 40vw;
+        height: 30vh;
+    }
+
+    
+
+} 
+
+@media (min-width: 1920px)
+{
         .main-nav{
             width: 30vw;
             
         }
 
-    }
-
-} 
+}
