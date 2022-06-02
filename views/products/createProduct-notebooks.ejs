@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head.ejs', {title: 'Creacion de productos'}) %> 
-<body>
+    <script src="/js/formCreaNotebook.js"></script> 
+    <body>
     <%- include('../partials/header.ejs') %> 
     <main>
         <div class="contenedor-main-form">
@@ -12,48 +13,56 @@
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
                 <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=locals.old && old.name? old.name:''%>">
+                <ul  class=erroresUlName></ul> 
                 </div>
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
                 <label for="price"></label>
                 <input type="number" name="price" id="precio" placeholder="Precio del producto" required="" value="<%=locals.old && old.price? old.price:''%>">
+                <ul  class=erroresUlPrice></ul> 
                 </div>
 
                 <h4>Descuento base</h4>
                 <div class="contenedor-form-precio">
                 <label for="discount"></label>
-                <input type="number" name="discount" id="precio" placeholder="Descuento del producto" required=""  value="<%=locals.old && old.discount? old.discount:''%>">
+                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required=""  value="<%=locals.old && old.discount? old.discount:''%>">
+                <ul  class=erroresUlDiscount></ul> 
                 </div>
 
                 <h4>Microprocesador</h4>
                 <div class="contenedor-form-nombre">
                 <label for="cpu_name"></label>
                 <input type="text" name="cpu_name" id="cpu_name" name="cpu_name" placeholder="Modelo CPU"  value="<%=locals.old && old.cpu_name? old.cpu_name:''%>">
+                <ul  class=erroresUlMicro></ul> 
                 </div>
                 
                 <h4>RAM</h4>
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
                 <input type="text" name="ram_name" id="ram_name" placeholder="Modelo de RAM"  value="<%=locals.old && old.ram_name? old.ram_name:''%>">
+                <ul  class=erroresUlRAM></ul> 
                 </div>
 
                 <h4>SSD</h4>
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
                 <input type="text" name="ssd_name" id="ssd_name"  placeholder="Modelo de SSD"  value="<%=locals.old && old.ssd_name? old.ssd_name:''%>">
+                <ul  class=erroresUlSSD></ul> 
                 </div>
 
                 <h4>GPU</h4>
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
                 <input type="text" name="gpu_name" id="gpu_name" placeholder="Modelo de GPU"  value="<%=locals.old && old.gpu_name? old.gpu_name:''%>">
+                <ul  class=erroresUlGPU></ul> 
                 </div>
 
                 <h4>Fuente de alimentacion</h4>
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
                 <input type="text" name="pws_name" id="pws_name" placeholder="Modelo de PWS"  value="<%=locals.old && old.pws_name? old.pws_name:''%>">
+                <ul  class=erroresUlPWS></ul> 
                 </div>
 
                 <h4>Categoria</h4>
@@ -68,18 +77,21 @@
                 <div class="contenedor-form-precio">
                 <label for="discount"></label>
                 <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="" value="<%=locals.old && old.type? old.type:''%>">
+                <ul  class=erroresUlType></ul> 
                 </div>
 
                 <div class="contenedor-form-imagen">
                     <h4>Subir una imagen del producto:</h4>
                     <label for="imagenProducto" class="form-label"></label>
-					<input name="imagenProducto" type="file" id="imagen-para-subir" accept="image/png,image/jpeg,image/jpg,image/gif" required>
+					<input name="imagenProducto" type="file" id="imagen-para-subir" accept="image/png,image/jpeg,image/jpg,image/gif" >
+                    <ul  class=erroresUlImagen></ul> 
                 </div>
         
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
                 <textarea name="description" id="description" class="form-input"> <%=locals.old && old.description? old.description:''%> </textarea>
+                <ul  class=erroresUlDescripcion></ul> 
                 </div>
 
                 

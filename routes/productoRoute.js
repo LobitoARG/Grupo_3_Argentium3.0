@@ -60,23 +60,23 @@ router.get('/detailProduct/:id', productoController.detailProduct);
 router.get('/productCart',productoController.productCart);
 
 /*** CREAR UN PRODUCTO PRODUCTO ***/ 
-router.get('/create',authMiddleware,productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
-router.get('/create/createProduct-pc_gamer',authMiddleware, productoController.createProductpc_gamer); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
-router.get('/create/createProduct-notebooks', authMiddleware,productoController.createProductnotebooks);
-router.get('/create/createProduct-componentes',authMiddleware, productoController.createProductcomponentes);
+router.get('/create',/* authMiddleware, */productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
+router.get('/create/createProduct-pc_gamer',/* authMiddleware, */ productoController.createProductpc_gamer); // sumarle el authMIddlewares para que funcione la verificacion de registro de usuario
+router.get('/create/createProduct-notebooks', /* authMiddleware, */productoController.createProductnotebooks);
+router.get('/create/createProduct-componentes',/* authMiddleware, */ productoController.createProductcomponentes);
 router.post('/', upload.single('imagenProducto'), productoValidator,productoController.store);
 
 
 
 /*** EDITAR UN PRODUCTO ***/ 
 
-router.get('/edit/:id', authMiddleware,productoController.edit); 
+router.get('/edit/:id', /* authMiddleware, */productoController.edit); 
 router.put('/edit/:id', upload.single('imagenProducto'),productoController.update); 
 
 /*** OBTENER TODOS LOS PRODUCTOS ***/ 
 router.get('/', productoController.index);
 
 /*** BORRAR UN PRODUCTO ***/ 
-router.delete('/detail/:id',authMiddleware,productoController.destroy); 
+router.delete('/detail/:id',/* authMiddleware, */productoController.destroy); 
 
 module.exports = router; 

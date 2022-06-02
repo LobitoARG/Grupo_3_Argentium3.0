@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head.ejs', {title: 'Creacion de PC GAMER'}) %> 
+    <script src="/js/formCreaPC.js"></script> 
 <body>
     <%- include('../partials/header.ejs') %> 
     <main>
@@ -12,78 +13,91 @@
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
                 <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=locals.old && old.name? old.name:''%>">
+                <ul  class=erroresUlName></ul>  
                 </div>
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
                 <label for="price"></label>
                 <input type="number" name="price" id="price" placeholder="Precio del producto" required="" value="<%=locals.old && old.price? old.price:''%>">
+                <ul  class=erroresUlPrice></ul>  
                 </div>
 
                 <h4>Descuento base</h4>
                 <div class="contenedor-form-precio">
                 <label for="discount"></label>
                 <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required=""  value="<%=locals.old && old.discount? old.discount:''%>">
+                <ul  class=erroresUlDiscount></ul>
                 </div>
 
                 <h4>Tipo</h4>
                 <div class="contenedor-form-precio">
                 <label for="discount"></label>
                 <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="" value="<%=locals.old && old.type? old.type:''%>">
+                <ul  class=erroresUlType></ul>
                 </div>
 
                 <h4>Microprocesador</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripCPU"></label>
                 <input type="text" name="descripCPU" id="descripCPU" placeholder="Modelo CPU" value="<%=locals.old && old.cpu_name? old.cpu_name:''%>">
+                <ul  class=erroresUlMicro></ul>
                 </div>
 
                 <h4>Water Cooler</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripWC"></label>
                 <input type="text" name="descripWC" id="descripWC" placeholder="Modelo Water Cooler" value="<%=locals.old && old.descripWC? old.descripWC:''%>">
+                <ul  class=erroresUlCooler></ul>
                 </div>
 
                 <h4>Motherboard</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripMB"></label> 
                 <input type="text" name="descripMB" id="descripMB" placeholder="Modelo de MB"  value="<%=locals.old && old.descripMB? old.descripMB:''%>">
+                <ul  class=erroresUlMother></ul>
                 </div>
 
                 <h4>RAM</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripRAM"></label>
                 <input type="text" name="descripRAM" id="descripRAM" placeholder="Modelo de RAM" value="<%=locals.old && old.descripRAM? old.descripRAM:''%>">
+                <ul  class=erroresUlRAM></ul>
                 </div>
 
                 <h4>SSD</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripSSD"></label>
                 <input type="text" name="descripSSD" id="descripSSD"  placeholder="Modelo de SSD" value="<%=locals.old && old.descripSSD? old.descripSSD:''%>">
+                <ul  class=erroresUlSSD></ul>
                 </div>
 
                 <h4>GPU</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripGPU"></label>
                 <input type="text" name="descripGPU" id="descripGPU" placeholder="Modelo de GPU" value="<%=locals.old && old.descripGPU? old.descripGPU:''%>">
+                <ul  class=erroresUlGPU></ul>
                 </div>
 
                 <h4>Fuente de alimentacion</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripPWS"></label>
                 <input type="text" name="descripPWS" id="descripPWS" placeholder="Modelo de PWS" value="<%=locals.old && old.descripPWS? old.descripPWS:''%>">
+                <ul  class=erroresUlPWS></ul>
                 </div>
 
                 <h4>Gabinete</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripGAB"></label>
                 <input type="text" name="descripGAB" id="descripGAB" placeholder="Modelo de Gabinete" value="<%=locals.old && old.descripGAB? old.descripGAB:''%>">
+                <ul  class=erroresUlGAB></ul>
                 </div>
         
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
                 <textarea name="description" id="description" class="form-input"> <%=locals.old && old.description? old.description:''%> </textarea>
+                <ul  class=erroresUlDescripcion></ul>
                 </div>             
                
                 <h4>Categoria</h4>
@@ -97,7 +111,8 @@
                 <div class="contenedor-form-imagen">
                     <h4>Subir una imagen del producto:</h4>
                     <label for="imagenProducto" class="form-label"></label>
-					<input name="imagenProducto" type="file" id="imagen-para-subir" required accept="image/png,image/jpeg,image/jpg,image/gif">
+					<input name="imagenProducto" type="file" id="imagen-para-subir" accept="image/png,image/jpeg,image/jpg,image/gif">
+                    <ul  class=erroresUlImagen></ul>
                 </div>
            
                 <div class="contenedor-form-botones">

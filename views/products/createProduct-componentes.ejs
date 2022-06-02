@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head.ejs', {title: 'Creacion de productos'}) %> 
+    <script src="/js/formCreaComp.js"></script> 
 <body>
     <%- include('../partials/header.ejs') %> 
     <main>
@@ -12,30 +13,35 @@
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
                 <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=locals.old && old.name? old.name:''%>">
+                <ul  class=erroresUlName></ul> 
                 </div>
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
                 <label for="precio"></label>
                 <input type="number" name="price" id="precio" placeholder="Precio del producto" required="" value="<%=locals.old && old.price? old.price:''%>">
+                <ul  class=erroresUlPrice></ul> 
                 </div>
 
                 <h4>Descuento base</h4>
                 <div class="contenedor-form-precio">
                 <label for="discount"></label>
                 <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="" value="<%=locals.old && old.discount? old.discount:''%>">
+                <ul  class=erroresUlDiscount></ul> 
                 </div>
 
                 <h4>Tipo</h4>
                 <div class="contenedor-form-nombre">
                 <label for="discount"></label>
                 <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="" value="<%=locals.old && old.type? old.type:''%>">
+                <ul  class=erroresUlType></ul> 
                 </div>
        
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
                 <textarea name="description" id="description" class="form-input"> <%=locals.old && old.description? old.description:''%> </textarea>
+                <ul  class=erroresUlDescripcion></ul> 
                 </div>
 
                 <h4>Seleccione una categoria</h4>
@@ -52,6 +58,7 @@
                     <h4>Subir una imagen del producto:</h4>
                     <label for="imagenProducto" class="form-label"></label>
 					<input name="imagenProducto" type="file" id="imagen-para-subir" required  accept="image/png,image/jpeg,image/jpg,image/gif">
+                    <ul  class=erroresUlImagen></ul> 
                 </div>
 
                 <h4>Seleccione Tipo de Componente</h4>
