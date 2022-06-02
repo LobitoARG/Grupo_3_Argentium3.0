@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head.ejs', {title: productoSeleccionado.name}) %> 
+    <script src="/js/formEditProduct.js"></script> 
 <body>
     <%- include('../partials/header.ejs') %> 
     <main>
@@ -12,31 +13,36 @@
                 <h4>Nombre del producto</h4>
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
-                <input type="text" name="name" required value="<%=productoSeleccionado.nombre %>">
+                <input type="text" name="name" id="name"   required value="<%=productoSeleccionado.nombre %>">
+                <ul  class=erroresUlName></ul>  
                 </div>
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
                 <label for="price"></label>
-                <input type="number" name="price" required value="<%=productoSeleccionado.precio %>">
+                <input type="number" name="price" id="price" required value="<%=productoSeleccionado.precio %>">
+                <ul  class=erroresUlPrice></ul>  
                 </div>
 
                 <h4>Descuento</h4>
                 <div class="contenedor-form-precio">
                 <label for="discount"></label>
-                <input type="number" name="discount" required="" value="<%=productoSeleccionado.descuento %>">
+                <input type="number" name="discount" id="discount" required="" value="<%=productoSeleccionado.descuento %>">
+                <ul  class=erroresUlDiscount></ul>  
                 </div>
 
                 <h4>Tipo</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="type"></label>
-                <input type="text" name="type" required value="<%=productoSeleccionado.tipo %>">
+                <input type="text" name="type" id="type" required value="<%=productoSeleccionado.tipo %>">
+                <ul  class=erroresUlType></ul>  
                 </div>
 
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
-                <input type="text" name="description" required value="<%=productoSeleccionado.descripcion %>">
+                <input type="text" name="description" id="description" required value="<%=productoSeleccionado.descripcion %>">
+                <ul  class=erroresUlDescripcion></ul>  
                 </div>
 
                 <h4>Categoria</h4>
@@ -53,6 +59,7 @@
                     <h4>Subir una imagen del producto:</h4>
                     <label for="imagenProducto" class="form-label"></label>
 					<input name="imagenProducto" type="file" id="imagen-para-subir" required>
+                    <ul  class=erroresUlImagen></ul>  
                 </div>                     
                              
 
