@@ -927,14 +927,14 @@ a.btnEndAdd{
     padding: 1%;
     border: none;
     border-radius: 3px;
-    width: 95%;
+    width: 50%;
 }
 
 .contenedor-form-descripcion input{
     padding: 1%;
     border: none;
     border-radius: 3px;
-    width: 95%;
+    width: 50%;
 }
 
 .contenedor-form-precio input{
@@ -970,6 +970,58 @@ a.btnEndAdd{
 .contenedor-google-maps{
     display: none;
 }
+
+.terms-conditions{
+    background-color: white;
+}
+
+.terms-conditions h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content-sumary-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid coral;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 13px;
+    animation: cambiarcolor 5s infinite;
+}
+
+@keyframes cambiarcolor {
+    50% {border-color: lightblue;}
+}
+
+.content-sumary-text div{
+    margin-top: 3vw;
+}
+
+.content-sumary-text div article h2{
+    margin-bottom: 1vh;
+}
+
+.boton-terminos{
+    height: 45px;
+	line-height: 45px;
+	width: 10%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.boton-terminos a{
+    color: white
+}
+
+
+
 
 @media (min-width:300px) {
     .contenedor-boton-para-enviar button{

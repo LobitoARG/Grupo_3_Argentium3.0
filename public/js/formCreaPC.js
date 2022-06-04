@@ -4,9 +4,13 @@ window.addEventListener("load", function(){
     let ulErroresName = document.querySelector(".erroresUlName");
     formNombre.addEventListener('blur', function(e) {
         if (formNombre.value == ""){
-           ulErroresName.innerHTML += "<li> El campo del nombre debe estar completo </li>"
+           ulErroresName.innerHTML += "<li> El campo del nombre debe estar completo </li>" 
+           //formNombre.value="";
+           //ulErroresName.innerHTML='';
         } else if (formNombre.value.length<5){
             ulErroresName.innerHTML += "<li> El campo del nombre debe tener mas de 5 caracteres</li>"
+            //formNombre.value="";
+            //ulErroresName.innerHTML='';
         }
     
     })

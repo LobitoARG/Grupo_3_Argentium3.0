@@ -129,7 +129,19 @@ main {
 	display: none;
 }
 
+.formulario__mensaje-error{
+	display: none;
+}
+
+.formulario__mensaje-error-activo{
+	font-size: 14px;
+	color: red;
+	display: block;
+}
+
 .formulario__mensaje-exito-activo {
+	font-size: 14px;
+	color: #119200;
 	display: block;
 }
 

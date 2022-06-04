@@ -15,6 +15,12 @@ const mainController = {
             let ProductoEJS = resultadoPromesa;
             res.render('./users/home', {ProductoEJS});
         })       
+    },
+    contacto: (req,res) =>{
+        res.render('./users/contacto')
+    },
+    terminos: (req,res)=>{
+        res.render('./users/terminos')
     }
 }
 

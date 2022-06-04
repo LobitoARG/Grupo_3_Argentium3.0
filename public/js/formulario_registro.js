@@ -1,5 +1,6 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
+const submitButton = document.querySelector('.formulario__btn');
 
 const expresiones = {
 	last_name: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -34,6 +35,8 @@ function validarIMG(){
 		mensajeError.classList.add('formulario__input-IMG-error')
 	}
 }
+
+
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
