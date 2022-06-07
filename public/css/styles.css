@@ -1020,8 +1020,17 @@ a.btnEndAdd{
     color: white
 }
 
+.errores-name-vacio{
+    display: none;
+}
 
+.errores-name-min{
+    display: none;
+}
 
+#pErroresVacio, #pErroresMin{
+    color: red;
+}
 
 @media (min-width:300px) {
     .contenedor-boton-para-enviar button{

@@ -1,14 +1,24 @@
 window.addEventListener("load", function(){
 
-    let formNombre = document.getElementById("name");
-    let ulErroresName = document.querySelector(".erroresUlName");
+    const formNombre = document.getElementById("name");
+    const pErroresVacio = document.getElementById('pErroresVacio')
+    const pErroresMin = document.getElementById('pErroresMin')
+
     formNombre.addEventListener('blur', function(e) {
-        if (formNombre.value == ""){
-           ulErroresName.innerHTML += "<li> El campo del nombre debe estar completo </li>"
+        if (formNombre.value === "")
+        {
+          pErroresVacio.classList.remove('errores-name-vacio')
+          pErroresMin.classList.add('errores-name-min')
+
         } else if (formNombre.value.length<5){
-            ulErroresName.innerHTML += "<li> El campo del nombre debe tener mas de 5 caracteres</li>"
+            pErroresMin.classList.remove('errores-name-min')
+            pErroresVacio.classList.add('errores-name-vacio')
         }
-    
+        else{
+            pErroresVacio.classList.add('errores-name-vacio')
+            pErroresMin.classList.add('errores-name-min')
+        }
+        
     })
 
     let formPrecio = document.getElementById("precio");

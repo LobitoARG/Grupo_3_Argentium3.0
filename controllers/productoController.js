@@ -109,26 +109,10 @@ const productoController = {
         res.render('products/createProduct-componentes')
     },
    
-    // Create - Metodo para crear el producto en el JSON
+    
     store: (req,res) => {
 
-        // let cmp = getComponentes(req.body);
-        // let cmpjson = JSON.stringify(cmp);
-        // let categid = getIdCategoria(req.body.category);
         
-
-        // db.Producto.create({        
-        // nombre: req.body.name,
-        // precio: req.body.price,
-        // descuento: req.body.discount,
-        // tipo: req.body.type,
-        // componentes: cmpjson,
-        // imagen: req.file.filename,
-        // descripcion: req.body.description,
-        // id_categoria_producto: categid
-        // });
-
-        // res.redirect('/')
 
 
 

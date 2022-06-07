@@ -12,8 +12,9 @@
                 <h4>Nombre del Producto</h4>
                 <div class="contenedor-form-nombre">
                 <label for="name"></label>
-                <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=locals.old && old.name? old.name:''%>">
-                <ul  class=erroresUlName></ul> 
+                <input class="input-nombre"type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=locals.old && old.name? old.name:''%>">
+                <p class="errores-name-vacio" id="pErroresVacio" >El campo del nombre debe estar completo</p>
+                <p class="errores-name-min" id="pErroresMin" >El campo del nombre debe tener mas de 5 caracteres</p>
                 </div>
 
                 <h4>Precio</h4>
