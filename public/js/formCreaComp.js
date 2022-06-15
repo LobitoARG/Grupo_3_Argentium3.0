@@ -21,35 +21,64 @@ window.addEventListener("load", function(){
         
     })
 
-    let formPrecio = document.getElementById("precio");
-    let ulErroresPrice = document.querySelector(".erroresUlPrice");
+    const formPrecio = document.getElementById("precio");
+    const pErroresVacioPrecio = document.getElementById('pErroresVacioPrecio')
     formPrecio.addEventListener('blur', function(e) {
-        if (formPrecio.value == ""){
-           ulErroresPrice.innerHTML += "<li> El campo del precio debe estar completo </li>"
-        }})
+        if (formPrecio.value == "")
+            {pErroresVacioPrecio.classList.remove('errores-price-vacio')} 
+        else{
+            pErroresVacioPrecio.classList.add('errores-price-vacio')
+            }
+        })
 
-    let formDescuento = document.getElementById("discount");
-    let ulErroresDiscount= document.querySelector(".erroresUlDiscount");
+   
+   
+    const formDescuento = document.getElementById("discount");
+    const pErroresVacioDescuento = document.getElementById('pErroresVacioDescuento')  
     formDescuento.addEventListener('blur', function(e) {
-        if (formDescuento.value == ""){
-            ulErroresDiscount.innerHTML += "<li> El campo del descuento debe estar completo </li>"
-        }})    
+        if (formDescuento.value == ""){  
+            pErroresVacioDescuento.classList.remove('errores-discount-vacio')}
+        else{
+            pErroresVacioDescuento.classList.add('errores-discount-vacio')
+        }    
+    
+        })    
 
-    let formTipo = document.getElementById("type");
-    let ulErroresType= document.querySelector(".erroresUlType");
+    const formTipo = document.getElementById("type");
+    const pErroresVacioType= document.getElementById("pErroresVacioType");
     formTipo.addEventListener('blur', function(e) {
-        if (formTipo.value == ""){
-            ulErroresType.innerHTML += "<li> El campo del tipo debe estar completo </li>"
-        }})  
+        if(formTipo.value == ""){
+            pErroresVacioType.classList.remove('errores-tipo-vacio')
+        }
+        else{
+            pErroresVacioType.classList.add('errores-tipo-vacio')
+        }
+    
+        })  
         
     let formDescripcion = document.getElementById("description");
-    let ulErroresDescripcion= document.querySelector(".erroresUlDescripcion");
+    let pErroresVacioDescripcion= document.getElementById("pErroresVacioDescripcion");
+    const pErroresMinDescripcion = document.getElementById('pErroresMinDescripcion')
     formDescripcion.addEventListener('blur', function(e) {
-        if (formDescripcion.value == ""){
-            ulErroresDescripcion.innerHTML += "<li> El campo de descripcionn debe estar completo </li>"
-        } else if (formDescripcion.value.length<5){
-            ulErroresDescripcion.innerHTML += "<li> El campo de la descripción debe tener mas de 20 caracteres</li>"
-        }})     
+        if (formDescripcion.value === "")
+        {
+          pErroresVacioDescripcion.classList.remove('errores-descripcion-vacio')
+          pErroresMinDescripcion.classList.add('errores-descripcion-min')
+
+        } else if (formDescripcion.value.length<20){
+            pErroresMinDescripcion.classList.remove('errores-descripcion-min')
+            pErroresVacioDescripcion.classList.add('errores-descripcion-vacio')
+        }
+        else{
+            pErroresVacioDescripcion.classList.add('errores-descripcion-vacio')
+            pErroresMinDescripcion.classList.add('errores-descripcion-min')
+        }
+    })     
+
+
+
+        
+
         
         
     let formImagen = document.getElementById("imagen-para-subir");

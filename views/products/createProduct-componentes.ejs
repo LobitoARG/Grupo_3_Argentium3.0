@@ -21,28 +21,29 @@
                 <div class="contenedor-form-precio">
                 <label for="precio"></label>
                 <input type="number" name="price" id="precio" placeholder="Precio del producto" required="" value="<%=locals.old && old.price? old.price:''%>">
-                <ul  class=erroresUlPrice></ul> 
+                <p  class="errores-price-vacio" id="pErroresVacioPrecio">El campo del precio debe estar completo</p> 
                 </div>
 
                 <h4>Descuento base</h4>
-                <div class="contenedor-form-precio">
+                <div class="contenedor-form-nombre">
                 <label for="discount"></label>
                 <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="" value="<%=locals.old && old.discount? old.discount:''%>">
-                <ul  class=erroresUlDiscount></ul> 
+                <p  class="errores-discount-vacio" id="pErroresVacioDescuento">El campo del descuento debe estar completo</p> 
                 </div>
 
                 <h4>Tipo</h4>
                 <div class="contenedor-form-nombre">
                 <label for="discount"></label>
                 <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="" value="<%=locals.old && old.type? old.type:''%>">
-                <ul  class=erroresUlType></ul> 
+                <p class="errores-tipo-vacio" id="pErroresVacioType">El campo del tipo debe estar completo</p>
                 </div>
        
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
                 <textarea name="description" id="description" class="form-input"> <%=locals.old && old.description? old.description:''%> </textarea>
-                <ul  class=erroresUlDescripcion></ul> 
+                <p class="errores-descripcion-vacio" id="pErroresVacioDescripcion">El campo descripcion debe estar completo</p>
+                <p class="errores-descripcion-min" id="pErroresMinDescripcion" >El campo de descripcion debe tener mas de 20 caracteres</p>
                 </div>
 
                 <h4>Seleccione una categoria</h4>

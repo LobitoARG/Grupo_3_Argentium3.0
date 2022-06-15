@@ -1,107 +1,168 @@
 window.addEventListener("load", function(){
 
     let formNombre = document.getElementById("name");
-    let ulErroresName = document.querySelector(".erroresUlName");
+    const pErroresVacio = document.getElementById('pErroresVacio')
+    const pErroresMin = document.getElementById('pErroresMin')
+
     formNombre.addEventListener('blur', function(e) {
-        if (formNombre.value == ""){
-           ulErroresName.innerHTML += "<li> El campo del nombre debe estar completo </li>" 
-           //formNombre.value="";
-           //ulErroresName.innerHTML='';
+        if (formNombre.value === "")
+        {
+          pErroresVacio.classList.remove('errores-name-vacio')
+          pErroresMin.classList.add('errores-name-min')
+
         } else if (formNombre.value.length<5){
-            ulErroresName.innerHTML += "<li> El campo del nombre debe tener mas de 5 caracteres</li>"
-            //formNombre.value="";
-            //ulErroresName.innerHTML='';
+            pErroresMin.classList.remove('errores-name-min')
+            pErroresVacio.classList.add('errores-name-vacio')
         }
-    
+        else{
+            pErroresVacio.classList.add('errores-name-vacio')
+            pErroresMin.classList.add('errores-name-min')
+        }
+        
     })
-
+   
+   
     let formPrecio = document.getElementById("price");
-    let ulErroresPrice = document.querySelector(".erroresUlPrice");
+    const pErroresVacioPrecio = document.getElementById('pErroresVacioPrecio')
     formPrecio.addEventListener('blur', function(e) {
-        if (formPrecio.value == ""){
-           ulErroresPrice.innerHTML += "<li> El campo del precio debe estar completo </li>"
-        }})
+        if (formPrecio.value == "")
+            {pErroresVacioPrecio.classList.remove('errores-price-vacio')} 
+        else{
+            pErroresVacioPrecio.classList.add('errores-price-vacio')
+            }
+        })
 
-    let formDescuento = document.getElementById("discount");
-    let ulErroresDiscount= document.querySelector(".erroresUlDiscount");
+    const formDescuento = document.getElementById("discount");
+    const pErroresVacioDescuento = document.getElementById('pErroresVacioDescuento')  
     formDescuento.addEventListener('blur', function(e) {
-        if (formDescuento.value == ""){
-            ulErroresDiscount.innerHTML += "<li> El campo del descuento debe estar completo </li>"
-        }})    
-
-    let formTipo = document.getElementById("type");
-    let ulErroresType= document.querySelector(".erroresUlType");
+        if (formDescuento.value == ""){  
+            pErroresVacioDescuento.classList.remove('errores-discount-vacio')}
+        else{
+            pErroresVacioDescuento.classList.add('errores-discount-vacio')
+            }    
+        })        
+    
+    const formTipo = document.getElementById("type");
+    const pErroresVacioType= document.getElementById("pErroresVacioType");
     formTipo.addEventListener('blur', function(e) {
-        if (formTipo.value == ""){
-            ulErroresType.innerHTML += "<li> El campo del tipo debe estar completo </li>"
-        }})    
+        if(formTipo.value == ""){
+            pErroresVacioType.classList.remove('errores-tipo-vacio')
+            }
+        else{
+            pErroresVacioType.classList.add('errores-tipo-vacio')
+            }
+        })      
+    
         
     let formMicro = document.getElementById("descripCPU");
-    let ulErroresMicro= document.querySelector(".erroresUlMicro");
+    const pErroresVacioCPU= document.getElementById("pErroresVacioCPU");
     formMicro.addEventListener('blur', function(e) {
-        if (formMicro.value == ""){
-            ulErroresMicro.innerHTML += "<li> El campo del Microprocesador debe estar completo </li>"
-        }})        
+        if(formMicro.value == ""){
+            pErroresVacioCPU.classList.remove('errores-cpu-vacio')
+            }
+        else{
+            pErroresVacioCPU.classList.add('errores-cpu-vacio')
+            }
+        }) 
+             
 
     let formCooler = document.getElementById("descripWC");
-    let ulErroresCooler= document.querySelector(".erroresUlCooler");
+    const pErroresVacioWC= document.getElementById("pErroresVacioWC");
     formCooler.addEventListener('blur', function(e) {
-        if (formCooler.value == ""){
-            ulErroresCooler.innerHTML += "<li> El campo del Water Cooler debe estar completo </li>"
-        }})
+        if(formCooler.value == ""){
+            pErroresVacioWC.classList.remove('errores-wc-vacio')
+            }
+        else{
+            pErroresVacioWC.classList.add('errores-wc-vacio')
+            }
+        })     
     
     let formMother = document.getElementById("descripMB");
-    let ulErroresMother= document.querySelector(".erroresUlMother");
+    const pErroresVacioMB= document.getElementById("pErroresVacioMB");
     formMother.addEventListener('blur', function(e) {
-        if (formMother.value == ""){
-            ulErroresMother.innerHTML += "<li> El campo de la Motherboard debe estar completo </li>"
-        }})
+        if(formMother.value == ""){
+            pErroresVacioMB.classList.remove('errores-mb-vacio')
+            }
+        else{
+            pErroresVacioMB.classList.add('errores-mb-vacio')
+            }
+        })     
 
     let formRAM = document.getElementById("descripRAM");
-    let ulErroresRAM= document.querySelector(".erroresUlRAM");
+    const pErroresVacioRAM= document.getElementById("pErroresVacioRAM");
     formRAM.addEventListener('blur', function(e) {
-        if (formRAM.value == ""){
-            ulErroresRAM.innerHTML += "<li> El campo del RAM debe estar completo </li>"
-        }})    
+        if(formRAM.value == ""){
+            pErroresVacioRAM.classList.remove('errores-ram-vacio')
+            }
+        else{
+            pErroresVacioRAM.classList.add('errores-ram-vacio')
+            }
+        })     
+
 
     let formSSD = document.getElementById("descripSSD");
-    let ulErroresSSD= document.querySelector(".erroresUlSSD");
+    const pErroresVacioSSD= document.getElementById("pErroresVacioSSD");
     formSSD.addEventListener('blur', function(e) {
-        if (formSSD.value == ""){
-            ulErroresSSD.innerHTML += "<li> El campo del SSD debe estar completo </li>"
-        }})    
+        if(formSSD.value == ""){
+            pErroresVacioSSD.classList.remove('errores-ssd-vacio')
+            }
+        else{
+            pErroresVacioSSD.classList.add('errores-ssd-vacio')
+            }
+        })     
 
     let formGPU = document.getElementById("descripGPU");
-    let ulErroresGPU= document.querySelector(".erroresUlGPU");
+    const pErroresVacioGPU= document.getElementById("pErroresVacioGPU");
     formGPU.addEventListener('blur', function(e) {
         if (formGPU.value == ""){
-            ulErroresGPU.innerHTML += "<li> El campo del GPU debe estar completo </li>"
-        }})    
+            pErroresVacioGPU.classList.remove('errores-gpu-vacio')
+            }
+        else{
+            pErroresVacioGPU.classList.add('errores-gpu-vacio')
+            }
+        })     
 
     let formPWS = document.getElementById("descripPWS");
-    let ulErroresPWS= document.querySelector(".erroresUlPWS");
+    const pErroresVacioPWS= document.getElementById("pErroresVacioPWS");
     formPWS.addEventListener('blur', function(e) {
         if (formPWS.value == ""){
-            ulErroresPWS.innerHTML += "<li> El campo de la fuente de alimentacion debe estar completo </li>"
-        }})     
+            pErroresVacioPWS.classList.remove('errores-pws-vacio')
+        }
+        else{
+        pErroresVacioPWS.classList.add('errores-pws-vacio')
+        }
+    })        
         
     let formGAB = document.getElementById("descripGAB");
-    let ulErroresGAB= document.querySelector(".erroresUlGAB");
+    const pErroresVacioGAB= document.getElementById("pErroresVacioGAB");
     formGAB.addEventListener('blur', function(e) {
         if (formGAB.value == ""){
-            ulErroresGAB.innerHTML += "<li> El campo del Gabinete debe estar completo </li>"
-        }})        
+            pErroresVacioGAB.classList.remove('errores-gab-vacio')
+        }
+        else{
+        pErroresVacioGAB.classList.add('errores-gab-vacio')
+        }
+    })                 
         
     let formDescripcion = document.getElementById("description");
-    let ulErroresDescripcion= document.querySelector(".erroresUlDescripcion");
+    let pErroresVacioDescripcion= document.getElementById("pErroresVacioDescripcion");
+    const pErroresMinDescripcion = document.getElementById('pErroresMinDescripcion')
     formDescripcion.addEventListener('blur', function(e) {
-        if (formDescripcion.value == ""){
-            ulErroresDescripcion.innerHTML += "<li> El campo de descripcionn debe estar completo </li>"
-        } else if (formDescripcion.value.length<5){
-            ulErroresDescripcion.innerHTML += "<li> El campo de la descripción debe tener mas de 20 caracteres</li>"
+        if (formDescripcion.value === "")
+        {
+          pErroresVacioDescripcion.classList.remove('errores-descripcion-vacio')
+          pErroresMinDescripcion.classList.add('errores-descripcion-min')
+
+        } else if (formDescripcion.value.length<20){
+            pErroresMinDescripcion.classList.remove('errores-descripcion-min')
+            pErroresVacioDescripcion.classList.add('errores-descripcion-vacio')
         }
+        else{
+            pErroresVacioDescripcion.classList.add('errores-descripcion-vacio')
+            pErroresMinDescripcion.classList.add('errores-descripcion-min')
+        }
+    }) 
     
-    })     
     
     let formImagen = document.getElementById("imagen-para-subir");
     var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;

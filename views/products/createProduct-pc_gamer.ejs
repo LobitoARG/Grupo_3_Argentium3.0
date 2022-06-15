@@ -11,94 +11,98 @@
                 <h1>Formulario de creacion de equipos completos</h1>
                 <h4>Nombre del Producto</h4>
                 <div class="contenedor-form-nombre">
-                <label for="name"></label>
-                <input type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=locals.old && old.name? old.name:''%>">
-                <ul  class=erroresUlName></ul>  
+                    <label for="name"></label>
+                    <input class="input-nombre"type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=locals.old && old.name? old.name:''%>">
+                    <p class="errores-name-vacio" id="pErroresVacio" >El campo del nombre debe estar completo</p>
+                    <p class="errores-name-min" id="pErroresMin" >El campo del nombre debe tener mas de 5 caracteres</p>
                 </div>
+                
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
-                <label for="price"></label>
-                <input type="number" name="price" id="price" placeholder="Precio del producto" required="" value="<%=locals.old && old.price? old.price:''%>">
-                <ul  class=erroresUlPrice></ul>  
-                </div>
+                    <label for="precio"></label>
+                    <input type="number" name="price" id="price" placeholder="Precio del producto" required="" value="<%=locals.old && old.price? old.price:''%>">
+                    <p  class="errores-price-vacio" id="pErroresVacioPrecio">El campo del precio debe estar completo</p> 
+                    </div>
 
                 <h4>Descuento base</h4>
-                <div class="contenedor-form-precio">
-                <label for="discount"></label>
-                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required=""  value="<%=locals.old && old.discount? old.discount:''%>">
-                <ul  class=erroresUlDiscount></ul>
-                </div>
-
+                <div class="contenedor-form-nombre">
+                    <label for="discount"></label>
+                    <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="" value="<%=locals.old && old.discount? old.discount:''%>">
+                    <p  class="errores-discount-vacio" id="pErroresVacioDescuento">El campo del descuento debe estar completo</p> 
+                    </div>
+                
                 <h4>Tipo</h4>
-                <div class="contenedor-form-precio">
-                <label for="discount"></label>
-                <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="" value="<%=locals.old && old.type? old.type:''%>">
-                <ul  class=erroresUlType></ul>
-                </div>
+                    <div class="contenedor-form-nombre">
+                    <label for="discount"></label>
+                    <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="" value="<%=locals.old && old.type? old.type:''%>">
+                    <p class="errores-tipo-vacio" id="pErroresVacioType">El campo del tipo debe estar completo</p>
+                    </div>    
+                
 
                 <h4>Microprocesador</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripCPU"></label>
                 <input type="text" name="descripCPU" id="descripCPU" placeholder="Modelo CPU" value="<%=locals.old && old.cpu_name? old.cpu_name:''%>">
-                <ul  class=erroresUlMicro></ul>
+                <p class="errores-cpu-vacio" id="pErroresVacioCPU">El campo del Microprocesador debe estar completo</p>  
                 </div>
 
                 <h4>Water Cooler</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripWC"></label>
                 <input type="text" name="descripWC" id="descripWC" placeholder="Modelo Water Cooler" value="<%=locals.old && old.descripWC? old.descripWC:''%>">
-                <ul  class=erroresUlCooler></ul>
+                <p class="errores-wc-vacio" id="pErroresVacioWC">El campo del Water Cooler debe estar completo</p>  
                 </div>
 
                 <h4>Motherboard</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripMB"></label> 
                 <input type="text" name="descripMB" id="descripMB" placeholder="Modelo de MB"  value="<%=locals.old && old.descripMB? old.descripMB:''%>">
-                <ul  class=erroresUlMother></ul>
+                <p class="errores-mb-vacio" id="pErroresVacioMB">El campo del Motherboard debe estar completo</p>  
                 </div>
 
                 <h4>RAM</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripRAM"></label>
                 <input type="text" name="descripRAM" id="descripRAM" placeholder="Modelo de RAM" value="<%=locals.old && old.descripRAM? old.descripRAM:''%>">
-                <ul  class=erroresUlRAM></ul>
+                <p class="errores-ram-vacio" id="pErroresVacioRAM">El campo del RAM debe estar completo</p>  
                 </div>
 
                 <h4>SSD</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripSSD"></label>
                 <input type="text" name="descripSSD" id="descripSSD"  placeholder="Modelo de SSD" value="<%=locals.old && old.descripSSD? old.descripSSD:''%>">
-                <ul  class=erroresUlSSD></ul>
+                <p class="errores-ssd-vacio" id="pErroresVacioSSD">El campo del SSD debe estar completo</p>  
                 </div>
 
                 <h4>GPU</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripGPU"></label>
                 <input type="text" name="descripGPU" id="descripGPU" placeholder="Modelo de GPU" value="<%=locals.old && old.descripGPU? old.descripGPU:''%>">
-                <ul  class=erroresUlGPU></ul>
+                <p class="errores-gpu-vacio" id="pErroresVacioGPU">El campo del GPU debe estar completo</p>  
                 </div>
 
                 <h4>Fuente de alimentacion</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripPWS"></label>
                 <input type="text" name="descripPWS" id="descripPWS" placeholder="Modelo de PWS" value="<%=locals.old && old.descripPWS? old.descripPWS:''%>">
-                <ul  class=erroresUlPWS></ul>
+                <p class="errores-pws-vacio" id="pErroresVacioPWS">El campo del PWS debe estar completo</p>  
                 </div>
 
                 <h4>Gabinete</h4>
                 <div class="contenedor-form-nombre">
                 <label for="descripGAB"></label>
                 <input type="text" name="descripGAB" id="descripGAB" placeholder="Modelo de Gabinete" value="<%=locals.old && old.descripGAB? old.descripGAB:''%>">
-                <ul  class=erroresUlGAB></ul>
+                <p class="errores-gab-vacio" id="pErroresVacioGAB">El campo del Gabinete debe estar completo</p>  
                 </div>
         
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
                 <textarea name="description" id="description" class="form-input"> <%=locals.old && old.description? old.description:''%> </textarea>
-                <ul  class=erroresUlDescripcion></ul>
-                </div>             
+                <p class="errores-descripcion-vacio" id="pErroresVacioDescripcion">El campo descripcion debe estar completo</p>
+                <p class="errores-descripcion-min" id="pErroresMinDescripcion" >El campo de descripcion debe tener mas de 20 caracteres</p>
+                </div>         
                
                 <h4>Categoria</h4>
                 <div class="contenedor-form-category">

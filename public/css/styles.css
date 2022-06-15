@@ -1020,15 +1020,15 @@ a.btnEndAdd{
     color: white
 }
 
-.errores-name-vacio{
+.errores-name-vacio, .errores-price-vacio, .errores-discount-vacio, .errores-tipo-vacio, .errores-descripcion-vacio, .errores-cpu-vacio, .errores-wc-vacio, .errores-mb-vacio, .errores-ram-vacio, .errores-ssd-vacio, .errores-gpu-vacio, .errores-pws-vacio, .errores-gab-vacio, .errores-imagen-vacio, .formulario__input-IMG-error {
     display: none;
 }
 
-.errores-name-min{
+.errores-name-min, .errores-descripcion-min  {
     display: none;
 }
 
-#pErroresVacio, #pErroresMin{
+#pErroresVacio, #pErroresMin, #pErroresVacioPrecio, #pErroresVacioDescuento, #pErroresVacioType, #pErroresVacioDescripcion, #pErroresMinDescripcion, #pErroresVacioCPU, #pErroresVacioWC, #pErroresVacioMB, #pErroresVacioRAM, #pErroresVacioSSD, #pErroresVacioGPU, #pErroresVacioPWS, #pErroresVacioGAB, #pErroresVacioImagen, #msgIMG {
     color: red;
 }
 

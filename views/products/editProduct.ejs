@@ -8,42 +8,45 @@
 
         <div class="contenedor-main-form">
             <form method="POST" action="/products/edit/<%= productoSeleccionado.id_producto %>?_method=PUT" class="form-register" enctype="multipart/form-data">
-
                 <h1>Editando: <%=productoSeleccionado.name %> </h1>
-                <h4>Nombre del producto</h4>
+                <h4>Nombre del Producto</h4>
                 <div class="contenedor-form-nombre">
-                <label for="name"></label>
-                <input type="text" name="name" id="name"   required value="<%=productoSeleccionado.nombre %>">
-                <ul  class=erroresUlName></ul>  
+                    <label for="name"></label>
+                    <input class="input-nombre"type="text" name="name" id="name" placeholder="Nombre del Producto" required="" value="<%=productoSeleccionado.nombre%>">
+                    <p class="errores-name-vacio" id="pErroresVacio" >El campo del nombre debe estar completo</p>
+                    <p class="errores-name-min" id="pErroresMin" >El campo del nombre debe tener mas de 5 caracteres</p>
                 </div>
 
                 <h4>Precio</h4>
                 <div class="contenedor-form-precio">
-                <label for="price"></label>
-                <input type="number" name="price" id="price" required value="<%=productoSeleccionado.precio %>">
-                <ul  class=erroresUlPrice></ul>  
+                    <label for="precio"></label>
+                    <input type="number" name="price" id="price" placeholder="Precio del producto" required="" value="<%=productoSeleccionado.precio %>">
+                    <p  class="errores-price-vacio" id="pErroresVacioPrecio">El campo del precio debe estar completo</p> 
                 </div>
-
+                
                 <h4>Descuento</h4>
-                <div class="contenedor-form-precio">
+                <div class="contenedor-form-nombre">
                 <label for="discount"></label>
-                <input type="number" name="discount" id="discount" required="" value="<%=productoSeleccionado.descuento %>">
-                <ul  class=erroresUlDiscount></ul>  
+                <input type="number" name="discount" id="discount" placeholder="Descuento del producto" required="" value="<%=productoSeleccionado.descuento %>">
+                <p  class="errores-discount-vacio" id="pErroresVacioDescuento">El campo del descuento debe estar completo</p> 
                 </div>
 
                 <h4>Tipo</h4>
-                <div class="contenedor-form-descripcion">
-                <label for="type"></label>
-                <input type="text" name="type" id="type" required value="<%=productoSeleccionado.tipo %>">
-                <ul  class=erroresUlType></ul>  
-                </div>
-
+                <div class="contenedor-form-nombre">
+                <label for="discount"></label>
+                <input type="text" name="type" id="type" placeholder="New / Sale / Essential" required="" value="<%=productoSeleccionado.tipo %>">
+                <p class="errores-tipo-vacio" id="pErroresVacioType">El campo del tipo debe estar completo</p>
+                </div>    
+                
                 <h4>Descripcion</h4>
                 <div class="contenedor-form-descripcion">
                 <label for="description"></label>
-                <input type="text" name="description" id="description" required value="<%=productoSeleccionado.descripcion %>">
-                <ul  class=erroresUlDescripcion></ul>  
-                </div>
+                <textarea name="description" id="description" class="form-input"><%=productoSeleccionado.descripcion %></textarea>  
+                <p class="errores-descripcion-vacio" id="pErroresVacioDescripcion">El campo descripcion debe estar completo</p>
+                <p class="errores-descripcion-min" id="pErroresMinDescripcion" >El campo de descripcion debe tener mas de 20 caracteres</p>
+                </div>            
+                                
+           
 
                 <h4>Categoria</h4>
                 <div class="contenedor-form-category">
@@ -55,13 +58,19 @@
                     </select>
                 </div>
                 
-                <div class="contenedor-form-imagen">
+                <!-- <div class="contenedor-form-imagen">
                     <h4>Subir una imagen del producto:</h4>
                     <label for="imagenProducto" class="form-label"></label>
 					<input name="imagenProducto" type="file" id="imagen-para-subir" required>
-                    <ul  class=erroresUlImagen></ul>  
-                </div>                     
-                             
+                    <p class="errores-imagen-vacio" id="pErroresVacioImagen"> Los formatos de imagen solo pueden ser JPG,JPEG,PNG,GIF</p>
+                </div>      -->
+
+            <div>
+            <h4>Imagen de Producto</h4>    
+            <label for="imagenProducto" class="formulario__label"></label>
+            <input type="file" accept="image/png,image/jpeg,image/jpg,image/gif" name="imagenProducto" id="imagenProducto" accept="image/png,image/jpeg,image/jpg,image/gif" onchange="return validarIMG()">
+            <p class="formulario__input-IMG-error" id="msgIMG">El archivo debe tener una de las siguientes extensiones: JPG, JPEG, PNG, GIF</p>
+            </div>             
 
 
                 <% for( let i = 0; i < ComponentesEJSkeys.length; i++ ) { %>
