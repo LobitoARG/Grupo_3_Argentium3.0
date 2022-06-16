@@ -71,19 +71,15 @@ const productoApiController = {
         let nextPage = '';
         let urljson = '';
         let urlApiProduct = '/api/products';
-        let queryPage = '?page=';
+        let queryPage = 'page=';
         let pagQueryValue = parseInt(req.query.page);
-        let queryLim = 'limit=';
-  
-        if(!lim){
-          lim = 10;
-          urljson = urlApiProduct;
-          queryLim += lim;
-        }
-  
+        let queryLim = '?limit=';
+        
               
-        if (!pag){
+        if (!pag || pagQueryValue == 1 || !lim){
             pag = 0;
+            lim = 10;
+            queryLim += lim;
             urljson = urlApiProduct + queryLim    
             prevPage = 'Estás en la primera página';
             pagQueryValue = 1;
@@ -91,8 +87,10 @@ const productoApiController = {
         }
         else {
             pag--;
-            urljson = urlApiProduct + queryPage + pagQueryValue + '&' + queryLim;
-            prevPage = urlApiProduct + queryPage + (pagQueryValue - 1) + queryLim;
+            queryLim += lim;
+            urljson = urlApiProduct + queryLim + '&' + queryPage + pagQueryValue;
+            prevPage = urlApiProduct + queryLim + '&' + queryPage + (pagQueryValue -1);
+
         } 
   
         let offS = lim * pag;
@@ -110,10 +108,10 @@ const productoApiController = {
             nextPage = 'Estás en la última página'
           }
           else if ((pag == 0 && lim == 10) && (conteo > offSNext)){
-            nextPage = urlApiProduct + queryPage + (pagQueryValue + 1) + queryLim;
+            nextPage = urlApiProduct + queryLim + '&' + queryPage + (pagQueryValue + 1);
           }
           else{
-            nextPage = urlApiProduct + queryPage + (pagQueryValue + 1) + queryLim;
+            nextPage = urlApiProduct + queryLim + '&' + queryPage + (pagQueryValue + 1);
           }
           let usuarios = respuesta.rows;
           let lista = funciones.getProductos(usuarios);

@@ -18,7 +18,7 @@ const userApiController = {
       let urlApiUser = '/api/user';
       let queryPage = '?page=';
       let pagQueryValue = parseInt(req.query.page);
-      let queryLim = '?limit=';
+      let queryLim = '?limit='
 
       if(!lim){
         lim = 10;
