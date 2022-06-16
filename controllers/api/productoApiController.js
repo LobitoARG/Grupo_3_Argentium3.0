@@ -95,7 +95,7 @@ const productoApiController = {
   
         let offS = lim * pag;
         let offSNext = lim * pagQueryValue;
-        console.log(offSNext);
+        
         
     
         db.Producto.findAndCountAll({

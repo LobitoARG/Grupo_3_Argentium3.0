@@ -20,25 +20,24 @@ const userApiController = {
       let pagQueryValue = parseInt(req.query.page);
       let queryLim = '?limit='
 
-      if(!lim){
-        lim = 10;
-        urljson = urlApiUser;
-        queryLim += lim;
-      }
 
-            
-      if (!pag){
-          pag = 0;
-          urljson = urlApiUser + queryLim    
-          prevPage = 'Estás en la primera página';
-          pagQueryValue = 1;
-          
-      }
-      else {
-          pag--;
-          urljson = urlApiUser + queryPage + pagQueryValue + '&' + queryLim;
-          prevPage = urlApiUser + queryPage + (pagQueryValue - 1) + queryLim;
-      } 
+
+      if (!pag || pagQueryValue == 1 || !lim){
+        pag = 0;
+        lim = 10;
+        queryLim += lim;
+        urljson = urlApiUser + queryLim    
+        prevPage = 'Estás en la primera página';
+        pagQueryValue = 1;
+        
+    }
+    else {
+        pag--;
+        queryLim += lim;
+        urljson = urlApiUser + queryLim + '&' + queryPage + pagQueryValue;
+        prevPage = urlApiUser + queryLim + '&' + queryPage + (pagQueryValue -1);
+
+    }
 
       let offS = lim * pag;
       let offSNext = lim * pagQueryValue;
@@ -55,10 +54,10 @@ const userApiController = {
           nextPage = 'Estás en la última página'
         }
         else if ((pag == 0 && lim == 10) && (conteo > offSNext)){
-          nextPage = urlApiUser + queryPage + (pagQueryValue + 1) + queryLim;
+          nextPage = urlApiUser + queryLim + '&' + queryPage + (pagQueryValue + 1);
         }
         else{
-          nextPage = urlApiUser + queryPage + (pagQueryValue + 1) + queryLim;
+          nextPage = urlApiUser + queryLim + '&' + queryPage + (pagQueryValue + 1);
         }
         let usuarios = respuesta.rows;
         let lista = funciones.getObjUsuarios(usuarios);  
