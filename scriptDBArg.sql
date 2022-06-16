@@ -72,8 +72,43 @@ CREATE TABLE `usuario` (
 --
 
 
-INSERT INTO `usuario` VALUES (NULL,'Alejandro','Jabo','12345A','alejandro@digitalhouse.com','123456','imagenUsers1650340819929.jpg',NULL,NULL,2),
-(NULL,'Perrito','Joven','12345AA','perrito@digitalhouse.com','1234567','imagenUsers1650340819929.jpg',NULL,NULL,1);
+INSERT INTO `usuario` VALUES (NULL,'Alejandro','Jabo','$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC','alejandro@digitalhouse.com','123456','imagenUsers1650338703069.jpg',NULL,NULL,2),
+(NULL,'Perrito','Joven','$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC','perrito@digitalhouse.com','12345467','imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Leonardo', 'Torrealba', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'leot5865@gmail.com', '1139157831', 'imagenUsers1654990538580.jpg',NULL,NULL,1),
+(NULL, 'Pablo', 'Peralta', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'JPP@gmail.com', '11391831546', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Maria', 'Perez', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'MPP@gmail.com', '1561651666654', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Pedro', 'Perez', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'PPP@gmail.com', '1512375678', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Oscar', 'Martinez', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'OM@gmail.com', '1561651655', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Antonio', 'Banderas', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'AB@gmail.com', '1545457878', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Jowell', 'Suelto', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'JS@gmail.com', '1556568989', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Randy', 'Ortiz', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'PPP@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Marc', 'Anthony', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'MA@gmail.com', '1544232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Sandy', 'Papo', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'SP@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Diego', 'Maradona', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'D10S@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Cristiano', 'Ronaldo', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'CR7@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Karim', 'Benzema', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'KB9@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Rodrigo', 'De Paul', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'RDP@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Vini', 'JR', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'VJR@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Aurelien', 'Tchouameni', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'AT@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Tibu', 'Courtois', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'TC@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Antonio', 'Rudiger', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'AR@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'David', 'Alaba', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'DA@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Carlos', 'Casimiro', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'CC@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1),
+(NULL, 'Eduardo', 'Camavinga', '$2a$10$uvxjIvAinA5blqUKZw8PG.YnyDiOlULOav8zydgLnCWZisafrkrxC', 'SP@gmail.com', '1523232323', 'imagenUsers1652744347227.jpg',NULL,NULL,1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

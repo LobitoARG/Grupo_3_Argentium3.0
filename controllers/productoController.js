@@ -6,71 +6,12 @@ const sequelize = db.sequelize;
 const {Op} = require('sequelize');
 const { traceDeprecation } = require('process');
 const {validationResult} = require('express-validator');
+const funciones = require('./funciones')
 
 
 const productsFilePath = path.join(__dirname, '../src/data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-//FUNCIONES
-
-function getIdCategoria (param) {
-    if (param == 'pc_gamer'){
-        return 1;
-    }
-    else if (param == 'notebooks'){
-        return 2;
-    }
-    else{
-        return 3;
-    }
-}
-
-function getComponentes (param){  
-                    
-    var components = new Object();
-    if (param.descripCPU){
-        components.Microprocesador = param.descripCPU;
-    }
-
-    if(param.descripWC){
-        components.Cooler = param.descripWC;
-    }
-
-    if(param.descripMB){
-        components.Motherboard = param.descripMB;
-    }
-
-    if(param.descripRAM){
-        components.RAM = param.descripRAM;
-    }
-
-    if(param.descripSSD){
-        components.Disco = param.descripSSD;
-    }        
-
-    if(param.descripPWS){
-        components.Fuente = param.descripPWS;
-    }
-    
-    if(param.descripGPU){
-        components.Video = param.descripGPU;
-    }   
-
-    if(param.descripGAB){
-        components.Gabinete = param.descripGAB;
-    }
-
-    if(param.componente){
-        components.Componente = param.componente;
-    }
-    return components;       
-  }
-
-
-
-
-
- 
 
 const productoController = {
 
@@ -110,18 +51,12 @@ const productoController = {
     },
    
     
-    store: (req,res) => {
-
-        
-
-
-
-
+    store: (req,res) => {     
         let errores = validationResult(req);
 		if (errores.isEmpty()) {
-            let cmp = getComponentes(req.body);
+            let cmp = funciones.getComponentes(req.body);
             let cmpjson = JSON.stringify(cmp);
-            let categid = getIdCategoria(req.body.category);
+            let categid = funciones.getIdCategoria(req.body.category);
 
             db.Producto.create({        
             nombre: req.body.name,
@@ -145,7 +80,7 @@ const productoController = {
     },
         
     index: (req,res) => {
-       //Necesito traer todos los productos para que se muestren en el home. 
+       
             db.Producto.findAll({
             include: ['categoria_producto']
             })
@@ -167,9 +102,9 @@ const productoController = {
         });
 	},
     update: (req, res) => {
-        let cmp = getComponentes(req.body);
+        let cmp = funciones.getComponentes(req.body);
         let cmpjson = JSON.stringify(cmp);
-        let categid = getIdCategoria(req.body.category);
+        let categid = funciones.getIdCategoria(req.body.category);
 
         db.Producto.update({
         nombre: req.body.name,

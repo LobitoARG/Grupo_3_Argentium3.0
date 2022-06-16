@@ -7,8 +7,7 @@ const {Op} = require('sequelize');
 
 const mainController = {
     home: (req, res) => {
-    //Necesito traer todos los productos para que se muestren en el home. 
-        db.Producto.findAll({
+       db.Producto.findAll({
             include: ['categoria_producto']
         })
         .then(resultadoPromesa => {
@@ -24,29 +23,4 @@ const mainController = {
     }
 }
 
-module.exports = mainController; 
-
-
-
-// const usersFilePath = path.join(__dirname, '../src/data/users.json');
-// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
- // var sales = [];        
-        // for (let i = 0; i < products.length; i++) {
-        //     const element = products[i];            
-        //     if (element.type == 'SALE'){
-        //         sales.push(element);
-        //     }            
-        // }
-
-        // var discounts = products.sort(function(a, b) {return b.discount-a.discount});
-      
-        // var news = [];
-        // for (let i = 0; i < products.length; i++) {
-        //     const element = products[i];            
-        //     if (element.type == 'NEW'){
-        //         news.push(element);
-        //     }            
-        // }
-      
-      
-        // res.render('./users/home', {sales, discounts, news});
+module.exports = mainController;

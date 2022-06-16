@@ -4,7 +4,206 @@ const fs = require('fs');
 const db = require('./src/database/models');
 const sequelize = db.sequelize; 
 const {Op} = require('sequelize');
-const arrayValidatorsUsers = require('./public/js/arrayValidatorsUsers');
+const funciones = require('./controllers/funciones');
+
+
+let jsonres = funciones.userListApi(5, 2);
+console.log(jsonres);
+
+
+
+
+
+// db.Usuario.findAll()
+//     .then(respuesta => {
+//       let usuarios = funciones.getObjUsuarios(respuesta);
+//       console.log(usuarios);
+//     })
+
+
+
+
+
+
+// let resultadoTest = funciones.listaApiUsuarios().then(respuesta => console.log(respuesta));
+
+// let categoria = funciones.getIdCategoria('pc_gamer');
+// console.log(categoria);
+
+// categoria = funciones.getNombreCategoria(2);
+// console.log(categoria);
+
+// db.Producto.findAndCountAll({
+//   include: ['categoria_producto']
+//   })
+//   .then(resultadoPromesa => {
+//   let totalProductos = resultadoPromesa.count;
+//   let Productos = resultadoPromesa.rows;
+  
+//   let verProductos = funciones.getProductos(Productos);
+//   console.log(verProductos);
+  
+
+//   })       
+
+
+
+// let miobjeto = {
+//   name: 'PC DE PRUEBA',
+//   price: '12313',
+//   discount: '2',
+//   type: '-jklhl',
+//   descripCPU: 'jkh',
+//   descripWC: 'lkjh',
+//   descripMB: 'lkj',
+//   descripRAM: 'hlk',
+//   descripSSD: 'jh',
+//   descripGPU: 'lkj',
+//   descripPWS: 'hlkjh',
+//   descripGAB: 'lkj',
+//   description: 'hl',
+//   category: 'pc_gamer'
+// };
+
+// let pruebaComp = funciones.getComponentes(miobjeto);
+// console.log(pruebaComp);
+
+
+
+
+
+
+// var lim = 5
+// var pag = 2;
+
+// var prevPage = '';
+// var nextPage = '';
+// var urljson = '';
+
+// if (!pag){
+//     pag = 0;
+//     urljson = '/api/user'      
+//     prev = 'Estás en la primera página';
+    
+// }
+// else {
+//     urljson = '/api/user?page='+ pag;
+//     prev = '/api/user?page=' + pag--;        
+// }    
+
+// var offS = lim * pag;
+// var donde = {
+//     limit: lim,
+//     offset: offS
+// } 
+
+
+// db.Usuario.findAndCountAll({
+//   limit: lim,
+//   offset: offS
+// })
+//     .then(function(respuesta){
+//         let totalLength = respuesta.count;
+
+//         if(totalLength < (lim * pag)){
+//             next = 'Fin del listado' 
+//         }
+//         else{
+//             next = '/api/user?page=' + pag++;
+//         }
+        
+        
+//            var listaApiUsuarios = respuesta.rows.map(function(element) { 
+//             return {
+//             id: element.id_usuario,
+//             first_name: element.first_name,
+//             last_name: element.last_name,
+//             email: element.email,
+//             detail: '/api/user/' + element.id_usuario
+//           }} 
+//           )
+
+          
+//     let resJson = {
+//         meta: {
+//             status: 200,
+//             total: listaApiUsuarios.length,
+//             url: urljson,      
+//             prev: prevPage,      
+//             next: nextPage
+            
+//         },
+//         data: listaApiUsuarios
+//     }
+//     console.log(resJson)
+//     return resJson;
+    
+//     });
+    
+
+
+
+
+
+
+
+
+
+
+// var usuarios = []; 
+
+// db.Usuario.findAll()
+// .then(function(respuesta){
+
+//   var usuarios = respuesta.map(function(element) { return {
+//       id: element.id_usuario,
+//       first_name: element.first_name,
+//       last_name: element.last_name,
+//       email: element.email,
+//       detail: '/api/user/' + element.id_usuario
+//     }} 
+//     )
+
+//   console.log(usuarios);
+// })
+
+//   for (let i = 0; i < respuesta.length; i++) {
+//     const element = respuesta[i];
+//     let unUser = {
+//       id: element.id_usuario,
+//       first_name: element.first_name,
+//       last_name: element.last_name,
+//       email: element.email,
+//       detail: '/api/user/' + element.id_usuario
+//     }
+//     usuarios.push(unUser);
+//   }
+
+//   console.log(usuarios);
+// } )
+
+
+
+
+//   let idUsers = 3;
+// db.Usuario.findByPk(idUsers)
+// .then(resultado => {
+// let usudetail = {
+//   id: resultado.id_usuario,
+//   first_name: resultado.first_name,
+//   last_name:resultado.last_name,
+//   email: resultado.email,
+//   telefono: resultado.telefono,
+//   fechaAlta: resultado.created_at,
+//   fotoPerfil: path.join(__dirname, 'public/img/usersImg/' + resultado.imagenUsers)
+// }
+// console.log(usudetail);
+
+         
+//       })
+
+
+
 
 
 
@@ -34,7 +233,7 @@ const arrayValidatorsUsers = require('./public/js/arrayValidatorsUsers');
 // console.log(variableMetodo);
 
 
-console.log(arrayValidatorsUsers.validacionLogin)
+// console.log(arrayValidatorsUsers.validacionLogin)
 
 
 
@@ -100,22 +299,7 @@ console.log(arrayValidatorsUsers.validacionLogin)
     // var gamer = 'pc_gamer';
     // console.log(getIdCategoria('notebooks'));
 
-  //  let miobjeto = {
-  //       name: 'PC DE PRUEBA',
-  //       price: '12313',
-  //       discount: '2',
-  //       type: '-jklhl',
-  //       descripCPU: 'jkh',
-  //       descripWC: 'lkjh',
-  //       descripMB: 'lkj',
-  //       descripRAM: 'hlk',
-  //       descripSSD: 'jh',
-  //       descripGPU: 'lkj',
-  //       descripPWS: 'hlkjh',
-  //       descripGAB: 'lkj',
-  //       description: 'hl',
-  //       category: 'pc_gamer'
-  //     };
+      
 
 
   //   console.log(miobjeto[0]);
