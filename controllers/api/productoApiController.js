@@ -73,7 +73,7 @@ const productoApiController = {
         let urlApiProduct = '/api/products';
         let queryPage = '?page=';
         let pagQueryValue = parseInt(req.query.page);
-        let queryLim = '?limit=';
+        let queryLim = 'limit=';
   
         if(!lim){
           lim = 10;
