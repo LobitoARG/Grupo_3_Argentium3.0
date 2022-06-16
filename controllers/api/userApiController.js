@@ -16,7 +16,7 @@ const userApiController = {
       let nextPage = '';
       let urljson = '';
       let urlApiUser = '/api/user';
-      let queryPage = '?page=';
+      let queryPage = 'page=';
       let pagQueryValue = parseInt(req.query.page);
       let queryLim = '?limit='
 
@@ -37,7 +37,7 @@ const userApiController = {
         urljson = urlApiUser + queryLim + '&' + queryPage + pagQueryValue;
         prevPage = urlApiUser + queryLim + '&' + queryPage + (pagQueryValue -1);
 
-    }
+    } 
 
       let offS = lim * pag;
       let offSNext = lim * pagQueryValue;
@@ -53,11 +53,8 @@ const userApiController = {
         if (conteo <= offSNext){
           nextPage = 'Estás en la última página'
         }
-        else if ((pag == 0 && lim == 10) && (conteo > offSNext)){
-          nextPage = urlApiUser + queryLim + '&' + queryPage + (pagQueryValue + 1);
-        }
         else{
-          nextPage = urlApiUser + queryLim + '&' + queryPage + (pagQueryValue + 1);
+          nextPage = urlApiUser + queryLim + '&' + queryPage +  (pagQueryValue + 1);
         }
         let usuarios = respuesta.rows;
         let lista = funciones.getObjUsuarios(usuarios);  
