@@ -114,25 +114,25 @@ const userController = {
 		}).then(resultado =>{
 			if (resultado !== null){
 				let booleanito = bcrypt.compareSync(req.body.password, resultado.password);        
-                if (booleanito)
-                {
-                    let usuarioALoguearse = {
-                    idUsuario: resultado.idUsuario,
-                    nombres: resultado.nombres,
-                    apellidos: resultado.apellidos,
-                    email: resultado.email,
-                    imgPerfil: resultado.imgPerfil
-                    };
+                var usuarioALoguearse = new Object
+				if (booleanito)
+                {                  
+					usuarioALoguearse.id_usuario = resultado.id_usuario;
+                    usuarioALoguearse.first_name = resultado.first_name;
+                    usuarioALoguearse.last_name = resultado.last_name;
+                    usuarioALoguearse.email = resultado.email;
+                    usuarioALoguearse.imagenUsers = resultado.imagenUsers;
+                    usuarioALoguearse.telefono = resultado.telefono;				
  
                     delete resultado.password;
                     req.session.usuarioLogeado = usuarioALoguearse;
+					console.log(req.session.usuarioLogeado.imagenUsers);					
                     //req.session.userLogged = usuarioALoguearse;
-
                     if(req.body.recordarUsuario){
-                        res.cookie('recordarme', req.body.email, {maxAge: (1000 * 60) * 2})
-                    }
-                    
-                    return res.redirect('/');
+                        res.cookie('recordarme', req.body.email, {maxAge: (1000 * 60) * 2})						
+                    }                    
+                    res.render('./users/detailUsers',{usersSeleccionado: req.session.usuarioLogeado});
+
                 } else {
                     let msg = 'La contraseña ingresada no es correcta'
                     return res.render('./users/login', {mensaje: msg});

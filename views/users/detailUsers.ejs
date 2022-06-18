@@ -10,24 +10,32 @@
     
     
     <main>
-        <h1>Datos del usuario: <%= usersSeleccionado.first_name %> <%= usersSeleccionado.last_name %> </h1>
+        <h1>¡Bienvenido <%= usersSeleccionado.first_name %> <%= usersSeleccionado.last_name %>!</h1>
         <ul>
-            <li>
-                <h2>Nombre:<%= usersSeleccionado.first_name%></h2>
+            <li>                
+                <h2>Número de Cliente:</h2>
+                <p id="idUsuarioLogeado"><%= usersSeleccionado.id_usuario %></p>
+            </li>
+            <li>                
+                <h2>Nombre:</h2>
+                <p id="nombreUsuarioLogeado"><%= usersSeleccionado.first_name %></p>
             </li>
             <li>
-                <h2>Apellido:<%= usersSeleccionado.last_name%></h2>
+                <h2>Apellido:</h2>
+                <p id="apellidoUsuarioLogeado"><%= usersSeleccionado.last_name %></p>
             </li>
             <li>
-                <h2>E-mail: <%= usersSeleccionado.email%></h2>
+                <h2>E-mail:</h2>
+                <p id="emailUsuarioLogeado"><%= usersSeleccionado.email%></p>
             </li>
             <li>
-                <h2>Telefono: <%= usersSeleccionado.telefono%></h2>
+                <h2>Telefono:</h2>
+                <p id="telefonoUsuarioLogeado"><%= usersSeleccionado.telefono%></p>
             </li>
             
         </ul>
         <div class="foto-principal-users"> 
-            <img src="/img/usersImg/<%=usersSeleccionado.imagenUsers%>" alt="foto_users" class="main-foto-principal">
+            <img id="imgUsuarioLogeado" src="/img/usersImg/<%=usersSeleccionado.imagenUsers%>" alt="foto_users" class="main-foto-principal">
         </div>
         <section class="contenedor-boton-users">
 
@@ -49,4 +57,5 @@
         <%- include('../partials/footer')  %> 
     </main>
 </body>
+<script src="/js/login.js"></script>
 </html>

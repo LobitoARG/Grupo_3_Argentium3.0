@@ -1,5 +1,15 @@
-//  seleccionamos los dos elementos que serán clickables
+let userSession = window.sessionStorage.getItem('usuarioSession');
+let usuario = JSON.parse(userSession);
+if(userSession){ 
+ let imgHeader = document.createElement('img');
+ let anchorUsuario = document.getElementById('anchorUsuario');
+ anchorUsuario.setAttribute('href', `user/detailUsers/${usuario.id_usuario}`)
+ imgHeader.setAttribute('src', usuario.imagenUsers)
+ imgHeader.setAttribute('class', 'imgHeader')
+ anchorUsuario.appendChild(imgHeader);
+}
 
+//  seleccionamos los dos elementos que serán clickables
 const toggleButton = document.getElementById("button-menu");
 const navWrapper = document.getElementById("nav");
 
