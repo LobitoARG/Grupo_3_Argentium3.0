@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- HEAD -->
 <%- include('../partials/head.ejs', {title: "Carrito de Compra"}) %> 
+<script src="/js/carritoGet.js"></script> 
 <body>
      
 <!-- HEADER -->
@@ -17,101 +18,19 @@
         <h2>Descripción de tu Pedido</h2>
         
         <div class="contCarritoPadre">
-        <div class="contArticles">
-        <article class="productoCarrito">
-            <div class="imagenCarrito">
-                <img src="img/DESKTOP/pc1.jpg" alt="">
-            </div>
-    
-        <div class="descripcionCarrito">
-            <h3 class="nombreProducto">Nombre Producto</h3>
-            <p class="precio">$$</p>
-        <div class="agregarQuitar">
-            <label>Cantidad:</label>
-            <div class="cantidadButtons">
-            <input type="text" name="cantidad" id="cantidad" value="1"/>
-            <div class="sumarRestar">
-               <button><i class="fas fa-angle-up"></i></button>
-               <button><i class="fas fa-angle-down"></i></button>
-            </div>            
-            <button><i class="fas fa-trash"></i></button>
-            </div>
-        </div>
-        </article>
+        <div id="contArticles"class="contArticles">
 
-        <article class="productoCarrito">
-            <div class="imagenCarrito">
-                <img src="img/DESKTOP/pc1.jpg" alt="">
-            </div>
-    
-        <div class="descripcionCarrito">
-            <h3 class="nombreProducto">Nombre Producto</h3>
-            <p class="precio">$$</p>
-        <div class="agregarQuitar">
-            <label>Cantidad:</label>
-            <div class="cantidadButtons">
-            <input type="text" name="cantidad" id="cantidad" value="1"/>
-            <div class="sumarRestar">
-               <button><i class="fas fa-angle-up"></i></button>
-               <button><i class="fas fa-angle-down"></i></button>
-            </div>            
-            <button><i class="fas fa-trash"></i></button>
-            </div>
-        </div>
-        </article>
-    
-    
-        <article class="productoCarrito">
-            <div class="imagenCarrito">
-                <img src="img/DESKTOP/pc1.jpg" alt="">
-            </div>
-    
-        <div class="descripcionCarrito">
-            <h3 class="nombreProducto">Nombre Producto</h3>
-            <p class="precio">$$</p>
-        <div class="agregarQuitar">
-            <label>Cantidad:</label>
-            <div class="cantidadButtons">
-            <input type="text" name="cantidad" id="cantidad" value="1"/>
-            <div class="sumarRestar">
-               <button><i class="fas fa-angle-up"></i></button>
-               <button><i class="fas fa-angle-down"></i></button>
-            </div>            
-            <button><i class="fas fa-trash"></i></button>
-            </div>
-        </div>
-        </article>
-    
-    
-        <article class="productoCarrito">
-            <div class="imagenCarrito">
-                <img src="img/DESKTOP/pc1.jpg" alt="">
-            </div>
-    
-        <div class="descripcionCarrito">
-            <h3 class="nombreProducto">Nombre Producto</h3>
-            <p class="precio">$$</p>
-        <div class="agregarQuitar">
-            <label>Cantidad:</label>
-            <div class="cantidadButtons">
-            <input type="text" name="cantidad" id="cantidad" value="1"/>
-            <div class="sumarRestar">
-               <button><i class="fas fa-angle-up"></i></button>
-               <button><i class="fas fa-angle-down"></i></button>
-            </div>            
-            <button><i class="fas fa-trash"></i></button>
-            </div>
-        </div>
-        </article>
-        </div>
-        
+            <!-- ACA VA EL APPEND -->
+
+        </div>       
     
         <section class="resumenCompra">
             <h2>Resumen de tu Compra</h2>
-            <h3>Total: <strong>$$$$</strong></h3>
+            <h3>Total:</h3>
+            <h3 id="totalCompra"></h3>
             <div class="endAddCompra">
-            <a class="btnEndAdd" href="#">Finalizar Compra</a>
-            <a class="btnEndAdd" href="/home.html">Agregar más Productos<a>   
+            <a id="btnEnd"class="btnEndAdd" href="/">Finalizar Compra</a>
+            <a id="btnAdd"class="btnEndAdd" href="/products">Agregar más Productos<a>   
             </div>
         </section>
      </div>  

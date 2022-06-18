@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- HEAD -->
 <%- include('../partials/head.ejs', {title: ProductoEJS.nombre}) %> 
+<script src="/js/carritoStorage.js"></script> 
 <body>
      
 <!-- HEADER -->
@@ -11,18 +12,19 @@
     
     <main>
         
-        <h1><%= ProductoEJS.nombre %> </h1>
+        <h1 id="nombreProducto"><%= ProductoEJS.nombre %> </h1>
+        
        
             <% if (ProductoEJS.categoria_producto.titulo_categoria) { %>
                 <div class="foto-principal-producto">
-                    <img src="/img/<%= ProductoEJS.categoria_producto.titulo_categoria %>/<%= ProductoEJS.imagen%>" alt="foto_pc" class="main-foto-principal">
+                    <img id='imagenInput' src="/img/<%= ProductoEJS.categoria_producto.titulo_categoria %>/<%= ProductoEJS.imagen%>" alt="foto_pc" class="main-foto-principal">
                 </div>
             <% } %>            
         <section class="contenedor-precio-boton-comprar">
 
             <div class="precio-y-descuento">
                 <div class="precio-anterior-precio-actual">
-                    <h2>$<%= ProductoEJS.precio %></h2>
+                    <h2 id="precio" ><%= ProductoEJS.precio %></h2>
                     <h2 class="descuento"><%= ProductoEJS.descuento %>% OFF</h2>
                 </div>
             </div>
@@ -42,7 +44,7 @@
             
             
             <div class="boton-comprar">
-                <button type="submit">AGREGAR AL CARRITO</button>
+                <button id="btnAgregarCarrito" type="submit">AGREGAR AL CARRITO</button>
             </div>
             
         </section>

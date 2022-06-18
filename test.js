@@ -7,8 +7,39 @@ const {Op} = require('sequelize');
 const funciones = require('./controllers/funciones');
 
 
-let jsonres = funciones.userListApi(5, 2);
-console.log(jsonres);
+const localS = [
+  {
+    nombre: "PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500w",
+    imagen: "/img/pc_gamer/pc_gamer_1.png",
+    precio: "$100.00"
+  },
+  {
+    nombre: "PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500w",
+    imagen: "/img/pc_gamer/pc_gamer_1.png",
+    precio: "$100.00"
+  },
+  {
+    nombre: "CPU Intel Core i9 12900",
+    imagen: "/img/componentes/CPU_Intel_Core_i9_12900K.png",
+    precio: "$72682.00"
+  },
+  {
+    nombre: "CPU Intel Core i9 12900",
+    imagen: "/img/componentes/CPU_Intel_Core_i9_12900K.png",
+    precio: "$72682.00"
+  },
+  {
+    nombre: "Gabinete ATX Thermaltake H550",
+    imagen: "/img/componentes/Gabinete_Thermaltake_H550-min.jpg",
+    precio: "$21000.00"
+  }
+]
+
+let resultado = localS.find( producto => producto.nombre == 'CPU Intel Core i9 12900' );
+let index = localS.findIndex(producto => producto.nombre == resultado.nombre)
+
+let arraySinPc = localS.filter(array => array.nombre !== 'PC GAMER INTEL CORE I3 GTX 1650 4GB SSD 500w')
+console.log(arraySinPc);
 
 
 
