@@ -34,7 +34,7 @@ window.addEventListener("load", function(){
                     <div class="agregarQuitar">
                     <label>Cantidad:</label>
                     <div class="cantidadButtons">
-                    <input type="text" name="cantidad" id="cantidad" class="cantidad" value="${cantidadProducto}"/>
+                    <input type="number" min="1" name="cantidad" id="cantidad" class="cantidad" value="${cantidadProducto}"/>
                     <div class="sumarRestar">
                     <button><i class="fas fa-angle-up"></i></button>
                     <button><i class="fas fa-angle-down"></i></button>
@@ -106,7 +106,7 @@ window.addEventListener("load", function(){
     let elementPrecioUnitario = pPreciosUnitariosProductos[i];   
     let elementPrecioTotal = pPreciosTotalesProductos[i];
 
-    elementInput.addEventListener('blur', (e) =>{
+    elementInput.addEventListener('input', (e) =>{
     multiPrecio = parseInt(elementInput.value) * parseInt(elementPrecioUnitario.innerText);    
     elementPrecioTotal.innerText = multiPrecio
     console.log(elementPrecioTotal.innerText);
