@@ -4,65 +4,11 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
 const db = require('../../src/database/models');
+const sequelize = require('../../src/database/config/config')
 const funciones = require('../funciones');
 
 
 const productoApiController = {   
-    // productIndexApi: (req,res) => {    
-    //     let lim = parseInt(req.query.limite)
-    //     let pag = parseInt(req.query.page);
-    //     let prevPage = '';
-    //     let nextPage = '';
-    //     let urljson = '';   
-              
-    //     if (!pag){
-    //         pag = 0;
-    //         urljson = '/api/products'      
-    //         prevPage = 'Estás en la primera página';
-            
-    //     }
-    //     else {
-    //         pag--;
-    //         urljson = '/api/products?page='+ pag;
-    //         prevPage = '/api/products?page=' + (pag - 1);        
-    //     }    
-    //     let offS = lim * pag;        
-
-    //     db.Producto.findAndCountAll({
-    //     include: ['categoria_producto'],
-    //     limit: lim,
-    //     offset: offS
-    //     })
-    //     .then(resultadoPromesa => {
-    //     let conteo = resultadoPromesa.count;
-    //     if (conteo < offS){
-    //         nextPage = 'Estás en la última página'
-    //       }
-    //       else{
-    //         nextPage = '/api/products?page=' + (pag + 1);
-    //       }
-
-
-
-    //     let Productos = resultadoPromesa.rows;
-    //     let totalPorCategoria = funciones.countByCategory(Productos);
-    //     let lista = funciones.getProductos(Productos);
-
-    //     let objPagApi = new Object();     
-    //     objPagApi.meta = {
-    //           status: 200,
-    //           total: conteo,                
-    //           url: '/api/products',
-    //           previous: '',
-    //           next: ''
-    //       };
-    //       objPagApi.countByCategory = totalPorCategoria;
-    //       objPagApi.data = lista;
-          
-    //       res.json(objPagApi);
-      
-    //     })       
-    // }
     productIndexApi: (req,res) => {   
          
         let lim = parseInt(req.query.limit);
@@ -150,7 +96,24 @@ const productoApiController = {
       
         })       
     },   
-      
+    countByCategory: (req, res) => {
+      db.Producto.findAll(
+        {include: ['categoria_producto'],
+        attributes: ['Producto.id_categoria_producto', [db.Sequelize.fn("COUNT", db.Sequelize.col("Producto.id_categoria_producto")), "countCategory"]],        
+        group: ['Producto.id_categoria_producto']
+        }
+      ).then(resultado => {
+        let objCount = {
+          pc_gamer : resultado[0].dataValues.countCategory,
+          notebooks : resultado[1].dataValues.countCategory,
+          componente : resultado[2].dataValues.countCategory
+          
+        }
+        console.log(objCount);        
+        res.json(objCount);
+      })
+
+    }
         
         
     }

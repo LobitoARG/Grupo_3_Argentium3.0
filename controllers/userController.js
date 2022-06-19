@@ -149,7 +149,11 @@ const userController = {
 	res.render('./users/login', {errors: erroresLogin.array(), old: req.body});
 	}
                    
-    }
+    },
+	cierreSesion: (req, res) => {
+		req.session.destroy();
+		res.redirect('/');
+	}
 	 
 
 }

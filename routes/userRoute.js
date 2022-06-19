@@ -82,21 +82,23 @@ const validacionRegister = [
 
  
 /*** OBTENER TODOS LOS USUARIOS ***/ 
-router.get('/list', userController.index); // authMiddleware,
+router.get('/list',authMiddleware,userController.index); // authMiddleware,
 
 /*** LOG IN DE USUARIO ***/ 
-router.get('/login',userController.login); // guestMiddleware ,
+router.get('/login', guestMiddleware ,userController.login); // guestMiddleware ,
 router.post('/login', validacionLogIn,userController.processlogin) // 10.05 que primero funcione y dsp sumamos el verificador validacionLogIn
 
-router.get('/detailUsers/:id',userController.detailUser); // authMiddleware ,
+router.get('/detailUsers/:id', authMiddleware ,userController.detailUser); // authMiddleware ,
  
 /*** CREAR UN USUARIO ***/ 
 router.get('/register',guestMiddleware,userController.createUser); // guestMiddleware,
 router.post('/register', upload.single('imagenUsers'), validacionRegister, userController.store); 
 
-router.get('/edit/:id' ,userController.edit);  // ,authMiddleware
+router.get('/edit/:id', authMiddleware ,userController.edit);  // ,authMiddleware
 router.put('/edit/:id', upload.single('imagenUsers') ,userController.update); 
 
-router.delete('/detailUsers/:id',userController.destroy);  //  authMiddleware ,
+router.delete('/detailUsers/:id', authMiddleware,userController.destroy);  //  authMiddleware
+
+router.get('/cierreSession', authMiddleware ,userController.cierreSesion)
 
 module.exports = router; 

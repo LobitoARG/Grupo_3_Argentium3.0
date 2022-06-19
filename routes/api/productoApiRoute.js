@@ -6,6 +6,7 @@ const multer = require('multer');
 const { check } = require('express-validator')
 
 router.get('/', productoApiController.productIndexApi);
-router.get('/:id', productoApiController.productDetailApi);
+router.get('/detailProduct/:id', productoApiController.productDetailApi);
+router.get('/countByCategory', productoApiController.countByCategory)
 
 module.exports = router;
