@@ -24,7 +24,10 @@ if(elementImg){
 }
 
 
-
+let btnLogOut = document.getElementById('LogOut');
+btnLogOut.addEventListener('click', () => {
+    window.sessionStorage.removeItem('usuarioSession');
+})
 
 
 
