@@ -85,7 +85,7 @@ const productoController = {
             include: ['categoria_producto']
             })
             .then(resultadoPromesa => {
-            let ProductoEJS = resultadoPromesa;                                            
+            let ProductoEJS = resultadoPromesa;                                          
             res.render('./products/products', {ProductoEJS});
             })       
     },
@@ -131,7 +131,29 @@ const productoController = {
             }
         });
         res.redirect('/');
-	}
+	},
+
+    searchProduct: (req, res) => {
+        db.Producto.findAll({
+            where: { nombre: {[Op.like]: `%${req.query.q}%`}},
+            include: ['categoria_producto']            
+            })
+            .then(resultadoPromesa => {
+            if(resultadoPromesa.length !== 0){
+            let ProductoEJS = resultadoPromesa;                                       
+            res.render('./products/searchProducts', {ProductoEJS});
+            }
+            else{
+                res.render('./products/searchProducts', {sinProductos: 'No existen productos para esta búsqueda'});
+            }
+            })     
+
+
+
+        // console.log(req.query.q);
+        // res.render('./products/searchProducts', {busqueda: req.query.q})
+    }
+
 }
 
 module.exports = productoController; 

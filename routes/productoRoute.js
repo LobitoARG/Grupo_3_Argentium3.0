@@ -5,7 +5,7 @@ const path = require('path');
 const multer = require('multer');
 const authMiddleware = require('../middlewares/authMiddlewares');
 const guestMiddleware = require('../middlewares/guestMiddleware');
-const { check } = require('express-validator')
+const { check } = require('express-validator');
 const db = require('../src/database/models');
 
 //NO ESTÁ GUARDANDO LA IMAGEN EN LA CARPETA QUE LE INDIQUÉ. 
@@ -60,10 +60,7 @@ router.get('/create/createProduct-notebooks',  /* authMiddleware, */ productoCon
 router.get('/create/createProduct-componentes', /* authMiddleware, */  productoController.createProductcomponentes);
 router.post('/', upload.single('imagenProducto'), productoValidator,productoController.store);
 
-
-
 /*** EDITAR UN PRODUCTO ***/ 
-
 router.get('/edit/:id',  /* authMiddleware, */productoController.edit); 
 router.put('/edit/:id', upload.single('imagenProducto'),productoController.update); 
 
@@ -72,5 +69,8 @@ router.get('/', productoController.index);
 
 /*** BORRAR UN PRODUCTO ***/ 
 router.delete('/detail/:id', /* authMiddleware, */ productoController.destroy); 
+
+/*** BUSCAR PRODUCTOS ***/
+router.get('/searchProducts', productoController.searchProduct)
 
 module.exports = router; 

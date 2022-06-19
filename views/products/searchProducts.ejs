@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<%- include('../partials/head', {title: 'Todos los productos'}) %> 
+<body>
+     
+<!-- HEADER -->
+<%- include('../partials/header') %> 
+   
+
+    <main>                 
+            <section class="contenedor-section-principal">   
+                <h2>RESULTADO DE LA BÚSQUEDA</h2>
+                <div class="contenedor-articulos-principales">
+                    
+                    <% if (locals.ProductoEJS) { %>
+                        <% for (let i = 0; i<ProductoEJS.length; i++) { %>                        
+                            <a class="anchorProducto" href="./detailProduct/<%=ProductoEJS[i].id_producto%> ">
+                                <article class="contenedor-producto-imagen-descripcion">            
+                                    <img src="/img/<%=ProductoEJS[i].categoria_producto.titulo_categoria%>/<%=ProductoEJS[i].imagen%>" alt="<%=ProductoEJS[i].nombre %> ">
+                                    <div class="contendor-descripcion">
+                                        <h3 class="description"><%= ProductoEJS[i].nombre %></h3>
+                                        <p class="price">$<%= ProductoEJS[i].precio %></p>
+                                        <p class="discount"><%= ProductoEJS[i].descuento%>%</p>
+                                    </div>                              
+                                </article></a>
+                                <% } %>                     
+                        <% } else { %>
+                         <p><%= sinProductos %> </p>
+                        
+                        <% } %>                
+                </div>
+            </section>    
+        
+    </main>
+       
+    <!-- footer  -->
+    <%- include('../partials/footer')  %> 
+   
+    
+</body>
+</html>
