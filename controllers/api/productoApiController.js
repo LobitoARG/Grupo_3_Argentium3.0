@@ -106,7 +106,7 @@ const productoApiController = {
         let objCount = {
           pc_gamer : resultado[0].dataValues.countCategory,
           notebooks : resultado[1].dataValues.countCategory,
-          componente : resultado[2].dataValues.countCategory
+          componentes : resultado[2].dataValues.countCategory
           
         }
         console.log(objCount);        
