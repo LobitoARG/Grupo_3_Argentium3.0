@@ -6,7 +6,7 @@ const bp = require('body-parser')
 const session = require('express-session');
 const cookieParser = require('cookie-parser')
 var recordameMiddleware = require('./middlewares/recordarmeMiddleware');
-
+const cors = require('cors')
 const app = express();
 const rutaPublic = path.join(__dirname, "./public");
 app.use(express.json());
@@ -18,6 +18,7 @@ app.set('view engine','ejs');
 app.use(session({secret: 'Argentium Mensaje'}));
 app.use(cookieParser());
 app.use(recordameMiddleware);
+app.use(cors())
 
 app.listen(3005, () => {
     console.log("Servidor 3005 corriendo");
