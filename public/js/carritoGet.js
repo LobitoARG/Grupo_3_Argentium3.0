@@ -35,10 +35,7 @@ window.addEventListener("load", function(){
                     <label>Cantidad:</label>
                     <div class="cantidadButtons">
                     <input type="number" min="1" name="cantidad" id="cantidad" class="cantidad" value="${cantidadProducto}"/>
-                    <div class="sumarRestar">
-                    <button><i class="fas fa-angle-up"></i></button>
-                    <button><i class="fas fa-angle-down"></i></button>
-                    </div>            
+                              
                     <button id='btnBorrarProducto'><i class="fas fa-trash"></i></button>
                     </div>
                     </div>`

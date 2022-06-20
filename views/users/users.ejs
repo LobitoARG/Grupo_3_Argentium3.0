@@ -13,18 +13,23 @@
         <h2>Listado de Usuarios</h2>
         <div class="contenedor-users-principales"> <!-- JPP modificar el css -->
             <div>
-                <h3>Nombre de los usuarios registrados:</h3> 
+                <h3>Lista de los usuarios registrados:</h3> 
             </div>
-            <% for( let i = 0; i < users.length; i++ ) { %>
-                <ul>
-                        <% if (users[i].first_name) { %>
-                            <li class="lista-nombres-usuarios">
-                                <a href="detailUsers/<%=users[i].id_usuario%> "><%= users[i].first_name  %></a>
-                            </li>
-                            
-                        <% } %>
+            <div class="container-lista-usuarios-registrados">
+                <ul class="lista-usuarios-registrados">
+                <% for( let i = 0; i < users.length; i++ ) { %>
+                    
+                            <% if (users[i].first_name) { %>
+                                <li class="lista-nombres-usuarios">
+                                    <a href="detailUsers/<%=users[i].id_usuario%> " class="lista-hypervinculo-usuario"><%= users[i].first_name  %></a>
+                                </li>
+                                
+                            <% } %>
+                    
+                <% } %>
                 </ul>
-            <% } %>
+            </div>
+            
         </div>
     </section>
     <div class="contenedor-boton-para-ingresar-registro"> <!--JPP  modificar el css -->

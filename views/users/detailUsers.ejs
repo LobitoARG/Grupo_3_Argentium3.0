@@ -11,42 +11,40 @@
     
     <main>
         <h1>¡Bienvenido <%= usersSeleccionado.first_name %> <%= usersSeleccionado.last_name %>!</h1>
-        <ul>
-            <li>                
-                <h2>Número de Cliente:</h2>
-                <p id="idUsuarioLogeado"><%= usersSeleccionado.id_usuario %></p>
-            </li>
-            <li>                
-                <h2>Nombre:</h2>
-                <p id="nombreUsuarioLogeado"><%= usersSeleccionado.first_name %></p>
-            </li>
-            <li>
-                <h2>Apellido:</h2>
-                <p id="apellidoUsuarioLogeado"><%= usersSeleccionado.last_name %></p>
-            </li>
-            <li>
-                <h2>E-mail:</h2>
-                <p id="emailUsuarioLogeado"><%= usersSeleccionado.email%></p>
-            </li>
-            <li>
-                <h2>Telefono:</h2>
-                <p id="telefonoUsuarioLogeado"><%= usersSeleccionado.telefono%></p>
-            </li>
-            <li>
-                <div class="boton-borrar">               
-                    <button id="LogOut" type="button"><a href="/user/cierreSession" class="href-boton-editar">Cerrar Sesion</button></a>
+        <div class="card-detail-user">
+            <ul class="lista-user-detail">
+                <li>                
+                    <h2>Número de Cliente: <p id="idUsuarioLogeado" class="texto-detail-user"><%= usersSeleccionado.id_usuario %></p></h2>
+                    
+                </li>
+                <li>                
+                    <h2>Nombre: <p id="nombreUsuarioLogeado" class="texto-detail-user"><%= usersSeleccionado.first_name %></p></h2>
+                    
+                </li>
+                <li>
+                    <h2>Apellido: <p id="apellidoUsuarioLogeado" class="texto-detail-user"><%= usersSeleccionado.last_name %></p></h2>
+                    
+                </li>
+                <li>
+                    <h2>E-mail:  <p id="emailUsuarioLogeado" class="texto-detail-user"><%= usersSeleccionado.email%></p></h2>
+                   
+                </li>
+                <li>
+                    <h2>Telefono: <p id="telefonoUsuarioLogeado" class="texto-detail-user"><%= usersSeleccionado.telefono%></p></h2>
+                </li>
+                <div class="foto-principal-users"> 
+                    <img id="imgUsuarioLogeado" src="/img/usersImg/<%=usersSeleccionado.imagenUsers%>" alt="foto_users" class="foto-detail-user">
                 </div>
-            </li>
-            
-        </ul>
-        <div class="foto-principal-users"> 
-            <img id="imgUsuarioLogeado" src="/img/usersImg/<%=usersSeleccionado.imagenUsers%>" alt="foto_users" class="main-foto-principal">
+            </ul>
         </div>
+       
+        
         <section class="contenedor-boton-users">
-
+            <div class="boton-borrar">               
+                <button id="LogOut" type="button"><a href="/user/cierreSession" class="href-boton-editar">Cerrar Sesion</button></a>
+            </div>
             <div class="boton-borrar">
-               
-                <button type="button"><a href="/user/edit/<%=usersSeleccionado.id_usuario%>" class="href-boton-editar">EDITAR USUARIO</button></a>
+                <button type="button" id="boton-borrar-detail-user"><a href="/user/edit/<%=usersSeleccionado.id_usuario%>" class="href-boton-editar">EDITAR USUARIO</button></a>
             </div>
 
            <form action="/user/detailUsers/<%=usersSeleccionado.id_usuario%>?_method=DELETE" method="POST">

@@ -232,7 +232,7 @@ a:link, a:visited, a:active {
 }
 
 .contenedor-logo-empresa img{
-    max-width: 33%;
+    max-width: 75%;
     margin: auto;
     
 }
@@ -240,6 +240,10 @@ a:link, a:visited, a:active {
 .contenedor-logo-empresa a{
     max-width: 50%;
     
+}
+
+.contenedor-logo-usuario img{
+    max-width: 60%;
 }
 
 .contenedor-header-derecho{
@@ -293,10 +297,10 @@ a:link, a:visited, a:active {
     height: 100%;
     margin: 0 10px;
 }
-
-
-
-
+.foto-detail-user{
+    width: 50%;
+    margin: auto;
+}
 
 .foto1, .foto2, .foto3, .foto4, .foto5{
     width: 60px;
@@ -995,6 +999,26 @@ a.btnEndAdd{
     50% {border-color: lightblue;}
 }
 
+.container-lista-usuarios-registrados{
+    border: solid 2px black;
+    padding: 10px;
+    margin: 1em 12em;
+    animation: cambiarcolor 5s infinite;
+}
+
+.lista-usuarios-registrados{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lista-hypervinculo-usuario{
+    color: black;
+    text-transform: uppercase;
+}
+
 .content-sumary-text div{
     margin-top: 3vw;
 }
@@ -1032,6 +1056,60 @@ a.btnEndAdd{
     color: red;
 }
 
+#LogOut a{
+    font-size: 100%;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+
+#LogOut{
+    
+    background-color: red;
+}
+
+#boton-borrar-detail-user a{
+    font-size: 100%;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+#boton-borrar-detail-user{
+    background-color: green;
+}
+
+
+
+.lista-user-detail{
+    margin-top: 1em;
+}
+
+.card-detail-user{
+    border: solid 2px black;
+    margin: 0px 10em;
+    padding: 0px 10px;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    animation: cambiarcolor 3s infinite
+
+}
+
+.card-detail-user:hover{
+    box-shadow: 5px 10px 8px #888888; 
+}
+
+@keyframes cambiarcolor {
+    50% {border-color: #0066cc;}
+  }
+
+.card-detail-user ul{
+    list-style: none;
+}
+
+.texto-detail-user{
+    display: inline
+}
+
 @media (min-width:300px) {
     .contenedor-boton-para-enviar button{
         margin: 0;
@@ -1053,21 +1131,24 @@ a.btnEndAdd{
     }
 
     .contenedor-logo-empresa img{
-        max-width: 30%;
+        max-width: 75%;
     }
 
     .contenedor-header-derecho i{
         font-size: 3.5vw;
     }
+    .contenedor-logo-usuario img{
+        max-width: 50%;
+    }
 } 
 
 @media (min-width: 600px){
     .contenedor-logo-empresa img{
-        max-width: 25%;
+        max-width: 55%;
     }
 
     .nav-links {
-        width: 55%;
+        width: 60%;
     }
 }
 
@@ -1078,6 +1159,10 @@ a.btnEndAdd{
 
     .contenedor-logo-empresa{
         max-width: 30%;
+    }
+
+    .contenedor-logo-usuario img{
+        max-width: 20%;
     }
 
     .register, .login {
@@ -1105,7 +1190,7 @@ a.btnEndAdd{
     article.productoCarrito{
         width: 90%;
         margin: 1%;
-        height: 20%;
+        height: 90%;
     }
 
     section.resumenCompra{
@@ -1153,6 +1238,10 @@ a.btnEndAdd{
         grid-template-rows: 100px;
     }
 
+    .contenedor-logo-usuario img{
+        max-width: 15%;
+    }
+
     .foto-principal-producto{
         width: 25%;
     }
@@ -1176,6 +1265,7 @@ a.btnEndAdd{
 
     .foto-principal-users{
         width: 15%;
+        margin-bottom: 1em;
     } 
 
     .boton-display-all-products button{
@@ -1203,11 +1293,14 @@ a.btnEndAdd{
 
 } 
 
-@media (min-width: 1920px)
+@media (min-width: 1500px)
 {
         .main-nav{
             width: 30vw;
             
+        }
+        .contenedor-logo-usuario img{
+            max-width: 10%;
         }
 
 }
