@@ -102,18 +102,35 @@ const productoApiController = {
         attributes: ['Producto.id_categoria_producto', [db.Sequelize.fn("COUNT", db.Sequelize.col("Producto.id_categoria_producto")), "countCategory"]],        
         group: ['Producto.id_categoria_producto']
         }
-      ).then(resultado => {
-        let objCount = {
-          pc_gamer : resultado[0].dataValues.countCategory,
-          notebooks : resultado[1].dataValues.countCategory,
-          componentes : resultado[2].dataValues.countCategory
-          
-        }
-        console.log(objCount);        
+      ).then(resultado => {       
+       let objCount = {
+        pc_gamer : resultado[0].dataValues.countCategory,
+        notebooks : resultado[1].dataValues.countCategory,
+        componentes : resultado[2].dataValues.countCategory        
+      }
+       console.log(objCount);
         res.json(objCount);
       })
 
-    }
+    },
+    lastProduct: (req,res) => {
+      db.Producto.findAll({
+        limit: 1,
+        order: [['id_producto', 'DESC']]
+      })
+      .then(respuesta => {
+        let producto = respuesta;
+        let lista = funciones.getProductos(producto) 
+        
+        let objPagApi = new Object();     
+        objPagApi.meta = {
+              status: 200
+          };
+          objPagApi.data = lista;        
+        res.json(objPagApi);        
+    })
+    
+}
         
         
     }

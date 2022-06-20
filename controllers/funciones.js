@@ -99,6 +99,7 @@ getProductos: (productos) => {
       id: producto.id_producto,
       name: producto.nombre,
       description: producto.descripcion,
+      imagen: producto.imagen,
       category: funciones.getNombreCategoria(producto.id_categoria_producto),
       detail: '/api/products/' + producto.id_producto
     }
@@ -117,6 +118,7 @@ getObjUsuarios: (respuesta) => {
           first_name: element.first_name,
           last_name: element.last_name,
           email: element.email,
+          imagen: element.imagenUsers,
           detail: '/api/user/' + element.id_usuario
         }
         return unUser;

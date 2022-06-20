@@ -20,8 +20,6 @@ const userApiController = {
       let pagQueryValue = parseInt(req.query.page);
       let queryLim = '?limit='
 
-
-
       if (!pag || pagQueryValue == 1 || !lim){
         pag = 0;
         lim = 10;
@@ -87,7 +85,26 @@ const userApiController = {
       res.json(objUserApi); 
         })
 
-    }
+    },
+
+    lastUser: (req,res) => {
+      db.Usuario.findAll({
+        limit: 1,
+        order: [['id_usuario', 'DESC']]
+      })
+      .then(respuesta => {
+        let usuarios = respuesta;
+        let lista = respuesta 
+        
+        let objPagApi = new Object();     
+        objPagApi.meta = {
+              status: 200
+          };
+          objPagApi.data = lista;        
+        res.json(objPagApi);        
+    })
+    
+}
 
 }
 

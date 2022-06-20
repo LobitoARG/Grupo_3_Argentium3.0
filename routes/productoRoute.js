@@ -51,7 +51,7 @@ const productoValidator = [
 router.get('/detailProduct/:id', productoController.detailProduct);
 
 /*** CART DE 1 PRODUCTO ***/ 
-router.get('/productCart',productoController.productCart);
+router.get('/productCart', authMiddleware ,productoController.productCart);
 
 /*** CREAR UN PRODUCTO PRODUCTO ***/ 
 router.get('/create', authMiddleware, productoController.createProduct); /*** SELECCION DE CATEGORIA PARA IR AL FORM CORRESPONDIENTE ***/ 
