@@ -13,6 +13,22 @@
       font-family: "Montserrat", sans-serif;
   }
 
+  .bannerPrincipal{
+    width: 100%;
+    height: 50%;
+  }
+  .bannerPrincipal img{
+    width: 100%;
+  }
+  .bannerProducts{
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .bannerProducts img{
+    width: 100%;
+    height: 50%;
+  }
+
   .main-header {
     height: 10vh;
     display: flex;
